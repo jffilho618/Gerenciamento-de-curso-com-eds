@@ -1,3 +1,7 @@
+#ifndef ARV_CURSOS_H
+#define ARV_CURSOS_H
+#include <stdio.h>
+#include <stdlib.h>
 #include "gerenciamento.h"
 
 typedef struct no_curso{
@@ -22,3 +26,4 @@ No_curso* buscar_no(No_curso *raiz, int valor);
 int altura(No_curso *raiz);
 int altura_no(No_curso *raiz, int valor);
 No_curso* libera_arvore(No_curso *raiz);
+#endif

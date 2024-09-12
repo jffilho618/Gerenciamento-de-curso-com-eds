@@ -1,5 +1,8 @@
 #ifndef GERENCIAMENTO_H
 #define GERENCIAMENTO_H
+
+#include <stdio.h>
+#include <stdlib.h>
 typedef struct no_notas{
     int codigo_disciplina;
     int semestre_cursado;
@@ -22,24 +25,7 @@ typedef struct no_disciplinas{
     struct no_disciplinas *esq;
     struct no_disciplinas *dir;
 }No_disciplinas;
-
-typedef struct elemento{
-    int matricula;
-    char nome[50];
-    int codigo_curso;
-    No_notas *arvore_notas;
-    No_matriculas *arvore_matriculas;
-    struct  elemento *prox;
-    struct elemento *ant;
-}Elemento;
-
-Elemento *criaLista(); 
-Elemento *addInicio(Elemento *l); 
-Elemento *addFinal(Elemento *l);
-Elemento *addOrdenadoCrescente(Elemento *l);
-Elemento *removerElemento(Elemento *l);
-int tamanhoDaLista(Elemento *l);
-void mostrarLista(Elemento *l); 
+ 
 void menu();
 
 void menu_principal();
