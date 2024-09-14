@@ -1,6 +1,4 @@
 #include "gerenciamento.h"
-#include "arv_cursos.h"
-#include "lista_alunos.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,6 +8,7 @@ int main(){
     int op1,op2;
     Elemento *lista_alunos = criaLista_alunos();
     No_curso *arv_cursos = criarARVOREcursos();
+    No_disciplinas *arv_disciplinas = criarARVORE_disciplinas();
 
     do{ 
         menu_principal();
@@ -29,7 +28,7 @@ int main(){
                             lista_alunos = Cadastrar_aluno(lista_alunos, arv_cursos);
                             break;
                         case 3:
-                            //lista_alunos = CadastrarDisciplina(lista_alunos);
+                            arv_disciplinas = Cadastrar_disciplina(arv_disciplinas, arv_cursos);
                             break;
                         case 4:
                             //lista_alunos = CadastrarMatricula(lista_alunos);
