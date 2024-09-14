@@ -74,11 +74,25 @@ int busca_curso(No_curso *raiz, int valor){
     }
 }
 
-void imprimir_pre_ordem(No_curso *raiz){
-    //10 5 3 1 7 20 15 30
+No_curso *retornar_curso(No_curso *raiz, int valor){
+    if(raiz == NULL){
+        return NULL;
+    }else{
+        if(raiz->codigo_curso == valor){
+            return raiz;
+        }else{
+            if(valor < raiz->codigo_curso){
+                return retornar_curso(raiz->esq, valor);
+            }else{
+                return retornar_curso(raiz->dir, valor);
+            }
+        }
+    }
+}
 
-    if (raiz != NULL) {
-        printf("%d ", raiz->codigo_curso);
+void imprimir_pre_ordem(No_curso *raiz){
+    if (raiz != NULL ) {
+        printf("║ %-11d ║ %-25s ║ %-6d ║\n",raiz->quant_periodos,raiz->nome_curso,raiz->codigo_curso);
         imprimir_pre_ordem(raiz->esq);
         imprimir_pre_ordem(raiz->dir);
     }
@@ -179,4 +193,16 @@ No_curso* libera_arvore(No_curso *raiz){
         free(raiz);
     }
     return NULL;
+}
+
+void mostrar_todos_os_cursos(No_curso *raiz){
+    
+        printf("╔═════════════╦═══════════════════════════╦════════╗\n");
+        printf("║   PERÍODOS  ║       NOME DO CURSO       ║ CÓDIGO ║\n");
+        printf("╠═════════════╬═══════════════════════════╬════════╣\n");
+        imprimir_pre_ordem(raiz);
+        
+        printf("╚═════════════╩═══════════════════════════╩════════╝\n");
+    
+    
 }

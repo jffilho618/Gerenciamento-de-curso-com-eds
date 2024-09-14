@@ -29,25 +29,33 @@ No_disciplinas* inserir_disciplina(No_disciplinas *raiz, int valor, char nome_di
     return raiz;
 }
 
-No_disciplinas* Cadastrar_disciplina(No_disciplinas *raiz, No_curso *raiz_curso){
+No_curso* Cadastrar_disciplina(No_curso *raiz_curso){
     int codigo_curso;
     srand(time(NULL));
 
     if (raiz_curso == NULL) {
         printf("Nenhum curso cadastrado\n");
-        return raiz;
+        return raiz_curso;
     }
+
+    
     
     printf("Digite o codigo do curso: ");
     scanf("%d", &codigo_curso);
     if (busca_curso(raiz_curso, codigo_curso)){
+
+
+        No_curso *curso_exato = retornar_curso(raiz_curso, codigo_curso);
+        No_disciplinas *raiz_disciplinas = curso_exato->arvore_disciplinas;
+        
+
         printf("Digite o código da disciplina: ");
         int codigo_disciplina;
         scanf("%d", &codigo_disciplina);
 
-        if (busca_disciplina(raiz, codigo_disciplina)){
+        if (busca_disciplina(raiz_disciplinas, codigo_disciplina)){
             printf("Disciplina já cadastrada\n");
-            return raiz;
+            return raiz_curso;
         }
         printf("Digite o nome da disciplina: ");
         char nome_disciplina[50];
@@ -58,7 +66,7 @@ No_disciplinas* Cadastrar_disciplina(No_disciplinas *raiz, No_curso *raiz_curso)
 
         if (!verifica_carga_horaria(carga_horaria)){
             printf("Carga horaria invalida\n");
-            return raiz;
+            return raiz_curso;
         }
 
         printf("Digite o periodo da disciplina: ");
@@ -69,16 +77,18 @@ No_disciplinas* Cadastrar_disciplina(No_disciplinas *raiz, No_curso *raiz_curso)
 
         if (periodo > quant_periodos || periodo < 1){
             printf("Periodo invalido\n");
-            return raiz;
+            return raiz_curso;
         }
-        raiz = inserir_disciplina(raiz, codigo_disciplina, nome_disciplina, carga_horaria, periodo);
+        
+        curso_exato->arvore_disciplinas = inserir_disciplina(curso_exato->arvore_disciplinas, codigo_disciplina, nome_disciplina, carga_horaria, periodo);
+
         printf("Disciplina cadastrada com sucesso\n");
     }
     else{
         printf("Curso nao cadastrado\n");
-        return raiz;
+        return raiz_curso;
     }
-    return raiz;
+    return raiz_curso;
 }
 
 
@@ -122,3 +132,44 @@ int verifica_carga_horaria(int valor){
     return 0;
 }
 
+void imprimir_pre_ordem_disciplinas(No_disciplinas *raiz){
+    if (raiz != NULL) {
+        printf("║ %-11d ║ %-25s ║ %-6d ║\n",raiz->carga_horaria,raiz->nome_disciplina,raiz->codigo_disciplina);
+        imprimir_pre_ordem_disciplinas(raiz->esq);
+        imprimir_pre_ordem_disciplinas(raiz->dir);
+    }
+}
+
+No_disciplinas* retorna_arvore_disciplinas(No_curso *raiz, int codigo_curso){
+    if (raiz == NULL){
+        return NULL;
+    }
+    if (raiz->codigo_curso == codigo_curso){
+        return raiz->arvore_disciplinas;
+    }
+    if (codigo_curso < raiz->codigo_curso){
+        return retorna_arvore_disciplinas(raiz->esq, codigo_curso);
+    }
+    return retorna_arvore_disciplinas(raiz->dir, codigo_curso);
+}
+
+void mostrar_disciplinas_de_um_curso(No_curso *raiz){
+
+    int codigo_curso;
+    printf("Digite o codigo do curso: ");
+    scanf("%d", &codigo_curso);
+    if (raiz == NULL){
+        printf("Nenhuma disciplina cadastrada\n");
+        return;
+    }
+
+    No_disciplinas *arvore_disciplinas = retorna_arvore_disciplinas(raiz, codigo_curso);
+
+
+    printf("╔═════════════╦═══════════════════════════╦════════╗\n");
+    printf("║  CARGA HOR  ║    NOME DA DISCIPLINA     ║ CÓDIGO ║\n");
+    printf("╠═════════════╬═══════════════════════════╬════════╣\n");
+    imprimir_pre_ordem_disciplinas(arvore_disciplinas);
+    
+    printf("╚═════════════╩═══════════════════════════╩════════╝\n");
+}
