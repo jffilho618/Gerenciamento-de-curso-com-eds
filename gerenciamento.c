@@ -24,6 +24,8 @@ void questao1()
     printf("║ [2] CADASTRAR ALUNO                  ║\n");
     printf("║ [3] CADASTRAR DISCIPLINA             ║\n");
     printf("║ [6] MOSTRAR TODOS ALUNOS DE UM CURSO ║\n");
+    printf("║ [7] MOSTRAR TODOS OS CURSOS          ║\n");
+    printf("║ [8] MOSTRAR DISCIPLINAS DE UM CURSO  ║\n");
     printf("║ [0] SAIR                             ║\n");
     printf("╚══════════════════════════════════════╝\n\n");
 }

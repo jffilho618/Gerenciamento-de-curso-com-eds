@@ -48,10 +48,12 @@ typedef struct elemento{
 
 No_disciplinas* criarARVORE_disciplinas();
 No_disciplinas* inserir_disciplina(No_disciplinas *raiz, int valor, char nome_disciplina[50], int carga_horaria, int periodo);
-No_disciplinas* Cadastrar_disciplina(No_disciplinas *raiz, No_curso *raiz_curso);;
+No_curso* Cadastrar_disciplina(No_curso *raiz_curso);
 int busca_disciplina(No_disciplinas *raiz, int valor);
 int verifica_carga_horaria(int valor);
-
+void imprimir_pre_ordem_disciplinas(No_disciplinas *raiz);
+No_disciplinas* retorna_arvore_disciplinas(No_curso *raiz, int codigo_curso);
+void mostrar_disciplinas_de_um_curso(No_curso *Raiz);
 
 
 No_curso* criarARVOREcursos();
@@ -60,6 +62,8 @@ No_curso* CadastrarCurso(No_curso *raiz);
 int tamanho(No_curso *raiz);
 int busca_curso(No_curso *raiz, int valor);
 int busca_periodo_curso(No_curso *raiz, int valor);
+No_curso *retornar_curso(No_curso *raiz, int valor);
+void mostrar_todos_os_cursos(No_curso *raiz);
 void imprimir_pre_ordem(No_curso *raiz);
 void imprimir_em_ordem(No_curso *raiz);
 void imprimir_pos_ordem(No_curso *raiz);
