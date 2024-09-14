@@ -3,7 +3,6 @@
 #include <string.h>
 #include <time.h>
 #include "gerenciamento.h"
-#include "arv_cursos.h"
 
 No_curso* criarARVOREcursos(){
     return NULL;
@@ -35,7 +34,7 @@ No_curso* CadastrarCurso(No_curso *raiz){
     srand(time(NULL));
     printf("Digite o codigo do curso: ");
     scanf("%d", &codigo_curso);
-    if (busca(raiz, codigo_curso)){
+    if (busca_curso(raiz, codigo_curso)){
         printf("Curso ja cadastrado\n");
     }
     else{
@@ -59,7 +58,7 @@ int tamanho(No_curso *raiz){
     }
 }
 
-int busca(No_curso *raiz, int valor){
+int busca_curso(No_curso *raiz, int valor){
     if(raiz == NULL){
         return 0;
     }else{
@@ -67,9 +66,9 @@ int busca(No_curso *raiz, int valor){
             return 1;
         }else{
             if(valor < raiz->codigo_curso){
-                return busca(raiz->esq, valor);
+                return busca_curso(raiz->esq, valor);
             }else{
-                return busca(raiz->dir, valor);
+                return busca_curso(raiz->dir, valor);
             }
         }
     }

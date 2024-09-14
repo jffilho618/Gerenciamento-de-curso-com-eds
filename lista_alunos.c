@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "lista_alunos.h"
-#include "arv_cursos.h"
 #include <string.h>
+#include "gerenciamento.h"
 
 Elemento *criaLista_alunos(){
     return NULL;
@@ -135,7 +134,7 @@ Elemento* Cadastrar_aluno(Elemento *l, No_curso *raiz){
     int matricula;
     scanf("%d", &matricula);
 
-    if (busca(raiz, codigo_curso)){
+    if (busca_curso(raiz, codigo_curso)){
         l = addOrdenado_alfabetico(l, matricula, nome, codigo_curso);
     }
     else{
