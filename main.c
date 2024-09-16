@@ -31,10 +31,10 @@ int main(){
                             arv_cursos = Cadastrar_disciplina(arv_cursos);
                             break;
                         case 4:
-                            //lista_alunos = CadastrarMatricula(lista_alunos);
+                            lista_alunos = cadastrarMatricula(lista_alunos, arv_cursos);
                             break;
                         case 5:
-                            //lista_alunos = CadastrarNota(lista_alunos);
+                            lista_alunos = cadastrarNota(lista_alunos);
                             break;
                         case 6:
                             alunos_de_um_curso(lista_alunos);
@@ -45,6 +45,12 @@ int main(){
                         case 8:
                             mostrar_disciplinas_de_um_curso(arv_cursos);
                             break;   
+                        case 9:
+                            mostrarNotasDePeriodo(lista_alunos);
+                            break;
+                        case 10:
+                            mostrarNotaDeDisciplina(lista_alunos, arv_cursos);
+                            break;
                         case 0:
                             break;
                         default:
