@@ -86,6 +86,35 @@ void mostrarLista(Elemento *l);
 void alunos_de_um_curso(Elemento *l);
 
 
+// iv) Cadastrar uma matrícula, onde a mesma é uma árvore organizada e contendo somente um código de
+// uma disciplina do curso do aluno. 
+No_matriculas* criarARVORE_matriculas();
+No_matriculas* inserirMatricula(No_matriculas* raiz, int codigo_disciplina);
+Elemento* cadastrarMatricula(Elemento* lista_alunos, No_curso* arvore_cursos);
+Elemento* buscar_aluno(Elemento* lista_alunos, int matricula_aluno);
+No_disciplinas* buscar_disciplina_no_curso(No_curso* raiz_curso, int codigo_disciplina);
+No_disciplinas* buscar_disciplina(No_disciplinas* raiz, int codigo_disciplina);
+No_matriculas* remover_matricula(No_matriculas* raiz, int codigo_disciplina);
+
+
+// v) Cadastrar Notas, permitir o cadastro de notas somente de disciplinas que estejam na árvore de
+// matricula, e quando a nota for cadastrada a disciplina deve ser removida da árvore de matricula para
+// árvore de notas. 
+No_notas* criarARVORE_notas();
+No_notas* inserirNota(No_notas* raiz, int codigo_disciplina, int semestre, float nota_final);
+Elemento* cadastrarNota(Elemento* lista_alunos);
+No_matriculas* minimo(No_matriculas* raiz);
+No_matriculas* busca_matricula(No_matriculas* raiz, int codigo_disciplina);
+
+
+// xi) Mostrar todas as notas de disciplinas de um determinado período de um determinado aluno.
+void mostrarNotasDePeriodo(Elemento* lista_alunos);
+
+
+// xii) Mostrar a nota de uma disciplina de um determinado aluno, mostrando o período e a carga horária da
+// disciplina. 
+void mostrarNotaDeDisciplina(Elemento* lista_alunos, No_curso* arvore_cursos);
+
  
 void menu();
 void menu_principal();

@@ -136,10 +136,14 @@ Elemento* Cadastrar_aluno(Elemento *l, No_curso *raiz){
 
     if (busca_curso(raiz, codigo_curso)){
         l = addOrdenado_alfabetico(l, matricula, nome, codigo_curso);
+        l->arvore_matriculas = criarARVORE_matriculas();
+        l->arvore_notas = criarARVORE_notas();
     }
     else{
         printf("Curso nao cadastrado\n");
     }
+
+    return l;
 }
 
 
