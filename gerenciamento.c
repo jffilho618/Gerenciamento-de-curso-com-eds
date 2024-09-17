@@ -29,6 +29,7 @@ void questao1()
     printf("║ [7] MOSTRAR TODOS OS CURSOS          ║\n");
     printf("║ [8] MOSTRAR DISCIPLINAS DE UM CURSO  ║\n");
     printf("║ [9] MOSTRAR DISCIPLINAS DE UM PERIODO║\n");
+    printf("║ [9] MOSTRAR DISCIPLINAS DE UM ALUNO  ║\n");
     printf("║ [11] MOSTRAR NOTAS DE UM PERÍODO     ║\n");
     printf("║ [12] MOSTRAR NOTAS DE DISCIPLINA     ║\n");
     printf("║ [0] SAIR                             ║\n");

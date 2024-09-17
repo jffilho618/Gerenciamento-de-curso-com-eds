@@ -74,17 +74,17 @@ int busca_curso(No_curso *raiz, int valor){
     }
 }
 
-No_curso *retornar_curso(No_curso *raiz, int valor){
+No_curso *retornar_curso(No_curso *raiz, int codigo_curso){
     if(raiz == NULL){
         return NULL;
     }else{
-        if(raiz->codigo_curso == valor){
+        if(raiz->codigo_curso == codigo_curso){
             return raiz;
         }else{
-            if(valor < raiz->codigo_curso){
-                return retornar_curso(raiz->esq, valor);
+            if(codigo_curso < raiz->codigo_curso){
+                return retornar_curso(raiz->esq, codigo_curso);
             }else{
-                return retornar_curso(raiz->dir, valor);
+                return retornar_curso(raiz->dir, codigo_curso);
             }
         }
     }

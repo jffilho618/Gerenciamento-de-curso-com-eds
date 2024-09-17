@@ -47,6 +47,9 @@ int main(){
                             break;
                         case 9:
                             mostrar_disciplinas_de_um_periodo(arv_cursos);
+                            break;
+                        case 10:
+                            mostrar_disciplinas_de_um_aluno_matriculado(lista_alunos, arv_cursos);
                             break;  
                         case 11:
                             mostrarNotasDePeriodo(lista_alunos);

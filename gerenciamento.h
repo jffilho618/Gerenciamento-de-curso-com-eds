@@ -53,6 +53,7 @@ int busca_disciplina(No_disciplinas *raiz, int valor);
 int verifica_carga_horaria(int valor);
 void imprimir_pre_ordem_disciplinas(No_disciplinas *raiz);
 void mostrar_disciplinas_de_um_periodo(No_curso *raiz);
+void imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(No_disciplinas *raiz_disciplinas, No_matriculas *raiz_matriculas);
 void imprimir_pre_ordem_disciplinas_de_um_periodo(No_disciplinas *raiz, int periodo);
 No_disciplinas* retorna_arvore_disciplinas(No_curso *raiz, int codigo_curso);
 void mostrar_disciplinas_de_um_curso(No_curso *Raiz);
@@ -83,6 +84,7 @@ Elemento *addFinal(Elemento *l);
 Elemento *addOrdenado_alfabetico(Elemento *l, int matricula, char nome[50], int codigo_curso);
 Elemento* Cadastrar_aluno(Elemento *l, No_curso *raiz);
 Elemento *removerElemento(Elemento *l);
+Elemento *retorna_aluno(Elemento *l, int matricula);        
 int tamanhoDaLista(Elemento *l);
 void mostrarLista(Elemento *l);
 void alunos_de_um_curso(Elemento *l);
@@ -97,6 +99,8 @@ Elemento* buscar_aluno(Elemento* lista_alunos, int matricula_aluno);
 No_disciplinas* buscar_disciplina_no_curso(No_curso* raiz_curso, int codigo_disciplina);
 No_disciplinas* buscar_disciplina(No_disciplinas* raiz, int codigo_disciplina);
 No_matriculas* remover_matricula(No_matriculas* raiz, int codigo_disciplina);
+No_matriculas* retorna_arvore_matriculas(Elemento* lista_alunos, int matricula_aluno);
+void mostrar_disciplinas_de_um_aluno_matriculado(Elemento* lista_alunos, No_curso* arvore_cursos);
 
 
 // v) Cadastrar Notas, permitir o cadastro de notas somente de disciplinas que estejam na árvore de
