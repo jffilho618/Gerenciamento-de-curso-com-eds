@@ -52,6 +52,8 @@ No_curso* Cadastrar_disciplina(No_curso *raiz_curso);
 int busca_disciplina(No_disciplinas *raiz, int valor);
 int verifica_carga_horaria(int valor);
 void imprimir_pre_ordem_disciplinas(No_disciplinas *raiz);
+void mostrar_disciplinas_de_um_periodo(No_curso *raiz);
+void imprimir_pre_ordem_disciplinas_de_um_periodo(No_disciplinas *raiz, int periodo);
 No_disciplinas* retorna_arvore_disciplinas(No_curso *raiz, int codigo_curso);
 void mostrar_disciplinas_de_um_curso(No_curso *Raiz);
 

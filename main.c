@@ -44,11 +44,14 @@ int main(){
                             break;
                         case 8:
                             mostrar_disciplinas_de_um_curso(arv_cursos);
-                            break;   
+                            break;
                         case 9:
+                            mostrar_disciplinas_de_um_periodo(arv_cursos);
+                            break;  
+                        case 11:
                             mostrarNotasDePeriodo(lista_alunos);
                             break;
-                        case 10:
+                        case 12:
                             mostrarNotaDeDisciplina(lista_alunos, arv_cursos);
                             break;
                         case 0:
