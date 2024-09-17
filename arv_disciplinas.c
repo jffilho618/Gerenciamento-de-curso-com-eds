@@ -134,7 +134,7 @@ int verifica_carga_horaria(int valor){
 
 void imprimir_pre_ordem_disciplinas(No_disciplinas *raiz){
     if (raiz != NULL) {
-        printf("║ %-11d ║ %-25s ║ %-6d ║\n",raiz->carga_horaria,raiz->nome_disciplina,raiz->codigo_disciplina);
+        printf("║ %-11d ║ %-25s ║ %-6d ║ %-7d ║\n",raiz->carga_horaria,raiz->nome_disciplina,raiz->codigo_disciplina, raiz->periodo);
         imprimir_pre_ordem_disciplinas(raiz->esq);
         imprimir_pre_ordem_disciplinas(raiz->dir);
     }
@@ -166,10 +166,45 @@ void mostrar_disciplinas_de_um_curso(No_curso *raiz){
     No_disciplinas *arvore_disciplinas = retorna_arvore_disciplinas(raiz, codigo_curso);
 
 
-    printf("╔═════════════╦═══════════════════════════╦════════╗\n");
-    printf("║  CARGA HOR  ║    NOME DA DISCIPLINA     ║ CÓDIGO ║\n");
-    printf("╠═════════════╬═══════════════════════════╬════════╣\n");
+    printf("╔═════════════╦═══════════════════════════╦════════╦═════════╗\n");
+    printf("║  CARGA HOR  ║    NOME DA DISCIPLINA     ║ CÓDIGO ║ PERÍODO ║\n");
+    printf("╠═════════════╬═══════════════════════════╬════════╬═════════╣\n");
     imprimir_pre_ordem_disciplinas(arvore_disciplinas);
     
-    printf("╚═════════════╩═══════════════════════════╩════════╝\n");
+    printf("╚═════════════╩═══════════════════════════╩════════╩═════════╝\n");
+}
+
+void imprimir_pre_ordem_disciplinas_de_um_periodo(No_disciplinas *raiz, int periodo){
+    if (raiz != NULL){
+        if (raiz->periodo == periodo){
+            printf("║ %-11d ║ %-25s ║ %-6d ║ %-7d ║\n",raiz->carga_horaria,raiz->nome_disciplina,raiz->codigo_disciplina, raiz->periodo);
+        }
+        imprimir_pre_ordem_disciplinas_de_um_periodo(raiz->esq, periodo);
+        imprimir_pre_ordem_disciplinas_de_um_periodo(raiz->dir, periodo);
+    }
+}
+
+void mostrar_disciplinas_de_um_periodo(No_curso *raiz){
+    int codigo_curso;
+    printf("Digite o codigo do curso: ");
+    scanf("%d", &codigo_curso);
+    if (raiz == NULL){
+        printf("Nenhuma disciplina cadastrada\n");
+        return;
+    }
+
+    No_curso *curso = retornar_curso(raiz, codigo_curso);
+
+    int periodo;
+    printf("Digite o periodo: ");
+    scanf("%d", &periodo);
+
+    printf("╔═════════════╦═══════════════════════════╦════════╦═════════╗\n");
+    printf("║  CARGA HOR  ║    NOME DA DISCIPLINA     ║ CÓDIGO ║ PERÍODO ║\n");
+    printf("╠═════════════╬═══════════════════════════╬════════╬═════════╣\n");
+
+    imprimir_pre_ordem_disciplinas_de_um_periodo(curso->arvore_disciplinas, periodo);
+    
+    printf("╚═════════════╩═══════════════════════════╩════════╩═════════╝\n");
+
 }
