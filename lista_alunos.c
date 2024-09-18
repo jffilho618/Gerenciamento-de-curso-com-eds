@@ -7,32 +7,6 @@ Elemento *criaLista_alunos(){
     return NULL;
 }
 
-Elemento *addFinal(Elemento *l){
-    Elemento *novo = (Elemento*) malloc(sizeof(Elemento));
-    novo->prox=NULL;
-    if (l==NULL)
-    {
-        scanf("%d",&novo->matricula);
-        novo->ant=NULL;
-        l=novo;
-        return l;
-    }
-    
-    else
-    {
-        Elemento *aux = l;
-        scanf("%d", &novo->matricula);
-        while (aux->prox!=NULL)
-        {
-            aux=aux->prox;
-        }
-        aux->prox=novo;
-        novo->ant=aux;
-        return l;
-    }
-
-}
-
 Elemento *addOrdenado_alfabetico(Elemento *l, int matricula, char nome[50], int codigo_curso) {
     Elemento *aux, *novo = (Elemento*) malloc(sizeof(Elemento));
     Elemento *inicio = l;  // Variável para armazenar o início da lista
@@ -80,29 +54,50 @@ Elemento *addOrdenado_alfabetico(Elemento *l, int matricula, char nome[50], int 
     return inicio;
 }
 
+int busca_matricula_aluno(Elemento *l, int matricula){
+    Elemento *aux = l;
+    int retorno = 0;
+    while (aux != NULL)
+    {
+        if (aux->matricula == matricula)
+        {
+            retorno = 1;
+        }
+        aux = aux->prox;
+    }
+    return retorno;
+}
+
 
 Elemento* Cadastrar_aluno(Elemento *l, No_curso *raiz){
     char nome[50];
 
     if (raiz == NULL) {
         printf("Nenhum curso cadastrado\n");
-        return l;
     }
 
-    printf("Digite o nome do aluno: ");
-    scanf(" %49[^\n]", nome);
-    int codigo_curso;
-    printf("Digite o codigo do curso: ");
-    scanf("%d", &codigo_curso);
-    printf("Digite a matricula do aluno: ");
-    int matricula;
-    scanf("%d", &matricula);
-
-    if (busca_curso(raiz, codigo_curso)){
-        l = addOrdenado_alfabetico(l, matricula, nome, codigo_curso);
-    }
     else{
-        printf("Curso nao cadastrado\n");
+        int codigo_curso;
+        printf("Digite o codigo do curso: ");
+        scanf("%d", &codigo_curso);
+
+        if (busca_curso(raiz, codigo_curso)){
+            printf("Digite o nome do aluno: ");
+            scanf(" %49[^\n]", nome);
+            
+            int matricula;
+            do
+            {
+                matricula = rand () % 10000000 + 1;
+            } while (busca_matricula_aluno(l, matricula));
+            
+            l = addOrdenado_alfabetico(l, matricula, nome, codigo_curso);
+        }
+        else{
+            printf("Curso nao cadastrado !\n");
+        }
+
+        
     }
 
     return l;
@@ -193,6 +188,7 @@ void alunos_de_um_curso(Elemento *l)
     scanf("%d", &codigo_curso);
     if (aux)
     {
+
         printf("╔═════════════╦═══════════════════════════╦════════╗\n");
         printf("║  MATRICULA  ║           NOME            ║ CÓDIGO ║\n");
         printf("╠═════════════╬═══════════════════════════╬════════╣\n");
@@ -206,5 +202,11 @@ void alunos_de_um_curso(Elemento *l)
         }
         printf("╚═════════════╩═══════════════════════════╩════════╝\n");
         printf("\n");
+        
+    }
+    else
+    {
+        printf("Nenhum Aluno Cadastrado !\n");
     }
 }
+
