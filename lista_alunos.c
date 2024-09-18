@@ -7,43 +7,6 @@ Elemento *criaLista_alunos(){
     return NULL;
 }
 
-void mostrarLista(Elemento *l){
-    if (l == NULL)
-        printf("Lista vazia ");
-    else{
-        Elemento *aux = l;
-        if (aux){
-            printf("\n");
-            do {
-                printf("%d -> ", aux->matricula);
-                aux = aux->prox; /* avança para o próximo nó */
-            } while (aux != NULL);
-            printf("\n");
-        }
-    }
-}
-
-Elemento *addInicio(Elemento *l){
-    Elemento *novo = (Elemento*) malloc(sizeof(Elemento));
-    novo->ant=NULL;
-    if (l==NULL)
-    {
-        scanf("%d",&novo->matricula);
-        novo->prox=NULL;
-        l=novo;
-        return l;
-    }
-    
-    else
-    {
-        scanf("%d",&novo->matricula);
-        novo->prox = l;
-        l->ant=novo;
-        return novo;
-    }
-    
-}
-
 Elemento *addFinal(Elemento *l){
     Elemento *novo = (Elemento*) malloc(sizeof(Elemento));
     novo->prox=NULL;
@@ -72,7 +35,8 @@ Elemento *addFinal(Elemento *l){
 
 Elemento *addOrdenado_alfabetico(Elemento *l, int matricula, char nome[50], int codigo_curso) {
     Elemento *aux, *novo = (Elemento*) malloc(sizeof(Elemento));
-    
+    Elemento *inicio = l;  // Variável para armazenar o início da lista
+
     // Verificar se houve falha na alocação de memória
     if (novo == NULL) {
         printf("Erro ao alocar memória\n");
@@ -88,34 +52,34 @@ Elemento *addOrdenado_alfabetico(Elemento *l, int matricula, char nome[50], int 
     novo->arvore_notas = NULL;
     novo->arvore_matriculas = NULL;
 
-    // Se a lista estiver vazia, retorna o novo elemento como a cabeça
+    // Se a lista estiver vazia, o novo elemento será o primeiro
     if (l == NULL) {
-        return novo;
-    }
-
-    // Se o nome do novo elemento for menor que o primeiro da lista, insere no início
-    if (strcmp(novo->nome, l->nome) < 0) {
+        inicio = novo;
+    } else if (strcmp(novo->nome, l->nome) < 0) {
+        // Inserir no início se o novo elemento for menor que o primeiro da lista
         novo->prox = l;
         l->ant = novo;
-        return novo;
+        inicio = novo;
+    } else {
+        // Percorre a lista para encontrar a posição correta
+        aux = l;
+        while (aux->prox != NULL && strcmp(aux->prox->nome, novo->nome) < 0) {
+            aux = aux->prox;
+        }
+
+        // Inserção no meio ou no final
+        novo->prox = aux->prox;
+        if (aux->prox != NULL) {
+            aux->prox->ant = novo;
+        }
+        aux->prox = novo;
+        novo->ant = aux;
     }
 
-    // Caso contrário, percorre a lista para encontrar a posição correta
-    aux = l;
-    while (aux->prox != NULL && strcmp(aux->prox->nome, novo->nome) < 0) {
-        aux = aux->prox;
-    }
-
-    // Inserção no meio ou no final
-    novo->prox = aux->prox;
-    if (aux->prox != NULL) {
-        aux->prox->ant = novo;
-    }
-    aux->prox = novo;
-    novo->ant = aux;
-
-    return l;
+    // Retorna o início da lista, que pode ser o novo elemento ou a lista original
+    return inicio;
 }
+
 
 Elemento* Cadastrar_aluno(Elemento *l, No_curso *raiz){
     char nome[50];
@@ -126,7 +90,7 @@ Elemento* Cadastrar_aluno(Elemento *l, No_curso *raiz){
     }
 
     printf("Digite o nome do aluno: ");
-    scanf("%s", nome);
+    scanf(" %49[^\n]", nome);
     int codigo_curso;
     printf("Digite o codigo do curso: ");
     scanf("%d", &codigo_curso);
@@ -136,8 +100,6 @@ Elemento* Cadastrar_aluno(Elemento *l, No_curso *raiz){
 
     if (busca_curso(raiz, codigo_curso)){
         l = addOrdenado_alfabetico(l, matricula, nome, codigo_curso);
-        l->arvore_matriculas = criarARVORE_matriculas();
-        l->arvore_notas = criarARVORE_notas();
     }
     else{
         printf("Curso nao cadastrado\n");
