@@ -88,6 +88,7 @@ Elemento *retorna_aluno(Elemento *l, int matricula);
 int tamanhoDaLista(Elemento *l);
 void mostrarLista(Elemento *l);
 void alunos_de_um_curso(Elemento *l);
+int busca_matricula_aluno(Elemento *l, int matricula);
 
 
 // iv) Cadastrar uma matrícula, onde a mesma é uma árvore organizada e contendo somente um código de
