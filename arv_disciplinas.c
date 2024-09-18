@@ -59,7 +59,7 @@ No_curso* Cadastrar_disciplina(No_curso *raiz_curso){
         }
         printf("Digite o nome da disciplina: ");
         char nome_disciplina[50];
-        scanf("%s", nome_disciplina);
+        scanf(" %[^\n]", nome_disciplina);
         printf("Digite a carga horaria da disciplina: ");
         int carga_horaria;
         scanf("%d", &carga_horaria);

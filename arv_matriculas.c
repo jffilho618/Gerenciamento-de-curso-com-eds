@@ -114,3 +114,61 @@ Elemento* cadastrarMatricula(Elemento* lista_alunos, No_curso* arvore_cursos){
 
     return lista_alunos;
 }
+
+
+Elemento* retorna_aluno(Elemento* lista_alunos, int matricula_aluno){
+    Elemento* atual = lista_alunos;
+
+    while (atual != NULL){
+        if (atual->matricula == matricula_aluno){
+            return atual;
+        }
+        atual = atual->prox;
+    }
+
+    return NULL;
+}
+
+No_matriculas* retorna_arvore_matriculas(Elemento* lista_alunos, int matricula_aluno){
+    Elemento* aluno = retorna_aluno(lista_alunos, matricula_aluno);
+    if (aluno == NULL){
+        printf("Aluno não encontrado!\n");
+        return NULL;
+    }
+
+    return aluno->arvore_matriculas;
+}
+
+void imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(No_disciplinas *raiz_disciplinas, No_matriculas *raiz_matriculas){
+    if (raiz_disciplinas != NULL){
+        imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(raiz_disciplinas->esq, raiz_matriculas);
+
+        if (busca_matricula(raiz_matriculas, raiz_disciplinas->codigo_disciplina)){
+            printf("║ %-11d ║ %-25s ║ %-6d ║ %-7d ║\n",raiz_disciplinas->carga_horaria,raiz_disciplinas->nome_disciplina,raiz_disciplinas->codigo_disciplina, raiz_disciplinas->periodo);
+        }
+
+        imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(raiz_disciplinas->dir, raiz_matriculas);
+    }
+}
+
+void mostrar_disciplinas_de_um_aluno_matriculado(Elemento* lista_alunos, No_curso* arvore_cursos){
+    int matricula_aluno;
+
+    printf("Digite a matricula do aluno: ");
+    scanf("%d", &matricula_aluno);
+
+    Elemento* aluno = retorna_aluno(lista_alunos, matricula_aluno);
+
+    No_curso *curso = retornar_curso(arvore_cursos, aluno->codigo_curso);
+    if (curso == NULL){
+        printf("Curso não encontrado!\n");
+        return;
+    }
+    
+    printf("╔═════════════╦═══════════════════════════╦════════╦═════════╗\n");
+    printf("║  CARGA HOR  ║    NOME DA DISCIPLINA     ║ CÓDIGO ║ PERÍODO ║\n");
+    printf("╠═════════════╬═══════════════════════════╬════════╬═════════╣\n");
+    imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(curso->arvore_disciplinas, aluno->arvore_matriculas);
+    printf("╚═════════════╩═══════════════════════════╩════════╩═════════╝\n");
+    
+}
