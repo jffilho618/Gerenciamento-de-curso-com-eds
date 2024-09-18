@@ -9,9 +9,11 @@ void menu_principal()
 {
     printf("\n");
     printf("╔════════════════TRABALHO══════════════╗\n");
-    printf("║ [1] QUESTÃO 1                        ║\n");
-    printf("║ [2] QUESTÃO 2                        ║\n");
-    printf("║ [3] SOBRE                            ║\n");
+    printf("║ [1] SISTEMA DESBALANCEADO            ║\n");
+    printf("║ [2] TESTE DESBALANCEADO              ║\n");
+    printf("║ [3] SISTEMA BALANCEADO               ║\n");
+    printf("║ [4] TESTE BALANCEAMENTO              ║\n");
+    printf("║ [5] SOBRE                            ║\n");
     printf("║ [0] SAIR                             ║\n");
     printf("╚══════════════════════════════════════╝\n\n");
 }
@@ -29,7 +31,7 @@ void questao1()
     printf("║ [7] MOSTRAR TODOS OS CURSOS          ║\n");
     printf("║ [8] MOSTRAR DISCIPLINAS DE UM CURSO  ║\n");
     printf("║ [9] MOSTRAR DISCIPLINAS DE UM PERIODO║\n");
-    printf("║ [9] MOSTRAR DISCIPLINAS DE UM ALUNO  ║\n");
+    printf("║ [10] MOSTRAR DISCIPLINAS DE UM ALUNO ║\n");
     printf("║ [11] MOSTRAR NOTAS DE UM PERÍODO     ║\n");
     printf("║ [12] MOSTRAR NOTAS DE DISCIPLINA     ║\n");
     printf("║ [0] SAIR                             ║\n");
