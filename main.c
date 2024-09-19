@@ -57,6 +57,15 @@ int main(){
                         case 12:
                             mostrarNotaDeDisciplina(lista_alunos, arv_cursos);
                             break;
+                        case 13:
+                            remover_disciplina_se_possivel(arv_cursos, lista_alunos);
+                            break;
+                        case 14:
+                            remover_disciplina_matricula(lista_alunos);
+                            break;
+                        case 15:
+                            mostrar_historico_aluno(lista_alunos, arv_cursos);
+                            break;
                         case 0:
                             break;
                         default:

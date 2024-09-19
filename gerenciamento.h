@@ -122,6 +122,25 @@ void mostrarNotasDePeriodo(Elemento* lista_alunos);
 // disciplina. 
 void mostrarNotaDeDisciplina(Elemento* lista_alunos, No_curso* arvore_cursos);
 
+
+//xiii)Remover uma disciplina de um determinado curso desde que não tenha nenhum aluno matriculado na
+// mesma
+void remover_disciplina_se_possivel(No_curso* arvore_cursos, Elemento* lista_alunos);
+No_curso* buscar_no_curso(No_curso* raiz, int codigo_curso);
+No_disciplinas* remover_disciplina_curso(No_disciplinas* raiz, int codigo_disciplina);
+No_disciplinas* minimo_disciplina(No_disciplinas* raiz);
+
+
+// xiv)Permita remover uma disciplina da árvore de matrícula de um determinado aluno. 
+void remover_disciplina_matricula(Elemento* lista_alunos);
+
+
+// xv) Mostrar o histórico de um determinado aluno, contendo o nome do curso, as disciplinas e sua respectiva
+// nota organizadas pelo período que a disciplina está cadastrada no curso. 
+void mostrar_historico_aluno(Elemento* lista_alunos, No_curso* arvore_cursos);
+No_disciplinas* buscar_disciplina_historico(No_disciplinas* raiz, int codigo_disciplina);
+
+
  
 void menu();
 void menu_principal();
