@@ -34,6 +34,9 @@ void questao1()
     printf("║ [10] MOSTRAR DISCIPLINAS DE UM ALUNO ║\n");
     printf("║ [11] MOSTRAR NOTAS DE UM PERÍODO     ║\n");
     printf("║ [12] MOSTRAR NOTAS DE DISCIPLINA     ║\n");
+    printf("║ [13] REMOVER UMA DISCIPLINA CURSO    ║\n");
+    printf("║ [14] REMOVER UMA DISCIPLINA ARV. MAT.║\n");
+    printf("║ [15] MOSTRAR HISTORICO               ║\n");
     printf("║ [0] SAIR                             ║\n");
     printf("╚══════════════════════════════════════╝\n\n");
 }
