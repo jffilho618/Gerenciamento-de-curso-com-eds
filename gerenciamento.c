@@ -3,6 +3,8 @@
 #include <string.h>
 #include <time.h>
 #include "gerenciamento.h"
+#include <sys/time.h>
+#include "RNG64.h"
 
 
 void menu_principal()
@@ -41,7 +43,63 @@ void questao1()
     printf("╚══════════════════════════════════════╝\n\n");
 }
 
+void menu_testes(){
+    printf("╔═════════════════TESTES═══════════════╗\n");
+    printf("║ [1] TESTE DE INSERCAO                ║\n");
+    printf("║ [2] TAMANHO DA ARVORE                ║\n");
+    printf("║ [0] SAIR                             ║\n");
+    printf("╚══════════════════════════════════════╝\n\n");
+}
+
+No_curso* cadastra_curso_automatico(No_curso *Raiz) {
+    rng64_randomize(); // Inicializa o gerador de números aleatórios
+    FILE *arq;
+    long long int codigo_curso;
+    char nome_curso[50];
+    int quant_periodos;
+    arq = fopen("cursos.txt", "r");
+    if (arq == NULL) {
+        printf("Não foi possível abrir o arquivo cursos.txt.\n");
+        
+    }
+
+    else{
+        rng64_intrange_spec range;
+        rng64_set_intrange(&range, 1, 1000000000);
+        // Medir o tempo de inserção
+        struct timeval start_time, end_time;
+        gettimeofday(&start_time, NULL);
+        for (int i = 0; i < 10000000; i++) {
+            fscanf(arq, "%s", nome_curso);
+            quant_periodos = 8 + (rand() % 3);
+            do
+            {
+            } while (!inserir_curso(&Raiz, rng64_intrange(&range), nome_curso, quant_periodos));
+            
+            
+        }
+        fclose(arq);
+        gettimeofday(&end_time, NULL);
+
+        // Calcular o tempo total de inserção
+        double time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 10000000000.0;
+        printf("Tempo de inserção: %f segundos\n", time_taken);
+    }
+
+    return Raiz;
+}
 
 
 
+int tamanho(No_curso *raiz){
+    if(raiz == NULL){
+        return 0;
+    }else{
+        return 1 + tamanho(raiz->esq) + tamanho(raiz->dir);
+    }
+}
+
+void printa_tamanho(No_curso *raiz){
+    printf("Tamanho da arvore: %d\n", tamanho(raiz));
+}
 
