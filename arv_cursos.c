@@ -1,60 +1,87 @@
+#define _POSIX_C_SOURCE 199309L
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
 #include "gerenciamento.h"
+#include <windows.h>
+#include "RNG64.h"
 
 No_curso* criarARVOREcursos(){
     return NULL;
 }
 
 
-No_curso* inserir_curso(No_curso *raiz, int valor, char nome_curso[50], int quant_periodos) {
-    No_curso *novo = raiz;
+int inserir_curso(No_curso **raiz, long long int codigo, char nome[50], int periodos) {
+    int resultado = 1; // Sucesso por padrão
 
-    if (raiz == NULL) {
-        novo = (No_curso*)malloc(sizeof(No_curso));
-        novo->codigo_curso = valor;
-        strcpy(novo->nome_curso, nome_curso);
-        novo->quant_periodos = quant_periodos;
-        novo->arvore_disciplinas = NULL;
-        novo->esq = NULL;
-        novo->dir = NULL;
-    } else {
-        if (valor < raiz->codigo_curso) {
-            raiz->esq = inserir_curso(raiz->esq, valor, nome_curso, quant_periodos);
+    if (*raiz == NULL) {
+        *raiz = (No_curso*)malloc(sizeof(No_curso));
+        if (*raiz == NULL) {
+            printf("Erro ao alocar memória para o novo nó.\n");
+            resultado = 0; // Falha na alocação de memória
         } else {
-            raiz->dir = inserir_curso(raiz->dir, valor, nome_curso, quant_periodos);
+            (*raiz)->codigo_curso = codigo;
+            strcpy((*raiz)->nome_curso, nome);
+            (*raiz)->quant_periodos = periodos;
+            (*raiz)->esq = NULL;
+            (*raiz)->dir = NULL;
+        }
+    } else if (codigo < (*raiz)->codigo_curso) {
+        resultado = inserir_curso(&(*raiz)->esq, codigo, nome, periodos);
+    } else if (codigo > (*raiz)->codigo_curso) {
+        resultado = inserir_curso(&(*raiz)->dir, codigo, nome, periodos);
+    } else {
+        resultado = 0;
+    }
+
+    return resultado;
+}
+
+
+
+No_curso* CadastrarCurso(No_curso *raiz) {
+    int vet[] = {9999, 8888, 99999, 88888, 999999, 888888, 9999999, 8888888, 99999999, 88888888};
+    printf("Informe o nome do curso: ");
+    char nome_curso[50];
+    scanf(" %49[^\n]", nome_curso);
+
+    printf("Informe a quantidade de periodos: ");
+    int quant_periodos;
+    scanf("%d", &quant_periodos);
+    
+    LARGE_INTEGER frequency, start_time, end_time;
+    long long total_nanos_sum = 0;
+
+    // Obtém a frequência do contador de alta resolução
+    QueryPerformanceFrequency(&frequency);
+
+    for (int i = 0; i < 10; i++) {
+        int codigo_curso = vet[i];
+        
+        QueryPerformanceCounter(&start_time);
+
+        if (inserir_curso(&raiz, codigo_curso, nome_curso, quant_periodos)) {
+            // Curso inserido com sucesso
+            QueryPerformanceCounter(&end_time);
+
+            // Calcular o tempo total de inserção em nanosegundos
+            long long total_nanos = (end_time.QuadPart - start_time.QuadPart) * 1000000000 / frequency.QuadPart;
+
+            // Acumular os tempos
+            total_nanos_sum += total_nanos;
+
+        } else {
+            // O curso já está cadastrado
         }
     }
 
-    return novo;
-}
-
-
-No_curso* CadastrarCurso(No_curso *raiz){
-    int codigo_curso;
-    srand(time(NULL));
-    do
-    {
-        codigo_curso = rand() % 100 + 1;
-    } while (busca_curso(raiz, codigo_curso));
+    // Exibir o tempo total de inserção
+    printf("Tempo total de inserção: %lld nanossegundos\n", total_nanos_sum);
     
-    if (busca_curso(raiz, codigo_curso)){
-        printf("Curso ja cadastrado!\n");
-    }
-    else{
-        printf("Informe o nome do curso: ");
-        char nome_curso[50];
-        scanf(" %49[^\n]", nome_curso);
-        printf("Informe a quantidade de periodos: ");
-        int quant_periodos;
-        scanf("%d", &quant_periodos);
-        raiz = inserir_curso(raiz, codigo_curso, nome_curso, quant_periodos);
-        printf("Curso cadastrado com sucesso\n");
-    }
     return raiz;
 }
+
 
 
 int busca_curso(No_curso *raiz, int codigo_curso){
@@ -92,7 +119,7 @@ No_curso *retornar_curso(No_curso *raiz, int codigo_curso){
 
 void imprimir_pre_ordem(No_curso *raiz){
     if (raiz != NULL ) {
-        printf("║ %-11d ║ %-25s ║ %-6d ║\n",raiz->quant_periodos,raiz->nome_curso,raiz->codigo_curso);
+        printf("║ %-11d ║ %-49s ║ %-6d ║\n",raiz->quant_periodos,raiz->nome_curso,raiz->codigo_curso);
         imprimir_pre_ordem(raiz->esq);
         imprimir_pre_ordem(raiz->dir);
     }
@@ -148,12 +175,12 @@ No_curso* libera_arvore(No_curso *raiz){
 
 void mostrar_todos_os_cursos(No_curso *raiz){
     
-        printf("╔═════════════╦═══════════════════════════╦════════╗\n");
-        printf("║   PERÍODOS  ║       NOME DO CURSO       ║ CÓDIGO ║\n");
-        printf("╠═════════════╬═══════════════════════════╬════════╣\n");
+        printf("╔═════════════╦═══════════════════════════════════════════════════╦════════╗\n");
+        printf("║   PERÍODOS  ║                    NOME DO CURSO                  ║ CÓDIGO ║\n");
+        printf("╠═════════════╬═══════════════════════════════════════════════════╬════════╣\n");
         imprimir_pre_ordem(raiz);
         
-        printf("╚═════════════╩═══════════════════════════╩════════╝\n");
+        printf("╚═════════════╩═══════════════════════════════════════════════════╩════════╝\n");
     
     
 }

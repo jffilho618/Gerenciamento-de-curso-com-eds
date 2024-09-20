@@ -60,7 +60,7 @@ void mostrar_disciplinas_de_um_curso(No_curso *Raiz);
 
 
 No_curso* criarARVOREcursos();
-No_curso* inserir_curso(No_curso *raiz, int valor, char nome_curso[50], int quant_periodos);
+int inserir_curso(No_curso **raiz, long long int codigo_curso, char nome_curso[50], int quant_periodos);
 No_curso* CadastrarCurso(No_curso *raiz);
 int tamanho(No_curso *raiz);
 int busca_curso(No_curso *raiz, int valor);
@@ -75,6 +75,7 @@ No_curso* buscar_no(No_curso *raiz, int valor);
 int altura(No_curso *raiz);
 int altura_no(No_curso *raiz, int valor);
 No_curso* libera_arvore(No_curso *raiz);
+void printa_tamanho(No_curso *raiz);
 
 
 
@@ -145,4 +146,6 @@ No_disciplinas* buscar_disciplina_historico(No_disciplinas* raiz, int codigo_dis
 void menu();
 void menu_principal();
 void questao1();
+void menu_testes();
+No_curso* cadastra_curso_automatico(No_curso *raiz);
 #endif

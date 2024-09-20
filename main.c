@@ -2,13 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 int main(){
 
-    int op1,op2;
+    int op1,op2,op3;
     Elemento *lista_alunos = criaLista_alunos();
     No_curso *arv_cursos = criarARVOREcursos();
     No_disciplinas *arv_disciplinas = criarARVORE_disciplinas();
+    srand(time(NULL));
 
     do{ 
         menu_principal();
@@ -75,7 +77,23 @@ int main(){
                 }while(op2!=0);
                 break;
             case 2:
-                //questao2();
+                menu_testes();
+                scanf("%d", &op3);
+                switch(op3){
+                    case 1:
+                        //teste_insercao();
+                        arv_cursos = cadastra_curso_automatico(arv_cursos);
+                        printf("Cursos cadastrados com sucesso!\n");
+                        break;
+                    case 2:
+                        printa_tamanho(arv_cursos);
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        printf("Opção inválida!\n");
+                        break;
+                }
                 break;
             case 3:
                 //sobre();
