@@ -24,6 +24,7 @@ int inserir_curso(No_curso **raiz, long long int codigo, char nome[50], int peri
             (*raiz)->codigo_curso = codigo;
             strcpy((*raiz)->nome_curso, nome);
             (*raiz)->quant_periodos = periodos;
+            (*raiz)->arvore_disciplinas = NULL;
             (*raiz)->esq = NULL;
             (*raiz)->dir = NULL;
         }
@@ -41,7 +42,11 @@ int inserir_curso(No_curso **raiz, long long int codigo, char nome[50], int peri
 
 
 No_curso* CadastrarCurso(No_curso *raiz) {
-    int vet[] = {9999, 8888, 99999, 88888, 999999, 888888, 9999999, 8888888, 99999999, 88888888};
+
+    printf("Informe o codigo do curso: ");
+    int codigo_curso;
+    scanf("%d", &codigo_curso);
+
     printf("Informe o nome do curso: ");
     char nome_curso[50];
     scanf(" %49[^\n]", nome_curso);
@@ -56,25 +61,24 @@ No_curso* CadastrarCurso(No_curso *raiz) {
     // Obtém a frequência do contador de alta resolução
     QueryPerformanceFrequency(&frequency);
 
-    for (int i = 0; i < 10; i++) {
-        int codigo_curso = vet[i];
+    
         
-        QueryPerformanceCounter(&start_time);
+    QueryPerformanceCounter(&start_time);
 
-        if (inserir_curso(&raiz, codigo_curso, nome_curso, quant_periodos)) {
-            // Curso inserido com sucesso
-            QueryPerformanceCounter(&end_time);
+    if (inserir_curso(&raiz, codigo_curso, nome_curso, quant_periodos)) {
+        // Curso inserido com sucesso
+        QueryPerformanceCounter(&end_time);
 
-            // Calcular o tempo total de inserção em nanosegundos
-            long long total_nanos = (end_time.QuadPart - start_time.QuadPart) * 1000000000 / frequency.QuadPart;
+        // Calcular o tempo total de inserção em nanosegundos
+        long long total_nanos = (end_time.QuadPart - start_time.QuadPart) * 1000000000 / frequency.QuadPart;
 
-            // Acumular os tempos
-            total_nanos_sum += total_nanos;
+        // Acumular os tempos
+        total_nanos_sum += total_nanos;
 
-        } else {
-            // O curso já está cadastrado
-        }
+    } else {
+        printf("Erro ao inserir o curso.\n");
     }
+    
 
     // Exibir o tempo total de inserção
     printf("Tempo total de inserção: %lld nanossegundos\n", total_nanos_sum);
@@ -92,30 +96,26 @@ int busca_curso(No_curso *raiz, int codigo_curso){
             retorno = 1;
         }else{
             if(codigo_curso < raiz->codigo_curso){
-                return busca_curso(raiz->esq, codigo_curso);
+                retorno = busca_curso(raiz->esq, codigo_curso);
             }else{
-                return busca_curso(raiz->dir, codigo_curso);
+                retorno = busca_curso(raiz->dir, codigo_curso);
             }
         }
     }
     return retorno;
 }
 
-No_curso *retornar_curso(No_curso *raiz, int codigo_curso){
-    if(raiz == NULL){
-        return NULL;
-    }else{
-        if(raiz->codigo_curso == codigo_curso){
-            return raiz;
-        }else{
-            if(codigo_curso < raiz->codigo_curso){
-                return retornar_curso(raiz->esq, codigo_curso);
-            }else{
-                return retornar_curso(raiz->dir, codigo_curso);
-            }
+No_curso *retornar_curso(No_curso *raiz, int codigo_curso) {
+    while (raiz != NULL && raiz->codigo_curso != codigo_curso) {
+        if (codigo_curso < raiz->codigo_curso) {
+            raiz = raiz->esq;
+        } else {
+            raiz = raiz->dir;
         }
     }
+    return raiz;
 }
+
 
 void imprimir_pre_ordem(No_curso *raiz){
     if (raiz != NULL ) {

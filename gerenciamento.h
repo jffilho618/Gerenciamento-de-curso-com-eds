@@ -47,7 +47,7 @@ typedef struct elemento{
 
 
 No_disciplinas* criarARVORE_disciplinas();
-No_disciplinas* inserir_disciplina(No_disciplinas *raiz, int valor, char nome_disciplina[50], int carga_horaria, int periodo);
+int inserir_disciplina(No_disciplinas **raiz, int valor, char nome_disciplina[50], int carga_horaria, int periodo);
 No_curso* Cadastrar_disciplina(No_curso *raiz_curso);
 int busca_disciplina(No_disciplinas *raiz, int valor);
 int verifica_carga_horaria(int valor);
@@ -64,7 +64,7 @@ int inserir_curso(No_curso **raiz, long long int codigo_curso, char nome_curso[5
 No_curso* CadastrarCurso(No_curso *raiz);
 int tamanho(No_curso *raiz);
 int busca_curso(No_curso *raiz, int valor);
-int busca_periodo_curso(No_curso *raiz, int valor);
+int retorna_periodo_curso(No_curso *raiz, int valor);
 No_curso *retornar_curso(No_curso *raiz, int valor);
 void mostrar_todos_os_cursos(No_curso *raiz);
 void imprimir_pre_ordem(No_curso *raiz);
@@ -148,4 +148,5 @@ void menu_principal();
 void questao1();
 void menu_testes();
 No_curso* cadastra_curso_automatico(No_curso *raiz);
+No_curso* teste_insercao_ARVBB(No_curso *raiz);
 #endif

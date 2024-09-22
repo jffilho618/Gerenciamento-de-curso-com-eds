@@ -47,7 +47,7 @@ def salvar_nomes_cursos_repetidos(df, caminho_txt, num_linhas):
                         break
 
 # Caminho para o arquivo CSV e TXT
-caminho_csv = r'C:\Users\jffil\Desktop\ED2\Gerenciamento de curso com Eds\MICRODADOS_CADASTRO_CURSOS_2022.CSV'
+caminho_csv = r'MICRODADOS_CADASTRO_CURSOS_2022.CSV'
 caminho_txt = 'cursos.txt'
 
 # Carregar a base de dados e salvar os nomes dos cursos
