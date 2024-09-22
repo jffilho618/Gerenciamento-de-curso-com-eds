@@ -5,50 +5,53 @@
 #include "gerenciamento.h"
 #include <sys/time.h>
 #include "RNG64.h"
+#include <windows.h>
+
 
 
 void menu_principal()
 {
     printf("\n");
-    printf("╔════════════════TRABALHO══════════════╗\n");
-    printf("║ [1] SISTEMA DESBALANCEADO            ║\n");
-    printf("║ [2] TESTE DESBALANCEADO              ║\n");
-    printf("║ [3] SISTEMA BALANCEADO               ║\n");
-    printf("║ [4] TESTE BALANCEAMENTO              ║\n");
-    printf("║ [5] SOBRE                            ║\n");
-    printf("║ [0] SAIR                             ║\n");
-    printf("╚══════════════════════════════════════╝\n\n");
+    printf("╔═══════════════════════TRABALHO═════════════════════╗\n");
+    printf("║ [1] SISTEMA DESBALANCEADO                          ║\n");
+    printf("║ [2] TESTES DE TEMPO NA ARVORE DE BUSCA             ║\n");
+    printf("║ [3] SISTEMA BALANCEADO                             ║\n");
+    printf("║ [4] TESTE BALANCEAMENTO                            ║\n");
+    printf("║ [5] SOBRE                                          ║\n");
+    printf("║ [0] SAIR                                           ║\n");
+    printf("╚════════════════════════════════════════════════════╝\n\n");
 }
 
 void questao1()
 {
     printf("\n");
-    printf("╔═════════════════MENU═════════════════╗\n");
-    printf("║ [1] CADASTRAR CURSO                  ║\n");
-    printf("║ [2] CADASTRAR ALUNO                  ║\n");
-    printf("║ [3] CADASTRAR DISCIPLINA             ║\n");
-    printf("║ [4] CADASTRAR MATRICULA              ║\n");
-    printf("║ [5] CADASTRAR NOTA                   ║\n");
-    printf("║ [6] MOSTRAR TODOS ALUNOS DE UM CURSO ║\n");
-    printf("║ [7] MOSTRAR TODOS OS CURSOS          ║\n");
-    printf("║ [8] MOSTRAR DISCIPLINAS DE UM CURSO  ║\n");
-    printf("║ [9] MOSTRAR DISCIPLINAS DE UM PERIODO║\n");
-    printf("║ [10] MOSTRAR DISCIPLINAS DE UM ALUNO ║\n");
-    printf("║ [11] MOSTRAR NOTAS DE UM PERÍODO     ║\n");
-    printf("║ [12] MOSTRAR NOTAS DE DISCIPLINA     ║\n");
-    printf("║ [13] REMOVER UMA DISCIPLINA CURSO    ║\n");
-    printf("║ [14] REMOVER UMA DISCIPLINA ARV. MAT.║\n");
-    printf("║ [15] MOSTRAR HISTORICO               ║\n");
-    printf("║ [0] SAIR                             ║\n");
-    printf("╚══════════════════════════════════════╝\n\n");
+    printf("╔════════════════════════MENU════════════════════════╗\n");
+    printf("║ [1] CADASTRAR CURSO                                ║\n");
+    printf("║ [2] CADASTRAR ALUNO                                ║\n");
+    printf("║ [3] CADASTRAR DISCIPLINA                           ║\n");
+    printf("║ [4] CADASTRAR MATRICULA                            ║\n");
+    printf("║ [5] CADASTRAR NOTA                                 ║\n");
+    printf("║ [6] MOSTRAR TODOS ALUNOS DE UM CURSO               ║\n");
+    printf("║ [7] MOSTRAR TODOS OS CURSOS                        ║\n");
+    printf("║ [8] MOSTRAR DISCIPLINAS DE UM CURSO                ║\n");
+    printf("║ [9] MOSTRAR DISCIPLINAS DE UM PERIODO              ║\n");
+    printf("║ [10] MOSTRAR DISCIPLINAS DE UM ALUNO               ║\n");
+    printf("║ [11] MOSTRAR NOTAS DE UM PERÍODO                   ║\n");
+    printf("║ [12] MOSTRAR NOTAS DE DISCIPLINA                   ║\n");
+    printf("║ [13] REMOVER UMA DISCIPLINA CURSO                  ║\n");
+    printf("║ [14] REMOVER UMA DISCIPLINA ARV. MAT.              ║\n");
+    printf("║ [15] MOSTRAR HISTORICO                             ║\n");
+    printf("║ [0] SAIR                                           ║\n");
+    printf("╚════════════════════════════════════════════════════╝\n\n");
 }
 
 void menu_testes(){
-    printf("╔═════════════════TESTES═══════════════╗\n");
-    printf("║ [1] TESTE DE INSERCAO                ║\n");
-    printf("║ [2] TAMANHO DA ARVORE                ║\n");
-    printf("║ [0] SAIR                             ║\n");
-    printf("╚══════════════════════════════════════╝\n\n");
+    printf("╔════════════════════════TESTES══════════════════════╗\n");
+    printf("║ [1] PREENCHER ARVORE COM 1 MILHAO DE DADOS         ║\n");
+    printf("║ [2] TESTE DE INSERCAO                              ║\n");
+    printf("║ [3] TAMANHO DA ARVORE                              ║\n");
+    printf("║ [0] SAIR                                           ║\n");
+    printf("╚════════════════════════════════════════════════════╝\n\n");
 }
 
 No_curso* cadastra_curso_automatico(No_curso *Raiz) {
@@ -69,7 +72,7 @@ No_curso* cadastra_curso_automatico(No_curso *Raiz) {
         // Medir o tempo de inserção
         struct timeval start_time, end_time;
         gettimeofday(&start_time, NULL);
-        for (int i = 0; i < 10000000; i++) {
+        for (int i = 0; i < 1000000; i++) {
             fscanf(arq, "%s", nome_curso);
             quant_periodos = 8 + (rand() % 3);
             do
@@ -89,13 +92,54 @@ No_curso* cadastra_curso_automatico(No_curso *Raiz) {
     return Raiz;
 }
 
+No_curso* teste_insercao_ARVBB(No_curso *raiz) {
+    int vet[] = {9999, 8888, 99999, 88888, 999999, 888888, 9999999, 8888888, 99999999, 88888888};
+    printf("Informe o nome do curso: ");
+    char nome_curso[50];
+    scanf(" %49[^\n]", nome_curso);
 
+    printf("Informe a quantidade de periodos: ");
+    int quant_periodos;
+    scanf("%d", &quant_periodos);
+    
+    LARGE_INTEGER frequency, start_time, end_time;
+    long long total_nanos_sum = 0;
+
+    // Obtém a frequência do contador de alta resolução
+    QueryPerformanceFrequency(&frequency);
+
+    for (int i = 0; i < 10; i++) {
+        int codigo_curso = vet[i];
+        
+        QueryPerformanceCounter(&start_time);
+
+        if (inserir_curso(&raiz, codigo_curso, nome_curso, quant_periodos)) {
+            // Curso inserido com sucesso
+            QueryPerformanceCounter(&end_time);
+
+            // Calcular o tempo total de inserção em nanosegundos
+            long long total_nanos = (end_time.QuadPart - start_time.QuadPart) * 1000000000 / frequency.QuadPart;
+
+            // Acumular os tempos
+            total_nanos_sum += total_nanos;
+
+        } else {
+            // O curso já está cadastrado
+        }
+    }
+
+    // Exibir o tempo total de inserção
+    printf("Tempo total de inserção: %lld nanossegundos\n", total_nanos_sum);
+    
+    return raiz;
+}
 
 int tamanho(No_curso *raiz){
+    int retorno = 0;
     if(raiz == NULL){
-        return 0;
+        retorno = 0;
     }else{
-        return 1 + tamanho(raiz->esq) + tamanho(raiz->dir);
+        retorno = 1 + tamanho(raiz->esq) + tamanho(raiz->dir);
     }
 }
 

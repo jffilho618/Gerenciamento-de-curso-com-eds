@@ -14,40 +14,41 @@ Elemento *addOrdenado_alfabetico(Elemento *l, int matricula, char nome[50], int 
     // Verificar se houve falha na alocação de memória
     if (novo == NULL) {
         printf("Erro ao alocar memória\n");
-        exit(1);
     }
 
-    // Inicializar o novo elemento
-    novo->matricula = matricula;
-    strcpy(novo->nome, nome);
-    novo->codigo_curso = codigo_curso;
-    novo->prox = NULL;
-    novo->ant = NULL;
-    novo->arvore_notas = NULL;
-    novo->arvore_matriculas = NULL;
+    else{
+        // Inicializar o novo elemento
+        novo->matricula = matricula;
+        strcpy(novo->nome, nome);
+        novo->codigo_curso = codigo_curso;
+        novo->prox = NULL;
+        novo->ant = NULL;
+        novo->arvore_notas = NULL;
+        novo->arvore_matriculas = NULL;
 
-    // Se a lista estiver vazia, o novo elemento será o primeiro
-    if (l == NULL) {
-        inicio = novo;
-    } else if (strcmp(novo->nome, l->nome) < 0) {
-        // Inserir no início se o novo elemento for menor que o primeiro da lista
-        novo->prox = l;
-        l->ant = novo;
-        inicio = novo;
-    } else {
-        // Percorre a lista para encontrar a posição correta
-        aux = l;
-        while (aux->prox != NULL && strcmp(aux->prox->nome, novo->nome) < 0) {
-            aux = aux->prox;
-        }
+        // Se a lista estiver vazia, o novo elemento será o primeiro
+        if (l == NULL) {
+            inicio = novo;
+        } else if (strcmp(novo->nome, l->nome) < 0) {
+            // Inserir no início se o novo elemento for menor que o primeiro da lista
+            novo->prox = l;
+            l->ant = novo;
+            inicio = novo;
+        } else {
+            // Percorre a lista para encontrar a posição correta
+            aux = l;
+            while (aux->prox != NULL && strcmp(aux->prox->nome, novo->nome) < 0) {
+                aux = aux->prox;
+            }
 
-        // Inserção no meio ou no final
-        novo->prox = aux->prox;
-        if (aux->prox != NULL) {
-            aux->prox->ant = novo;
+            // Inserção no meio ou no final
+            novo->prox = aux->prox;
+            if (aux->prox != NULL) {
+                aux->prox->ant = novo;
+            }
+            aux->prox = novo;
+            novo->ant = aux;
         }
-        aux->prox = novo;
-        novo->ant = aux;
     }
 
     // Retorna o início da lista, que pode ser o novo elemento ou a lista original
@@ -109,48 +110,49 @@ Elemento* removerElemento(Elemento *l) {
 
     if (l == NULL) {
         printf("Lista vazia\n");
-        return l;
     }
 
-    int valor;
-    printf("Digite o valor a ser removido: ");
-    scanf("%d", &valor);
+    else{
+        int valor;
+        printf("Digite o valor a ser removido: ");
+        scanf("%d", &valor);
 
-    if (l->prox == NULL) {
-        if (l->matricula == valor) {
-            free(l);
-            return NULL;
-        } else {
+        if (l->prox == NULL) {
+            if (l->matricula == valor) {
+                free(l);
+                return NULL;
+            } else {
+                printf("Valor inexistente!\n");
+                return l;
+            }
+        }
+
+        if (valor == l->matricula){
+            remover = l;
+            l->prox->ant=NULL;
+            l = l->prox;
+            free(remover);
+            return l;
+        }
+
+        aux = l;
+        while (aux->prox != NULL && aux->prox->matricula != valor) {
+            aux = aux->prox;
+        }
+
+        if (aux->prox == NULL) {
+            
+        if(aux->matricula==valor){
+            remover=aux;
+            aux->ant->prox=NULL;
+            free(remover);
+            return l;
+        }
+        else{
             printf("Valor inexistente!\n");
             return l;
         }
-    }
-
-    if (valor == l->matricula){
-        remover = l;
-        l->prox->ant=NULL;
-        l = l->prox;
-        free(remover);
-        return l;
-    }
-
-    aux = l;
-    while (aux->prox != NULL && aux->prox->matricula != valor) {
-        aux = aux->prox;
-    }
-
-    if (aux->prox == NULL) {
-        
-       if(aux->matricula==valor){
-           remover=aux;
-           aux->ant->prox=NULL;
-           free(remover);
-           return l;
-       }
-       else{
-           printf("Valor inexistente!\n");
-           return l;
-       }
+        }
     }
 
 
