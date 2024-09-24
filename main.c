@@ -6,7 +6,7 @@
 
 int main(){
 
-    int op1,op2,op3;
+    int op1,op2,op3,op4;
     Elemento *lista_alunos = criaLista_alunos();
     No_curso *arv_cursos = criarARVOREcursos();
     No_disciplinas *arv_disciplinas = criarARVORE_disciplinas();
@@ -77,33 +77,47 @@ int main(){
                 }while(op2!=0);
                 break;
             case 2:
-                menu_testes();
-                scanf("%d", &op3);
-                switch(op3){
-                    case 1:
-                        arv_cursos = cadastra_curso_automatico_aleatorio(arv_cursos);
-                        printf("Cursos cadastrados com sucesso!\n");
-                        break;
-                    case 2:
-                        arv_cursos = cadastra_curso_automatico_crescente(arv_cursos);
-                        printf("Cursos cadastrados com sucesso!\n");
-                        break;
-                    case 3:
-                        arv_cursos = cadastra_curso_automatico_decrescente(arv_cursos);
-                        printf("Cursos cadastrados com sucesso!\n");
-                        break;
-                    case 4:
-                        arv_cursos = teste_insercao_ARVBB(arv_cursos);
-                        break;
-                    case 5:
-                        printa_tamanho(arv_cursos);
-                        break;
-                    case 0:
-                        break;
-                    default:
-                        printf("Opção inválida!\n");
-                        break;
-                }
+                do {
+                    menu_testes();
+                    scanf("%d", &op3);
+                    switch(op3){
+                        case 1:
+                            arv_cursos = cadastra_curso_automatico_aleatorio(arv_cursos);
+                            printf("Cursos cadastrados com sucesso!\n");
+                            break;
+                        case 2:
+                            arv_cursos = cadastra_curso_automatico_crescente(arv_cursos);
+                            printf("Cursos cadastrados com sucesso!\n");
+                            break;
+                        case 3:
+                            arv_cursos = cadastra_curso_automatico_decrescente(arv_cursos);
+                            printf("Cursos cadastrados com sucesso!\n");
+                            break;
+                        case 4:
+                            arv_cursos = teste_insercao_ARVBB(arv_cursos);
+                            break;
+                        case 5:
+                            printa_tamanho(arv_cursos);
+                            break;
+                        case 6:
+                            arv_cursos = cadastra_curso_automatico_aleatorio_avl(arv_cursos);
+                            printf("Cursos cadastrados com sucesso!\n");
+                            break;
+                        case 7:
+                            arv_cursos = cadastra_curso_automatico_crescente_avl(arv_cursos);
+                            printf("Cursos cadastrados com sucesso!\n");
+                            break;
+                        case 8:
+                            arv_cursos = cadastra_curso_automatico_decrescente_avl(arv_cursos);
+                            printf("Cursos cadastrados com sucesso!\n");
+                            break;
+                        case 0:
+                            break;
+                        default:
+                            printf("Opção inválida!\n");
+                            break;
+                    }
+                }while(op3!=0);
                 break;
             case 3:
                 //sobre();

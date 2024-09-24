@@ -6,7 +6,7 @@
 #include <sys/time.h>
 #include "RNG64.h"
 #include <windows.h>
-
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
 
 void menu_principal()
@@ -47,11 +47,14 @@ void questao1()
 
 void menu_testes(){
     printf("╔════════════════════════TESTES══════════════════════╗\n");
-    printf("║ [1] PREENCHER ARVORE COM 1M DE DADOS ALEATORIOS    ║\n");
-    printf("║ [2] PREENCHER ARVORE COM 1M DE DADOS CRESCENTE     ║\n");
-    printf("║ [3] PREENCHER ARVORE COM 1M DE DADOS DECRESCENTE   ║\n");
+    printf("║ [1] PREENCHER ARVORE ALEATORIOS ABB                ║\n");
+    printf("║ [2] PREENCHER ARVORE CRESCENTE  ABB                ║\n");
+    printf("║ [3] PREENCHER ARVORE DECRESCENTE  ABB              ║\n");
     printf("║ [4] TESTE DE INSERCAO                              ║\n");
     printf("║ [5] TAMANHO DA ARVORE                              ║\n");
+    printf("║ [6] PREENCHER ARVORE ALEATORIOS AVL                ║\n");
+    printf("║ [7] PREENCHER ARVORE CRESCENTE  AVL                ║\n");
+    printf("║ [8] PREENCHER ARVORE DECRESCENTE AVL               ║\n");
     printf("║ [0] SAIR                                           ║\n");
     printf("╚════════════════════════════════════════════════════╝\n\n");
 }
@@ -240,3 +243,120 @@ void printa_tamanho(No_curso *raiz){
     printf("Tamanho da arvore: %d\n", tamanho(raiz));
 }
 
+
+No_curso* cadastra_curso_automatico_aleatorio_avl(No_curso *Raiz) {
+    rng64_randomize(); // Inicializa o gerador de números aleatórios
+    FILE *arq;
+    char nome_curso[50];
+    int quant_periodos;
+    arq = fopen("cursos.txt", "r");
+    if (arq == NULL) {
+        printf("Não foi possível abrir o arquivo cursos.txt.\n");
+        
+    }
+
+    else{
+        rng64_intrange_spec range;
+        rng64_set_intrange(&range, 1, 1000000000);
+        // Medir o tempo de inserção
+        struct timeval start_time, end_time;
+        gettimeofday(&start_time, NULL);
+        for (int i = 0; i < 26000; i++) {
+            fscanf(arq, "%s", nome_curso);
+            quant_periodos = 8 + (rand() % 3);
+            do
+            {
+            } while (!inserir_curso_avl(&Raiz, rng64_intrange(&range), nome_curso, quant_periodos));
+            
+            
+        }
+        fclose(arq);
+        gettimeofday(&end_time, NULL);
+
+        // Calcular o tempo total de inserção
+        double time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 10000000000.0;
+        printf("Tempo de inserção: %f segundos\n", time_taken);
+    }
+
+    return Raiz;
+}
+
+No_curso* cadastra_curso_automatico_crescente_avl(No_curso *Raiz) {
+    rng64_randomize(); // Inicializa o gerador de números aleatórios
+    FILE *arq;
+    char nome_curso[50];
+    int quant_periodos;
+    arq = fopen("cursos.txt", "r");
+    if (arq == NULL) {
+        printf("Não foi possível abrir o arquivo cursos.txt.\n");
+        
+    }
+
+    else{
+        // Medir o tempo de inserção
+        struct timeval start_time, end_time;
+        gettimeofday(&start_time, NULL);
+        for (int i = 0; i < 25000; i++) {
+            //printf("i: %d\n", i+1);
+            fscanf(arq, "%s", nome_curso);
+            quant_periodos = 8 + (rand() % 3);
+            
+            if (i+1!=131 && i+1!=23249 && i+1!=2956 && i+1!=10231 && i+1!=592 && i+1!=8321 && i+1!=6234 && i+1!=1237 && i+1!=18239 && i+1!=4123){
+                if (inserir_curso_avl(&Raiz, i+1, nome_curso, quant_periodos)) {
+                    //printf("Curso inserido com sucesso\n");
+                } else {
+                    //printf("O curso já está cadastrado\n");
+                }
+            }
+            
+            
+        }
+        fclose(arq);
+        gettimeofday(&end_time, NULL);
+
+        // Calcular o tempo total de inserção
+        double time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 10000000000.0;
+        printf("Tempo de inserção: %f segundos\n", time_taken);
+    }
+
+    return Raiz;
+}
+
+No_curso* cadastra_curso_automatico_decrescente_avl(No_curso *Raiz) {
+    rng64_randomize(); // Inicializa o gerador de números aleatórios
+    FILE *arq;
+    char nome_curso[50];
+    int quant_periodos;
+    arq = fopen("cursos.txt", "r");
+    if (arq == NULL) {
+        printf("Não foi possível abrir o arquivo cursos.txt.\n");
+        
+    }
+
+    else{
+        // Medir o tempo de inserção
+        struct timeval start_time, end_time;
+        gettimeofday(&start_time, NULL);
+        for (int i = 25000; i > 0 ; i--) {
+            //printf("i: %d\n", i-1);
+            fscanf(arq, "%s", nome_curso);
+            quant_periodos = 8 + (rand() % 3);
+            if (i+1!=131 && i+1!=23249 && i+1!=2956 && i+1!=10231 && i+1!=592 && i+1!=8321 && i+1!=6234 && i+1!=1237 && i+1!=18239 && i+1!=4123){
+                if (inserir_curso_avl(&Raiz, i+1, nome_curso, quant_periodos)) {
+                    //printf("Curso inserido com sucesso\n");
+                } else {
+                    //printf("O curso já está cadastrado\n");
+                }
+            }
+            
+        }
+        fclose(arq);
+        gettimeofday(&end_time, NULL);
+
+        // Calcular o tempo total de inserção
+        double time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1000000000.0;
+        printf("Tempo de insercao: %f segundos\n", time_taken);
+    }
+
+    return Raiz;
+}

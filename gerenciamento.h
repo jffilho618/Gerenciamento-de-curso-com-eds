@@ -33,6 +33,7 @@ typedef struct no_curso{
     No_disciplinas *arvore_disciplinas;
     struct no_curso *esq;
     struct no_curso *dir;
+    int altura;
 }No_curso;
 
 typedef struct elemento{
@@ -149,4 +150,26 @@ No_curso* cadastra_curso_automatico_aleatorio(No_curso *raiz);
 No_curso* cadastra_curso_automatico_crescente(No_curso *raiz);
 No_curso* cadastra_curso_automatico_decrescente(No_curso *raiz);
 No_curso* teste_insercao_ARVBB(No_curso *raiz);
+
+
+
+
+
+No_curso* cadastrar_curso_avl(No_curso *raiz);
+No_curso* cadastra_curso_automatico_aleatorio_avl(No_curso *raiz);
+No_curso* cadastra_curso_automatico_crescente_avl(No_curso *raiz);
+No_curso* cadastra_curso_automatico_decrescente_avl(No_curso *raiz);
+int inserir_curso_avl(No_curso **raiz, long long int codigo_curso, char nome_curso[50], int quant_periodos);
+int altura(No_curso *raiz);
+int fatorBalanceamento(No_curso *raiz);
+int maior(int x, int y);
+No_curso* rotacaoDireita(No_curso *raiz);
+No_curso* rotacaoEsquerda(No_curso *raiz);
+No_curso* rotacaoDuplaDireita(No_curso *raiz);
+No_curso* rotacaoDuplaEsquerda(No_curso *raiz);
+
+
+
+
+
 #endif
