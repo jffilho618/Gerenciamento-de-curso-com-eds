@@ -81,13 +81,21 @@ int main(){
                 scanf("%d", &op3);
                 switch(op3){
                     case 1:
-                        arv_cursos = cadastra_curso_automatico(arv_cursos);
+                        arv_cursos = cadastra_curso_automatico_aleatorio(arv_cursos);
                         printf("Cursos cadastrados com sucesso!\n");
                         break;
                     case 2:
-                        arv_cursos = teste_insercao_ARVBB(arv_cursos);
+                        arv_cursos = cadastra_curso_automatico_crescente(arv_cursos);
+                        printf("Cursos cadastrados com sucesso!\n");
                         break;
                     case 3:
+                        arv_cursos = cadastra_curso_automatico_decrescente(arv_cursos);
+                        printf("Cursos cadastrados com sucesso!\n");
+                        break;
+                    case 4:
+                        arv_cursos = teste_insercao_ARVBB(arv_cursos);
+                        break;
+                    case 5:
                         printa_tamanho(arv_cursos);
                         break;
                     case 0:
