@@ -36,7 +36,7 @@ int main(){
                             lista_alunos = cadastrarMatricula(lista_alunos, arv_cursos);
                             break;
                         case 5:
-                            lista_alunos = cadastrarNota(lista_alunos);
+                            cadastrarNota(lista_alunos, arv_cursos);
                             break;
                         case 6:
                             alunos_de_um_curso(lista_alunos);

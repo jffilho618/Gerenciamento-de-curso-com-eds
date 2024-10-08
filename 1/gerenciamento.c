@@ -45,11 +45,11 @@ void questao1()
 
 void menu_testes(){
     printf("╔════════════════════════TESTES══════════════════════╗\n");
-    printf("║ [1] PREENCHER ARVORE ALEATORIOS ABB                ║\n");
-    printf("║ [2] PREENCHER ARVORE CRESCENTE  ABB                ║\n");
-    printf("║ [3] PREENCHER ARVORE DECRESCENTE  ABB              ║\n");
-    printf("║ [4] TESTE DE INSERCAO                              ║\n");
-    printf("║ [5] TESTE DE REMOÇÃO                               ║\n");
+    printf("║ [1] PREENCHER ARVORE CURSOS ALEATORIOS ABB         ║\n");
+    printf("║ [2] PREENCHER ARVORE CURSOS CRESCENTE  ABB         ║\n");
+    printf("║ [3] PREENCHER ARVORE CURSOS DECRESCENTE  ABB       ║\n");
+    printf("║ [4] TESTE DE INSERCAO ABB                          ║\n");
+    printf("║ [5] TESTE DE BUSCA ABB                             ║\n");
     printf("║ [6] TAMANHO DA ARVORE                              ║\n");
     printf("║ [0] SAIR                                           ║\n");
     printf("╚════════════════════════════════════════════════════╝\n\n");

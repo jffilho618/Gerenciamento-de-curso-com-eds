@@ -93,13 +93,13 @@ int busca_matricula_aluno(Elemento *l, int matricula);
 // iv) Cadastrar uma matrícula, onde a mesma é uma árvore organizada e contendo somente um código de
 // uma disciplina do curso do aluno. 
 No_matriculas* criarARVORE_matriculas();
-No_matriculas* inserirMatricula(No_matriculas* raiz, int codigo_disciplina);
+int inserirMatricula(No_matriculas** raiz, int codigo_disciplina);
 Elemento* cadastrarMatricula(Elemento* lista_alunos, No_curso* arvore_cursos);
-Elemento* buscar_aluno(Elemento* lista_alunos, int matricula_aluno);
-No_disciplinas* buscar_disciplina_no_curso(No_curso* raiz_curso, int codigo_disciplina);
-No_disciplinas* buscar_disciplina(No_disciplinas* raiz, int codigo_disciplina);
-No_matriculas* remover_matricula(No_matriculas* raiz, int codigo_disciplina);
-No_matriculas* retorna_arvore_matriculas(Elemento* lista_alunos, int matricula_aluno);
+int buscar_aluno(Elemento* lista_alunos, int matricula_aluno, Elemento** aluno_encontrado);
+int buscar_disciplina_no_curso(No_curso* raiz_curso, int codigo_disciplina, No_disciplinas** disciplina_encontrada);
+int buscar_disciplina(No_disciplinas* raiz, int codigo_disciplina, No_disciplinas** disciplina_encontrada);
+int remover_matricula(No_matriculas** raiz, int codigo_disciplina);
+No_matriculas* retorna_arvore_matriculas(Elemento* lista_alunos, int matricula_aluno, No_matriculas** arvore_matriculas);
 void mostrar_disciplinas_de_um_aluno_matriculado(Elemento* lista_alunos, No_curso* arvore_cursos);
 
 
@@ -107,14 +107,15 @@ void mostrar_disciplinas_de_um_aluno_matriculado(Elemento* lista_alunos, No_curs
 // matricula, e quando a nota for cadastrada a disciplina deve ser removida da árvore de matricula para
 // árvore de notas. 
 No_notas* criarARVORE_notas();
-No_notas* inserirNota(No_notas* raiz, int codigo_disciplina, int semestre, float nota_final);
-Elemento* cadastrarNota(Elemento* lista_alunos);
+int inserirNota(No_notas** raiz, int codigo_disciplina, int semestre, float nota_final);
+void cadastrarNota(Elemento* lista_alunos, No_curso* arvore_cursos);
 No_matriculas* minimo(No_matriculas* raiz);
-No_matriculas* busca_matricula(No_matriculas* raiz, int codigo_disciplina);
+int busca_matricula(No_matriculas* raiz, int codigo_disciplina, No_matriculas** matricula_encontrada);
 
 
 // xi) Mostrar todas as notas de disciplinas de um determinado período de um determinado aluno.
 void mostrarNotasDePeriodo(Elemento* lista_alunos);
+void exibir_notas(No_notas* notas, int periodo, int* encontrou);
 
 
 // xii) Mostrar a nota de uma disciplina de um determinado aluno, mostrando o período e a carga horária da
@@ -122,11 +123,12 @@ void mostrarNotasDePeriodo(Elemento* lista_alunos);
 void mostrarNotaDeDisciplina(Elemento* lista_alunos, No_curso* arvore_cursos);
 
 
+
 //xiii)Remover uma disciplina de um determinado curso desde que não tenha nenhum aluno matriculado na
 // mesma
 void remover_disciplina_se_possivel(No_curso* arvore_cursos, Elemento* lista_alunos);
-No_curso* buscar_no_curso(No_curso* raiz, int codigo_curso);
-No_disciplinas* remover_disciplina_curso(No_disciplinas* raiz, int codigo_disciplina);
+int buscar_no_curso(No_curso* raiz, int codigo_curso, No_curso** curso_encontrado);
+int remover_disciplina_curso(No_disciplinas** raiz, int codigo_disciplina);
 No_disciplinas* minimo_disciplina(No_disciplinas* raiz);
 
 
@@ -137,7 +139,7 @@ void remover_disciplina_matricula(Elemento* lista_alunos);
 // xv) Mostrar o histórico de um determinado aluno, contendo o nome do curso, as disciplinas e sua respectiva
 // nota organizadas pelo período que a disciplina está cadastrada no curso. 
 void mostrar_historico_aluno(Elemento* lista_alunos, No_curso* arvore_cursos);
-No_disciplinas* buscar_disciplina_historico(No_disciplinas* raiz, int codigo_disciplina);
+int buscar_disciplina_historico(No_disciplinas* raiz, int codigo_disciplina, No_disciplinas** disciplina_encontrada);
 
 
  

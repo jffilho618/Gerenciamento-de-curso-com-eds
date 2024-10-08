@@ -105,69 +105,63 @@ Elemento* Cadastrar_aluno(Elemento *l, No_curso *raiz){
 }
 
 
-Elemento* removerElemento(Elemento *l) {
-    Elemento *aux, *remover = NULL;
+Elemento* removerElemento(Elemento* l) {
+    Elemento* aux = l;
+    Elemento* remover = NULL;
+    int valor;
 
     if (l == NULL) {
         printf("Lista vazia\n");
-    }
-
-    else{
-        int valor;
+    } else {
         printf("Digite o valor a ser removido: ");
         scanf("%d", &valor);
 
+        // Caso em que há apenas um elemento na lista
         if (l->prox == NULL) {
             if (l->matricula == valor) {
                 free(l);
-                return NULL;
+                l = NULL;
             } else {
                 printf("Valor inexistente!\n");
-                return l;
+            }
+        } else {
+            // Caso em que o primeiro elemento é o que será removido
+            if (valor == l->matricula) {
+                remover = l;
+                l = l->prox;
+                l->ant = NULL;
+                free(remover);
+            } else {
+                // Percorrer a lista até encontrar o valor
+                while (aux->prox != NULL && aux->prox->matricula != valor) {
+                    aux = aux->prox;
+                }
+
+                // Verificar se o valor está no último nó
+                if (aux->prox == NULL) {
+                    if (aux->matricula == valor) {
+                        remover = aux;
+                        aux->ant->prox = NULL;
+                        free(remover);
+                    } else {
+                        printf("Valor inexistente!\n");
+                    }
+                } else {
+                    // Valor encontrado no meio da lista
+                    remover = aux->prox;
+                    aux->prox = remover->prox;
+                    if (remover->prox != NULL) {
+                        remover->prox->ant = aux;
+                    }
+                    free(remover);
+                }
             }
         }
-
-        if (valor == l->matricula){
-            remover = l;
-            l->prox->ant=NULL;
-            l = l->prox;
-            free(remover);
-            return l;
-        }
-
-        aux = l;
-        while (aux->prox != NULL && aux->prox->matricula != valor) {
-            aux = aux->prox;
-        }
-
-        if (aux->prox == NULL) {
-            
-        if(aux->matricula==valor){
-            remover=aux;
-            aux->ant->prox=NULL;
-            free(remover);
-            return l;
-        }
-        else{
-            printf("Valor inexistente!\n");
-            return l;
-        }
-        }
     }
-
-
-
-
-    remover = aux->prox;
-    aux->prox = remover->prox;
-    if (remover->prox != NULL) {
-        remover->prox->ant = aux;
-    
-    }
-    free(remover);
 
     return l;
 }
+
 
 
 int tamanhoDaLista(Elemento *l){

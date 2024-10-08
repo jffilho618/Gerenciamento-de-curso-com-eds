@@ -9,12 +9,14 @@ typedef struct no_notas{
     float nota_final;
     struct no_notas *esq;
     struct no_notas *dir;
+    int altura;
 }No_notas;
 
 typedef struct no_matriculas{
     int codigo_disciplina;
     struct no_matriculas *esq;
     struct no_matriculas *dir;
+    int altura;
 }No_matriculas;
 
 typedef struct no_disciplinas{
@@ -24,6 +26,7 @@ typedef struct no_disciplinas{
     int periodo;
     struct no_disciplinas *esq;
     struct no_disciplinas *dir;
+    int altura;
 }No_disciplinas;
 
 typedef struct no_curso{
@@ -61,8 +64,6 @@ void mostrar_disciplinas_de_um_curso(No_curso *Raiz);
 
 
 No_curso* criarARVOREcursos();
-int inserir_curso(No_curso **raiz, long long int codigo_curso, char nome_curso[50], int quant_periodos);
-No_curso* CadastrarCurso(No_curso *raiz);
 int tamanho(No_curso *raiz);
 int busca_curso(No_curso *raiz, int codigo_curso);
 int retorna_periodo_curso(No_curso *raiz, int codigo_curso);
@@ -75,6 +76,18 @@ No_curso* remover(No_curso *raiz,int codigo_curso);
 No_curso* buscar_no(No_curso *raiz, int codigo_curso);
 No_curso* libera_arvore(No_curso *raiz);
 void printa_tamanho(No_curso *raiz);
+No_curso* cadastrar_curso_avl(No_curso *raiz);
+No_curso* cadastra_curso_automatico_aleatorio_avl(No_curso *raiz);
+No_curso* cadastra_curso_automatico_crescente_avl(No_curso *raiz);
+No_curso* cadastra_curso_automatico_decrescente_avl(No_curso *raiz);
+int inserir_curso_avl(No_curso **raiz, long long int codigo_curso, char nome_curso[50], int quant_periodos);
+int altura(No_curso *raiz);
+int fatorBalanceamento(No_curso *raiz);
+int maior(int x, int y);
+No_curso* rotacaoDireita(No_curso *raiz);
+No_curso* rotacaoEsquerda(No_curso *raiz);
+No_curso* rotacaoDuplaDireita(No_curso *raiz);
+No_curso* rotacaoDuplaEsquerda(No_curso *raiz);
 
 
 
@@ -94,13 +107,13 @@ int busca_matricula_aluno(Elemento *l, int matricula);
 // iv) Cadastrar uma matrícula, onde a mesma é uma árvore organizada e contendo somente um código de
 // uma disciplina do curso do aluno. 
 No_matriculas* criarARVORE_matriculas();
-No_matriculas* inserirMatricula(No_matriculas* raiz, int codigo_disciplina);
+int inserirMatricula(No_matriculas** raiz, int codigo_disciplina);
 Elemento* cadastrarMatricula(Elemento* lista_alunos, No_curso* arvore_cursos);
-Elemento* buscar_aluno(Elemento* lista_alunos, int matricula_aluno);
-No_disciplinas* buscar_disciplina_no_curso(No_curso* raiz_curso, int codigo_disciplina);
-No_disciplinas* buscar_disciplina(No_disciplinas* raiz, int codigo_disciplina);
-No_matriculas* remover_matricula(No_matriculas* raiz, int codigo_disciplina);
-No_matriculas* retorna_arvore_matriculas(Elemento* lista_alunos, int matricula_aluno);
+int buscar_aluno(Elemento* lista_alunos, int matricula_aluno, Elemento** aluno_encontrado);
+int buscar_disciplina_no_curso(No_curso* raiz_curso, int codigo_disciplina, No_disciplinas** disciplina_encontrada);
+int buscar_disciplina(No_disciplinas* raiz, int codigo_disciplina, No_disciplinas** disciplina_encontrada);
+int remover_matricula(No_matriculas** raiz, int codigo_disciplina);
+No_matriculas* retorna_arvore_matriculas(Elemento* lista_alunos, int matricula_aluno, No_matriculas** arvore_matriculas);
 void mostrar_disciplinas_de_um_aluno_matriculado(Elemento* lista_alunos, No_curso* arvore_cursos);
 
 
@@ -108,10 +121,10 @@ void mostrar_disciplinas_de_um_aluno_matriculado(Elemento* lista_alunos, No_curs
 // matricula, e quando a nota for cadastrada a disciplina deve ser removida da árvore de matricula para
 // árvore de notas. 
 No_notas* criarARVORE_notas();
-No_notas* inserirNota(No_notas* raiz, int codigo_disciplina, int semestre, float nota_final);
-Elemento* cadastrarNota(Elemento* lista_alunos);
+int inserirNota(No_notas** raiz, int codigo_disciplina, int semestre, float nota_final);
+void cadastrarNota(Elemento* lista_alunos, No_curso* arvore_cursos);
 No_matriculas* minimo(No_matriculas* raiz);
-No_matriculas* busca_matricula(No_matriculas* raiz, int codigo_disciplina);
+int busca_matricula(No_matriculas* raiz, int codigo_disciplina, No_matriculas** matricula_encontrada);
 
 
 // xi) Mostrar todas as notas de disciplinas de um determinado período de um determinado aluno.
@@ -126,10 +139,9 @@ void mostrarNotaDeDisciplina(Elemento* lista_alunos, No_curso* arvore_cursos);
 //xiii)Remover uma disciplina de um determinado curso desde que não tenha nenhum aluno matriculado na
 // mesma
 void remover_disciplina_se_possivel(No_curso* arvore_cursos, Elemento* lista_alunos);
-No_curso* buscar_no_curso(No_curso* raiz, int codigo_curso);
-No_disciplinas* remover_disciplina_curso(No_disciplinas* raiz, int codigo_disciplina);
+int buscar_no_curso(No_curso* raiz, int codigo_curso, No_curso** curso_encontrado);
+int remover_disciplina_curso(No_disciplinas** raiz, int codigo_disciplina);
 No_disciplinas* minimo_disciplina(No_disciplinas* raiz);
-
 
 // xiv)Permita remover uma disciplina da árvore de matrícula de um determinado aluno. 
 void remover_disciplina_matricula(Elemento* lista_alunos);
@@ -146,27 +158,7 @@ void menu();
 void menu_principal();
 void questao1();
 void menu_testes();
-No_curso* cadastra_curso_automatico_aleatorio(No_curso *raiz);
-No_curso* cadastra_curso_automatico_crescente(No_curso *raiz);
-No_curso* cadastra_curso_automatico_decrescente(No_curso *raiz);
 No_curso* teste_insercao_ARVBB(No_curso *raiz);
-
-
-
-
-
-No_curso* cadastrar_curso_avl(No_curso *raiz);
-No_curso* cadastra_curso_automatico_aleatorio_avl(No_curso *raiz);
-No_curso* cadastra_curso_automatico_crescente_avl(No_curso *raiz);
-No_curso* cadastra_curso_automatico_decrescente_avl(No_curso *raiz);
-int inserir_curso_avl(No_curso **raiz, long long int codigo_curso, char nome_curso[50], int quant_periodos);
-int altura(No_curso *raiz);
-int fatorBalanceamento(No_curso *raiz);
-int maior(int x, int y);
-No_curso* rotacaoDireita(No_curso *raiz);
-No_curso* rotacaoEsquerda(No_curso *raiz);
-No_curso* rotacaoDuplaDireita(No_curso *raiz);
-No_curso* rotacaoDuplaEsquerda(No_curso *raiz);
 
 
 
