@@ -24,7 +24,7 @@ int main(){
                     scanf("%d",&op2);
                     switch(op2){
                         case 1:
-                            arv_cursos = CadastrarCurso(arv_cursos);
+                            arv_cursos = cadastrar_curso_avl(arv_cursos);
                             break;
                         case 2:
                             lista_alunos = Cadastrar_aluno(lista_alunos, arv_cursos);
@@ -82,15 +82,15 @@ int main(){
                     scanf("%d", &op3);
                     switch(op3){
                         case 1:
-                            arv_cursos = cadastra_curso_automatico_aleatorio(arv_cursos);
+                            arv_cursos = cadastra_curso_automatico_aleatorio_avl(arv_cursos);
                             printf("Cursos cadastrados com sucesso!\n");
                             break;
                         case 2:
-                            arv_cursos = cadastra_curso_automatico_crescente(arv_cursos);
+                            arv_cursos = cadastra_curso_automatico_crescente_avl(arv_cursos);
                             printf("Cursos cadastrados com sucesso!\n");
                             break;
                         case 3:
-                            arv_cursos = cadastra_curso_automatico_decrescente(arv_cursos);
+                            arv_cursos = cadastra_curso_automatico_decrescente_avl(arv_cursos);
                             printf("Cursos cadastrados com sucesso!\n");
                             break;
                         case 4:
