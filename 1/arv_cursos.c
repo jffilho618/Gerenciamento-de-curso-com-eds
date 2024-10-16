@@ -127,44 +127,6 @@ void imprimir_pre_ordem(No_curso *raiz){
 }
 
 
-No_curso* remover(No_curso *raiz,int valor){
-    if (raiz == NULL){
-        printf("Valor nao encontrado\n");
-        return NULL;
-    }
-    if (raiz->codigo_curso == valor){
-        if (raiz->esq == NULL && raiz->dir == NULL){
-            free(raiz);
-            return NULL;
-        }
-        if (raiz->esq ==  NULL || raiz->dir == NULL){
-            No_curso *aux;
-            if (raiz->esq == NULL){
-                aux = raiz->dir;
-            }else{
-                aux = raiz->esq;
-            }
-            free(raiz);
-            return aux;
-        }
-        No_curso *aux = raiz->esq;
-        while (aux->dir != NULL){
-            aux = aux->dir;
-        }
-        raiz->codigo_curso = aux->codigo_curso;
-        aux->codigo_curso = valor;
-        raiz->esq = remover(raiz->esq, valor);
-        return raiz;
-    }
-    if (valor < raiz->codigo_curso){
-        raiz->esq = remover(raiz->esq, valor);
-    }else{
-        raiz->dir = remover(raiz->dir, valor);
-    }
-    return raiz;
-}
-
-
 No_curso* libera_arvore(No_curso *raiz){
     if (raiz != NULL){
         libera_arvore(raiz->esq);

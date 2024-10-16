@@ -49,8 +49,9 @@ void menu_testes(){
     printf("║ [2] PREENCHER ARVORE CURSOS CRESCENTE  ABB         ║\n");
     printf("║ [3] PREENCHER ARVORE CURSOS DECRESCENTE  ABB       ║\n");
     printf("║ [4] TESTE DE INSERCAO ABB                          ║\n");
-    printf("║ [5] TESTE DE BUSCA ABB                             ║\n");
-    printf("║ [6] TAMANHO DA ARVORE                              ║\n");
+    printf("║ [5] TAMANHO DA ARVORE                              ║\n");
+    printf("║ [6] PRENCHER ALUNOS E DISCIPLINAS ABB              ║\n");
+    printf("║ [7] TESTE DE BUSCA ABB                             ║\n");
     printf("║ [0] SAIR                                           ║\n");
     printf("╚════════════════════════════════════════════════════╝\n\n");
 }
@@ -239,3 +240,181 @@ void printa_tamanho(No_curso *raiz){
     printf("Tamanho da arvore: %d\n", tamanho(raiz));
 }
 
+
+// Função para ler o arquivo de dados (alunos, disciplinas, matrículas)
+void cadastrarAlunosEmCurso(Elemento** lista_alunos, No_curso** arvore_cursos) {
+    FILE *file_alunos, *file_disciplinas;
+    int codigo_curso = 23249;  // Código fixo do curso
+
+    if (inserir_curso(arvore_cursos, codigo_curso, "Ciencia da Computacao", 8)) {
+        printf("Curso inserido com sucesso.\n");
+    } else {
+        printf("Erro ao inserir o curso.\n");
+        return;
+    }
+
+    // Abrindo o arquivo de alunos
+    file_alunos = fopen("alunos.txt", "r");
+    if (file_alunos == NULL) {
+        printf("Erro ao abrir o arquivo de alunos.\n");
+        return;
+    }
+
+    // Lendo os dados de alunos
+    char line[256];
+    while (fgets(line, sizeof(line), file_alunos)) {
+        int matricula;
+        char nome[50];
+        sscanf(line, "%d;%[^;];%d", &matricula, nome, &codigo_curso);
+        printf("Cadastrando aluno: %s, matrícula: %d\n", nome, matricula); // Depuração
+        *lista_alunos = addOrdenado_alfabetico(*lista_alunos, matricula, nome, codigo_curso);
+    }
+    fclose(file_alunos);
+    printf("Todos os alunos foram cadastrados.\n"); // Depuração
+
+    // Abrindo o arquivo de disciplinas
+    file_disciplinas = fopen("disciplinas.txt", "r");
+    if (file_disciplinas == NULL) {
+        printf("Erro ao abrir o arquivo de disciplinas.\n");
+        return;
+    }
+
+    // Lendo os dados de disciplinas e inserindo no curso
+    while (fgets(line, sizeof(line), file_disciplinas)) {
+        int codigo_disciplina, carga_horaria, periodo;
+        char nome_disciplina[50];
+        sscanf(line, "%d;%[^;];%d;%d;%d", &codigo_disciplina, nome_disciplina, &carga_horaria, &periodo, &codigo_curso);
+
+        printf("Inserindo disciplina: %s (código: %d) no curso %d\n", nome_disciplina, codigo_disciplina, codigo_curso);  // Depuração
+        No_curso* curso = NULL;
+        if (buscar_no_curso(*arvore_cursos, codigo_curso, &curso)) {
+            inserir_disciplina(&(curso->arvore_disciplinas), codigo_disciplina, nome_disciplina, carga_horaria, periodo);
+        } else {
+            printf("Curso %d não encontrado!\n", codigo_curso);
+        }
+    }
+    fclose(file_disciplinas);
+    printf("Todas as disciplinas foram cadastradas no curso.\n");  // Depuração
+
+    // Matricular aluno específico em todas as disciplinas após cadastrá-las
+    int matricula_aluno_especifico = 7581;  // Exemplo de aluno a ser matriculado em todas as disciplinas
+    Elemento* aluno = NULL;
+    if (!buscar_aluno(*lista_alunos, matricula_aluno_especifico, &aluno)) {
+        printf("Aluno com matrícula %d não encontrado.\n", matricula_aluno_especifico);
+        return;
+    }
+
+    // Matricular o aluno em todas as disciplinas agora que elas já foram inseridas
+    file_disciplinas = fopen("disciplinas.txt", "r");
+    if (file_disciplinas == NULL) {
+        printf("Erro ao abrir o arquivo de disciplinas.\n");
+        return;
+    }
+
+    while (fgets(line, sizeof(line), file_disciplinas)) {
+        int codigo_disciplina;
+        sscanf(line, "%d;%*[^;];%*d;%*d;%*d", &codigo_disciplina);  // Lê apenas o código da disciplina
+
+        printf("Matriculando aluno %d na disciplina (código: %d)\n",matricula_aluno_especifico, codigo_disciplina);  // Depuração
+        *lista_alunos = cadastrarMatriculaAutomatico(*lista_alunos, *arvore_cursos, matricula_aluno_especifico, codigo_disciplina);
+    }
+    fclose(file_disciplinas);
+
+    // Cadastrando notas aleatórias para o aluno nas disciplinas
+    cadastrarNotasAleatorias(aluno, *arvore_cursos);
+    printf("Aluno com matrícula %d foi matriculado em todas as disciplinas e recebeu notas aleatórias.\n", matricula_aluno_especifico);
+}
+
+
+
+void medirTempoBuscaNota(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina) {
+    LARGE_INTEGER frequency, start_time, end_time;
+    long long total_nanos_sum = 0;
+
+    // Obtém a frequência do contador de alta resolução
+    QueryPerformanceFrequency(&frequency);
+
+    // Repetir a busca 30 vezes para calcular a média
+    for (int i = 0; i < 30; i++) {
+        QueryPerformanceCounter(&start_time);
+
+        // Chama a função de busca da nota
+        mostrarNotaDeDisciplinaAutomatico(lista_alunos, arvore_cursos, matricula_aluno, codigo_disciplina);
+
+        QueryPerformanceCounter(&end_time);
+
+        // Calcular o tempo total de busca em nanosegundos
+        long long total_nanos = (end_time.QuadPart - start_time.QuadPart) * 1000000000 / frequency.QuadPart;
+        total_nanos_sum += total_nanos;
+    }
+
+    // Calcula a média
+    long long media_nanos = total_nanos_sum / 30;
+    printf("Tempo médio de busca da nota: %lld nanosegundos\n", media_nanos);
+}
+
+
+Elemento* cadastrarMatriculaAutomatico(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina) {
+    Elemento* aluno = NULL;
+
+    // Busca o aluno pela matrícula
+    if (buscar_aluno(lista_alunos, matricula_aluno, &aluno)) { // Aluno encontrado
+        No_disciplinas* disciplina_encontrada = NULL;
+        
+        // Busca a disciplina no curso
+        if (buscar_disciplina_no_curso(arvore_cursos, codigo_disciplina, &disciplina_encontrada)) { // Disciplina encontrada
+            // Verifica se o aluno já está matriculado na disciplina
+            if (inserirMatricula(&(aluno->arvore_matriculas), codigo_disciplina)) {
+                printf("Matricula realizada com sucesso!\n");
+            } else {
+                printf("Aluno já cadastrado na disciplina!\n");
+            }
+        } else {
+            printf("Disciplina não encontrada no curso do aluno!\n");
+        }
+    } else {
+        printf("Aluno não encontrado!\n");
+    }
+
+    return lista_alunos;
+}
+
+
+void cadastrarNotasAleatorias(Elemento* aluno, No_curso* arvore_cursos) {
+    No_matriculas* matriculas = aluno->arvore_matriculas;
+
+    srand(time(NULL));  // Inicializa a seed para geração de números aleatórios
+    while (matriculas != NULL) {
+        // Gera uma nota aleatória entre 0 e 10
+        float nota_aleatoria = (float)(rand() % 1001) / 100.0;
+
+        // Cadastra a nota aleatória para a disciplina
+        printf("Cadastrando nota %.2f para a disciplina %d.\n", nota_aleatoria, matriculas->codigo_disciplina);
+
+        if(inserirNota(&(aluno->arvore_notas), matriculas->codigo_disciplina, 1 + (rand() % 8), nota_aleatoria)) {
+            // Remove a matrícula da disciplina
+            matriculas = matriculas->esq;
+            matriculas = matriculas->dir;
+        }
+        
+        else {
+            printf("Erro ao cadastrar a nota.\n");
+        }
+
+         
+    }
+}
+
+void cadastrarNotaAutomatica(Elemento* aluno, No_curso* arvore_cursos, int codigo_disciplina, float nota) {
+    No_disciplinas* disciplina = NULL;
+    if (buscar_disciplina_no_curso(arvore_cursos, codigo_disciplina, &disciplina)) {
+        // Gera um semestre aleatório (para fins de demonstração)
+        int semestre = 1 + (rand() % 8);  // Semestre entre 1 e 8
+        inserirNota(&(aluno->arvore_notas), codigo_disciplina, semestre, nota);
+        remover_matricula(&(aluno->arvore_matriculas), codigo_disciplina);
+        printf("Nota %.2f cadastrada para a disciplina %s (código %d).\n", nota, disciplina->nome_disciplina, codigo_disciplina);
+    }
+    else {
+        printf("Disciplina não encontrada no curso do aluno.\n");
+    }
+}
