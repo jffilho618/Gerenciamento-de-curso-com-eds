@@ -206,9 +206,7 @@ void mostrar_disciplinas_de_um_aluno_matriculado(Elemento* lista_alunos, No_curs
 
 
 // xiii
-
-
-int buscar_no_curso(No_curso* raiz, int codigo_curso, No_curso** curso_encontrado) {
+int buscar_no_curso(No_curso* raiz, int codigo_curso, No_curso** curso_encontrado){
     // Se a árvore estiver vazia ou se o código do curso for encontrado
     int resultado = 0;  // Variável para armazenar o resultado
     *curso_encontrado = NULL;  // Inicialmente, nenhum curso encontrado
@@ -458,4 +456,70 @@ void mostrar_historico_aluno(Elemento* lista_alunos, No_curso* arvore_cursos) {
         printf("Aluno não encontrado!\n");
     }
     
+}
+
+// Função de comparação para ordenar pelo período
+int comparar_periodo(const void* a, const void* b) {
+    Historico* hist1 = (Historico*)a;
+    Historico* hist2 = (Historico*)b;
+    return hist1->periodo - hist2->periodo;
+}
+
+void mostrar_historico_aluno_periodo(Elemento* lista_alunos, No_curso* arvore_cursos) {
+    int matricula_aluno;
+
+    // Coletando as informações
+    printf("Digite a matrícula do aluno: ");
+    scanf("%d", &matricula_aluno);
+
+    // Busca o aluno na lista
+    Elemento* aluno = NULL;
+    if (buscar_aluno(lista_alunos, matricula_aluno, &aluno)) { // Aluno encontrado
+
+        // Busca o curso do aluno
+        No_curso* curso = NULL;
+        if (buscar_no_curso(arvore_cursos, aluno->codigo_curso, &curso)) { // Curso encontrado
+
+            // Exibindo o histórico do aluno
+            printf("Histórico do aluno %s (Matrícula: %d) - Curso: %s\n", aluno->nome, aluno->matricula, curso->nome_curso);
+            printf("Período | Código Disciplina | Nome Disciplina | Nota | Carga Horária\n");
+            printf("--------------------------------------------------------------\n");
+
+            // Array temporário para armazenar o histórico
+            Historico historico[100]; // Tamanho fixo para exemplo (pode ser dinâmico conforme necessidade)
+            int count = 0;
+
+            // Percorre a árvore de notas do aluno
+            No_notas* notas = aluno->arvore_notas;
+            while (notas != NULL) {
+                No_disciplinas* disciplina = NULL;
+                if (buscar_disciplina_historico(curso->arvore_disciplinas, notas->codigo_disciplina, &disciplina)) {
+                    // Adiciona a disciplina e nota ao histórico
+                    historico[count].periodo = disciplina->periodo;
+                    historico[count].codigo_disciplina = disciplina->codigo_disciplina;
+                    strcpy(historico[count].nome_disciplina, disciplina->nome_disciplina);
+                    historico[count].nota_final = notas->nota_final;
+                    historico[count].carga_horaria = disciplina->carga_horaria;
+                    count++;
+                }
+
+                // Percorre a árvore de notas do aluno
+                notas = (notas->esq != NULL) ? notas->esq : notas->dir;
+            }
+
+            // Ordena o histórico pelo período
+            qsort(historico, count, sizeof(Historico), comparar_periodo);
+
+            // Exibe o histórico ordenado
+            for (int i = 0; i < count; i++) {
+                printf("%d | %d | %s | %.2f | %d\n", historico[i].periodo, historico[i].codigo_disciplina, historico[i].nome_disciplina, historico[i].nota_final, historico[i].carga_horaria);
+            }
+
+        } else {
+            printf("Curso não encontrado!\n");
+        }
+
+    } else {
+        printf("Aluno não encontrado!\n");
+    }
 }

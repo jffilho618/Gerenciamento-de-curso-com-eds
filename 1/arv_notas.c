@@ -250,3 +250,33 @@ void mostrarNotaDeDisciplina(Elemento* lista_alunos, No_curso* arvore_cursos){
     }
 
 }
+
+void mostrarNotaDeDisciplinaAutomatico(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina) {
+    Elemento* aluno = NULL;
+    if (buscar_aluno(lista_alunos, matricula_aluno, &aluno)) {
+        No_notas* notas = aluno->arvore_notas;
+        No_disciplinas* disciplina = NULL;
+
+        if (buscar_disciplina_no_curso(arvore_cursos, codigo_disciplina, &disciplina)) {
+            while (notas != NULL) {
+                if (notas->codigo_disciplina == codigo_disciplina) {
+                    printf("Disciplina: %s\n", disciplina->nome_disciplina);
+                    printf("Período: %d, Carga Horária: %d\n", disciplina->periodo, disciplina->carga_horaria);
+                    printf("Nota: %.2f\n", notas->nota_final);
+                    return;
+                }
+
+                if (codigo_disciplina < notas->codigo_disciplina) {
+                    notas = notas->esq;
+                } else {
+                    notas = notas->dir;
+                }
+            }
+            printf("Nota para a disciplina %d não encontrada.\n", codigo_disciplina);
+        } else {
+            printf("Disciplina não encontrada no curso!\n");
+        }
+    } else {
+        printf("Aluno não encontrado!\n");
+    }
+}

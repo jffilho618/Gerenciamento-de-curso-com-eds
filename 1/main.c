@@ -97,10 +97,13 @@ int main(){
                             arv_cursos = teste_insercao_ARVBB(arv_cursos);
                             break;
                         case 5:
-                            //teste_remocao(arv_cursos);
+                            printa_tamanho(arv_cursos);
                             break;
                         case 6:
-                            printa_tamanho(arv_cursos);
+                            cadastrarAlunosEmCurso(&lista_alunos, &arv_cursos);
+                            break;
+                        case 7:
+                            medirTempoBuscaNota(lista_alunos, arv_cursos,  7581,  205);
                             break;
                         case 0:
                             break;

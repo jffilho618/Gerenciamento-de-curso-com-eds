@@ -45,6 +45,14 @@ typedef struct elemento{
     struct elemento *ant;
 }Elemento;
 
+// Estrutura para armazenar temporariamente as disciplinas e notas
+typedef struct {
+    int periodo;
+    int codigo_disciplina;
+    char nome_disciplina[50];
+    float nota_final;
+    int carga_horaria;
+} Historico;
 
 No_disciplinas* criarARVORE_disciplinas();
 int inserir_disciplina(No_disciplinas **raiz, int valor, char nome_disciplina[50], int carga_horaria, int periodo);
@@ -151,4 +159,13 @@ No_curso* cadastra_curso_automatico_aleatorio(No_curso *raiz);
 No_curso* cadastra_curso_automatico_crescente(No_curso *raiz);
 No_curso* cadastra_curso_automatico_decrescente(No_curso *raiz);
 No_curso* teste_insercao_ARVBB(No_curso *raiz);
+
+void cadastrarAlunosEmCurso(Elemento** lista_alunos, No_curso** arvore_cursos);
+void medirTempoBuscaNota(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina);
+Elemento* cadastrarMatriculaAutomatico(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina);
+void mostrarNotaDeDisciplinaAutomatico(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina);
+void cadastrarNotasAleatorias(Elemento* aluno, No_curso* arvore_cursos);
+void cadastrarNotaAutomatica(Elemento* aluno, No_curso* arvore_cursos, int codigo_disciplina, float nota);
+void mostrar_historico_aluno_periodo(Elemento* lista_alunos, No_curso*  arvore_cursos);
+
 #endif
