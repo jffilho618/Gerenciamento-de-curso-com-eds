@@ -164,8 +164,11 @@ void cadastrarAlunosEmCurso(Elemento** lista_alunos, No_curso** arvore_cursos);
 void medirTempoBuscaNota(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina);
 Elemento* cadastrarMatriculaAutomatico(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina);
 void mostrarNotaDeDisciplinaAutomatico(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina);
-void cadastrarNotasAleatorias(Elemento* aluno, No_curso* arvore_cursos);
+void cadastrarNotasAleatorias(No_notas **arv_notas, No_matriculas *arv_matriculas);
 void cadastrarNotaAutomatica(Elemento* aluno, No_curso* arvore_cursos, int codigo_disciplina, float nota);
 void mostrar_historico_aluno_periodo(Elemento* lista_alunos, No_curso*  arvore_cursos);
+No_notas* retorna_arvore_de_notas(Elemento* lista_alunos, int matricula_aluno);
+void imprimir_disciplinas_matriculadas(No_disciplinas* raiz, int codigo_disciplina);
+void removerMatriculas(No_matriculas** arv_matriculas);
 
 #endif

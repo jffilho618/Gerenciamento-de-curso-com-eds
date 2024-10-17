@@ -165,16 +165,22 @@ No_matriculas* retorna_arvore_matriculas(Elemento* lista_alunos, int matricula_a
 
 }
 
-void imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(No_disciplinas *raiz_disciplinas, No_matriculas *raiz_matriculas){
-    if (raiz_disciplinas != NULL){
-        imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(raiz_disciplinas->esq, raiz_matriculas);
-
-        No_matriculas* matricula = NULL;
-        if (busca_matricula(raiz_matriculas, raiz_disciplinas->codigo_disciplina, &matricula)){
-            printf("║ %-11d ║ %-25s ║ %-6d ║ %-7d ║\n",raiz_disciplinas->carga_horaria,raiz_disciplinas->nome_disciplina,raiz_disciplinas->codigo_disciplina, raiz_disciplinas->periodo);
+void imprimir_disciplinas_matriculadas(No_disciplinas* raiz, int codigo_disciplina){
+    if (raiz != NULL){
+        
+        if (raiz->codigo_disciplina == codigo_disciplina){
+            printf("║ %-11d ║ %-25s ║ %-6d ║ %-7d ║\n",raiz->carga_horaria,raiz->nome_disciplina,raiz->codigo_disciplina, raiz->periodo);
         }
+        imprimir_disciplinas_matriculadas(raiz->esq, codigo_disciplina);
+        imprimir_disciplinas_matriculadas(raiz->dir, codigo_disciplina);
+    }
+}
 
-        imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(raiz_disciplinas->dir, raiz_matriculas);
+void imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(No_disciplinas *raiz_disciplinas, No_matriculas *raiz_matriculas){
+    if (raiz_matriculas != NULL){
+        imprimir_disciplinas_matriculadas(raiz_disciplinas, raiz_matriculas->codigo_disciplina);
+        imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(raiz_disciplinas, raiz_matriculas->esq);        
+        imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(raiz_disciplinas, raiz_matriculas->dir);
     }
 }
 
@@ -186,22 +192,27 @@ void mostrar_disciplinas_de_um_aluno_matriculado(Elemento* lista_alunos, No_curs
 
     Elemento* aluno = retorna_aluno(lista_alunos, matricula_aluno);
 
-    No_curso *curso = retornar_curso(arvore_cursos, aluno->codigo_curso);
-    if (curso != NULL){
-        // printf("Curso não encontrado!\n");
-        // return;
+    if (aluno != NULL){
+        No_curso *curso = retornar_curso(arvore_cursos, aluno->codigo_curso);
+        if (curso != NULL){
+            // printf("Curso não encontrado!\n");
+            // return;
 
-        printf("╔═════════════╦═══════════════════════════╦════════╦═════════╗\n");
-        printf("║  CARGA HOR  ║    NOME DA DISCIPLINA     ║ CÓDIGO ║ PERÍODO ║\n");
-        printf("╠═════════════╬═══════════════════════════╬════════╬═════════╣\n");
-        imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(curso->arvore_disciplinas, aluno->arvore_matriculas);
-        printf("╚═════════════╩═══════════════════════════╩════════╩═════════╝\n");
+            printf("╔═════════════╦═══════════════════════════╦════════╦═════════╗\n");
+            printf("║  CARGA HOR  ║    NOME DA DISCIPLINA     ║ CÓDIGO ║ PERÍODO ║\n");
+            printf("╠═════════════╬═══════════════════════════╬════════╬═════════╣\n");
+            imprimir_pre_ordem_disciplinas_de_um_aluno_matriculado(curso->arvore_disciplinas, aluno->arvore_matriculas);
+            printf("╚═════════════╩═══════════════════════════╩════════╩═════════╝\n");
+        }
+        
+        else{
+            printf("Curso não encontrado!\n");
+        }
     }
-    
+
     else{
-        printf("Curso não encontrado!\n");
+        printf("Aluno não encontrado!\n");
     }
-    
 }
 
 

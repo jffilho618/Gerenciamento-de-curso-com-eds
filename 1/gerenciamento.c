@@ -314,18 +314,53 @@ void cadastrarAlunosEmCurso(Elemento** lista_alunos, No_curso** arvore_cursos) {
     while (fgets(line, sizeof(line), file_disciplinas)) {
         int codigo_disciplina;
         sscanf(line, "%d;%*[^;];%*d;%*d;%*d", &codigo_disciplina);  // Lê apenas o código da disciplina
-
+        inserirMatricula(&(aluno->arvore_matriculas), codigo_disciplina);
         printf("Matriculando aluno %d na disciplina (código: %d)\n",matricula_aluno_especifico, codigo_disciplina);  // Depuração
-        *lista_alunos = cadastrarMatriculaAutomatico(*lista_alunos, *arvore_cursos, matricula_aluno_especifico, codigo_disciplina);
+        
     }
     fclose(file_disciplinas);
 
-    // Cadastrando notas aleatórias para o aluno nas disciplinas
-    cadastrarNotasAleatorias(aluno, *arvore_cursos);
+    printf("Aluno com matrícula %d foi matriculado em todas as disciplinas.\n", matricula_aluno_especifico);
+    srand(time(NULL));
+
+    //Cadastrando notas aleatórias para o aluno nas disciplinas
+    cadastrarNotasAleatorias(&(aluno->arvore_notas), aluno->arvore_matriculas);
     printf("Aluno com matrícula %d foi matriculado em todas as disciplinas e recebeu notas aleatórias.\n", matricula_aluno_especifico);
+
+    removerMatriculas(&(aluno->arvore_matriculas));
+    
 }
 
+void cadastrarNotasAleatorias(No_notas** arv_notas, No_matriculas* arv_matriculas) {
+    if (arv_matriculas == NULL) {
+        return;  // Condição de término para evitar chamadas em NULL
+    }
 
+    // Gera uma nota aleatória entre 0 e 10
+    float nota = (rand() % 110) / 10.0;
+
+    // Insere a nota aleatória para a disciplina
+    inserirNota(arv_notas, arv_matriculas->codigo_disciplina, 1 + (rand() % 8), nota);
+    printf("Nota %.2f cadastrada para a disciplina %d.\n", nota, arv_matriculas->codigo_disciplina);
+
+    // Chamada recursiva para a subárvore esquerda e direita antes de remover a matrícula
+    cadastrarNotasAleatorias(&(*arv_notas), arv_matriculas->esq);
+    cadastrarNotasAleatorias(&(*arv_notas), arv_matriculas->dir);
+
+}
+
+void removerMatriculas(No_matriculas** arv_matriculas) {
+    if (*arv_matriculas == NULL) {
+        return;
+    }
+
+    // Chamada recursiva para remover matrículas em ambas as subárvores
+    removerMatriculas(&(*arv_matriculas)->esq);
+    removerMatriculas(&(*arv_matriculas)->dir);
+
+    // Remove a matrícula atual após processar ambas as subárvores
+    remover_matricula(arv_matriculas, (*arv_matriculas)->codigo_disciplina);
+}
 
 void medirTempoBuscaNota(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina) {
     LARGE_INTEGER frequency, start_time, end_time;
@@ -351,58 +386,6 @@ void medirTempoBuscaNota(Elemento* lista_alunos, No_curso* arvore_cursos, int ma
     // Calcula a média
     long long media_nanos = total_nanos_sum / 30;
     printf("Tempo médio de busca da nota: %lld nanosegundos\n", media_nanos);
-}
-
-
-Elemento* cadastrarMatriculaAutomatico(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina) {
-    Elemento* aluno = NULL;
-
-    // Busca o aluno pela matrícula
-    if (buscar_aluno(lista_alunos, matricula_aluno, &aluno)) { // Aluno encontrado
-        No_disciplinas* disciplina_encontrada = NULL;
-        
-        // Busca a disciplina no curso
-        if (buscar_disciplina_no_curso(arvore_cursos, codigo_disciplina, &disciplina_encontrada)) { // Disciplina encontrada
-            // Verifica se o aluno já está matriculado na disciplina
-            if (inserirMatricula(&(aluno->arvore_matriculas), codigo_disciplina)) {
-                printf("Matricula realizada com sucesso!\n");
-            } else {
-                printf("Aluno já cadastrado na disciplina!\n");
-            }
-        } else {
-            printf("Disciplina não encontrada no curso do aluno!\n");
-        }
-    } else {
-        printf("Aluno não encontrado!\n");
-    }
-
-    return lista_alunos;
-}
-
-
-void cadastrarNotasAleatorias(Elemento* aluno, No_curso* arvore_cursos) {
-    No_matriculas* matriculas = aluno->arvore_matriculas;
-
-    srand(time(NULL));  // Inicializa a seed para geração de números aleatórios
-    while (matriculas != NULL) {
-        // Gera uma nota aleatória entre 0 e 10
-        float nota_aleatoria = (float)(rand() % 1001) / 100.0;
-
-        // Cadastra a nota aleatória para a disciplina
-        printf("Cadastrando nota %.2f para a disciplina %d.\n", nota_aleatoria, matriculas->codigo_disciplina);
-
-        if(inserirNota(&(aluno->arvore_notas), matriculas->codigo_disciplina, 1 + (rand() % 8), nota_aleatoria)) {
-            // Remove a matrícula da disciplina
-            matriculas = matriculas->esq;
-            matriculas = matriculas->dir;
-        }
-        
-        else {
-            printf("Erro ao cadastrar a nota.\n");
-        }
-
-         
-    }
 }
 
 void cadastrarNotaAutomatica(Elemento* aluno, No_curso* arvore_cursos, int codigo_disciplina, float nota) {
