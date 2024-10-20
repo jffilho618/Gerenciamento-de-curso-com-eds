@@ -425,55 +425,34 @@ void remover_disciplina_matricula(Elemento* lista_alunos) {
 
 // xv
 
-void mostrar_historico_aluno(Elemento* lista_alunos, No_curso* arvore_cursos) {
-    int matricula_aluno;
-
-    // Coletando as informações
-    printf("Digite a matrícula do aluno: ");
-    scanf("%d", &matricula_aluno);
-
-    // Busca o aluno na lista
-    Elemento* aluno = NULL;
-    if (buscar_aluno(lista_alunos, matricula_aluno, &aluno)) { // Aluno encontrado
-
-        // Busca o curso do aluno
-        No_curso* curso = NULL;
-        if (buscar_no_curso(arvore_cursos, aluno->codigo_curso, &curso)) { // Curso encontrado
-
-            // Exibindo o histórico do aluno
-            printf("Histórico do aluno %s (Matrícula: %d) - Curso: %s\n", aluno->nome, aluno->matricula, curso->nome_curso);
-            printf("Período | Código Disciplina | Nome Disciplina | Nota | Carga Horária\n");
-            printf("--------------------------------------------------------------\n");
-
-            // Percorre a árvore de notas do aluno
-            No_notas* notas = aluno->arvore_notas;
-            while (notas != NULL) {
-                No_disciplinas* disciplina = NULL;
-                if (buscar_disciplina_historico(curso->arvore_disciplinas, notas->codigo_disciplina, &disciplina)) {
-                    printf("%d | %d | %s | %.2f | %d\n", disciplina->periodo, disciplina->codigo_disciplina, disciplina->nome_disciplina, notas->nota_final, disciplina->carga_horaria);
-                }
-
-                notas = (notas->esq != NULL) ? notas->esq : notas->dir;
-            }
-        }
-
-        else{
-            printf("Curso não encontrado!\n");
-        }
-        
-    }
-
-    else{
-        printf("Aluno não encontrado!\n");
-    }
-    
-}
 
 // Função de comparação para ordenar pelo período
 int comparar_periodo(const void* a, const void* b) {
     Historico* hist1 = (Historico*)a;
     Historico* hist2 = (Historico*)b;
     return hist1->periodo - hist2->periodo;
+}
+
+// Função auxiliar para percorrer a árvore de notas e preencher o histórico
+void percorrerNotas(No_notas* notas, No_curso* curso, Historico* historico, int* count) {
+    if (notas == NULL) return;  // Caso base da recursão
+
+    // Percorre a subárvore esquerda
+    percorrerNotas(notas->esq, curso, historico, count);
+
+    // Processa o nó atual
+    No_disciplinas* disciplina = NULL;
+    if (buscar_disciplina_historico(curso->arvore_disciplinas, notas->codigo_disciplina, &disciplina)) {
+        historico[*count].periodo = disciplina->periodo;
+        historico[*count].codigo_disciplina = disciplina->codigo_disciplina;
+        strcpy(historico[*count].nome_disciplina, disciplina->nome_disciplina);
+        historico[*count].nota_final = notas->nota_final;
+        historico[*count].carga_horaria = disciplina->carga_horaria;
+        (*count)++;
+    }
+
+    // Percorre a subárvore direita
+    percorrerNotas(notas->dir, curso, historico, count);
 }
 
 void mostrar_historico_aluno_periodo(Elemento* lista_alunos, No_curso* arvore_cursos) {
@@ -500,23 +479,8 @@ void mostrar_historico_aluno_periodo(Elemento* lista_alunos, No_curso* arvore_cu
             Historico historico[100]; // Tamanho fixo para exemplo (pode ser dinâmico conforme necessidade)
             int count = 0;
 
-            // Percorre a árvore de notas do aluno
-            No_notas* notas = aluno->arvore_notas;
-            while (notas != NULL) {
-                No_disciplinas* disciplina = NULL;
-                if (buscar_disciplina_historico(curso->arvore_disciplinas, notas->codigo_disciplina, &disciplina)) {
-                    // Adiciona a disciplina e nota ao histórico
-                    historico[count].periodo = disciplina->periodo;
-                    historico[count].codigo_disciplina = disciplina->codigo_disciplina;
-                    strcpy(historico[count].nome_disciplina, disciplina->nome_disciplina);
-                    historico[count].nota_final = notas->nota_final;
-                    historico[count].carga_horaria = disciplina->carga_horaria;
-                    count++;
-                }
-
-                // Percorre a árvore de notas do aluno
-                notas = (notas->esq != NULL) ? notas->esq : notas->dir;
-            }
+            // Percorre a árvore de notas do aluno usando uma função recursiva
+            percorrerNotas(aluno->arvore_notas, curso, historico, &count);
 
             // Ordena o histórico pelo período
             qsort(historico, count, sizeof(Historico), comparar_periodo);
@@ -526,6 +490,7 @@ void mostrar_historico_aluno_periodo(Elemento* lista_alunos, No_curso* arvore_cu
                 printf("%d | %d | %s | %.2f | %d\n", historico[i].periodo, historico[i].codigo_disciplina, historico[i].nome_disciplina, historico[i].nota_final, historico[i].carga_horaria);
             }
 
+
         } else {
             printf("Curso não encontrado!\n");
         }
@@ -534,3 +499,4 @@ void mostrar_historico_aluno_periodo(Elemento* lista_alunos, No_curso* arvore_cu
         printf("Aluno não encontrado!\n");
     }
 }
+

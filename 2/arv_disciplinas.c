@@ -15,25 +15,97 @@ int inserir_disciplina(No_disciplinas **raiz, int codigo_disciplina, char nome_d
     if (*raiz == NULL) {
         // Criamos o novo nó se a raiz é nula
         *raiz = (No_disciplinas*)malloc(sizeof(No_disciplinas));
-        if (*raiz != NULL) {
+        if (*raiz == NULL){
+            printf("Erro ao alocar memória para o novo nó.\n");
+            resultado = 0; // Falha na alocação de memória
+        }
+        else {
             (*raiz)->codigo_disciplina = codigo_disciplina;
             strcpy((*raiz)->nome_disciplina, nome_disciplina);
             (*raiz)->carga_horaria = carga_horaria;
             (*raiz)->periodo = periodo;
             (*raiz)->esq = NULL;
             (*raiz)->dir = NULL;
+            (*raiz)->altura = 0;
               // Inserção bem-sucedida
         }
     } else if (codigo_disciplina < (*raiz)->codigo_disciplina) {
         resultado = inserir_disciplina(&(*raiz)->esq, codigo_disciplina, nome_disciplina, carga_horaria, periodo);
+        if (resultado){
+            if (fatorBalanceamentoDisciplinas(*raiz) >= 2){ // tenho que fazer essa para disciplina
+                if (codigo_disciplina < (*raiz)->esq->codigo_disciplina){
+                    *raiz = rotacaoDireitaDisciplinas(*raiz); // mesma coisa pra essa
+                }
+                else {
+                    *raiz = rotacaoDuplaDireitaDisciplinas(*raiz); // mesma coisa pra essa
+                }
+            }
+        }
     } else if (codigo_disciplina > (*raiz)->codigo_disciplina) {
         resultado = inserir_disciplina(&(*raiz)->dir, codigo_disciplina, nome_disciplina, carga_horaria, periodo);
+        if (resultado) {
+            if (fatorBalanceamentoDisciplinas(*raiz) >= 2) {
+                if (codigo_disciplina > (*raiz)->dir->codigo_disciplina) {
+                    *raiz = rotacaoEsquerdaDisciplinas(*raiz); // mesma coisa pra essa
+                } else {
+                    *raiz = rotacaoDuplaEsquerdaDisciplinas(*raiz); // mesma coisa pra essa
+                }
+            }
+        }
     } else {
         resultado = 0;  // Disciplina já existe
     }
 
+    if (resultado) {
+        (*raiz)->altura = maior(alturaDisciplinas((*raiz)->esq), alturaDisciplinas((*raiz)->dir)) + 1; // mesma coisa pra função da altura
+    }
+
     return resultado;  // Apenas um retorno
 }
+
+
+int alturaDisciplinas(No_disciplinas *raiz) {
+    if (raiz == NULL) {
+        return -1;
+    } else {
+        return raiz->altura;
+    }
+}
+
+int fatorBalanceamentoDisciplinas(No_disciplinas *raiz) {
+    return labs(alturaDisciplinas(raiz->esq) - alturaDisciplinas(raiz->dir));
+}
+
+
+No_disciplinas* rotacaoDireitaDisciplinas(No_disciplinas *raiz) {
+    No_disciplinas *aux = raiz->esq;
+    raiz->esq = aux->dir;
+    aux->dir = raiz;
+    raiz->altura = maior(alturaDisciplinas(raiz->esq), alturaDisciplinas(raiz->dir)) + 1;
+    aux->altura = maior(alturaDisciplinas(aux->esq), raiz->altura) + 1;
+    return aux;
+}
+
+No_disciplinas* rotacaoEsquerdaDisciplinas(No_disciplinas *raiz) {
+    No_disciplinas *aux = raiz->dir;
+    raiz->dir = aux->esq;
+    aux->esq = raiz;
+    raiz->altura = maior(alturaDisciplinas(raiz->esq), alturaDisciplinas(raiz->dir)) + 1;
+    aux->altura = maior(alturaDisciplinas(aux->dir), raiz->altura) + 1;
+    return aux;
+}
+
+No_disciplinas* rotacaoDuplaDireitaDisciplinas(No_disciplinas *raiz) {
+    raiz->esq = rotacaoEsquerdaDisciplinas(raiz->esq);
+    return rotacaoDireitaDisciplinas(raiz);
+}
+
+No_disciplinas* rotacaoDuplaEsquerdaDisciplinas(No_disciplinas *raiz) {
+    raiz->dir = rotacaoDireitaDisciplinas(raiz->dir);
+    return rotacaoEsquerdaDisciplinas(raiz);
+}
+
+
 
 No_curso* Cadastrar_disciplina(No_curso *raiz_curso){
     int codigo_curso;

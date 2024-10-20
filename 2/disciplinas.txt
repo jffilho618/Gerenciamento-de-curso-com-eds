@@ -1,0 +1,12 @@
+201;Algoritmos;60;1;23249
+202;Estrutura de Dados;60;2;23249
+203;Cálculo;60;1;23249
+204;Álgebra Linear;60;1;23249
+205;Banco de Dados;60;3;23249
+206;Redes de Computadores;60;3;23249
+207;Sistemas Operacionais;60;2;23249
+208;Engenharia de Software;60;2;23249
+209;Inteligência Artificial;60;4;23249
+210;Matemática Discreta;60;1;23249
+211;Compiladores;60;4;23249
+212;Análise de Algoritmos;60;3;23249
