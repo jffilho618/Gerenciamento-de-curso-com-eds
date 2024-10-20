@@ -24,7 +24,7 @@ int main(){
                     scanf("%d",&op2);
                     switch(op2){
                         case 1:
-                            arv_cursos = cadastrar_curso_avl(arv_cursos);
+                            arv_cursos = cadastrarCurso(arv_cursos);
                             break;
                         case 2:
                             lista_alunos = Cadastrar_aluno(lista_alunos, arv_cursos);
@@ -36,7 +36,7 @@ int main(){
                             lista_alunos = cadastrarMatricula(lista_alunos, arv_cursos);
                             break;
                         case 5:
-                            lista_alunos = cadastrarNota(lista_alunos);
+                            cadastrarNota(lista_alunos, arv_cursos);
                             break;
                         case 6:
                             alunos_de_um_curso(lista_alunos);
@@ -66,7 +66,7 @@ int main(){
                             remover_disciplina_matricula(lista_alunos);
                             break;
                         case 15:
-                            mostrar_historico_aluno(lista_alunos, arv_cursos);
+                            mostrar_historico_aluno_periodo(lista_alunos, arv_cursos);
                             break;
                         case 0:
                             break;
@@ -82,15 +82,15 @@ int main(){
                     scanf("%d", &op3);
                     switch(op3){
                         case 1:
-                            arv_cursos = cadastra_curso_automatico_aleatorio_avl(arv_cursos);
+                            arv_cursos = cadastra_curso_automatico_aleatorio(arv_cursos);
                             printf("Cursos cadastrados com sucesso!\n");
                             break;
                         case 2:
-                            arv_cursos = cadastra_curso_automatico_crescente_avl(arv_cursos);
+                            arv_cursos = cadastra_curso_automatico_crescente(arv_cursos);
                             printf("Cursos cadastrados com sucesso!\n");
                             break;
                         case 3:
-                            arv_cursos = cadastra_curso_automatico_decrescente_avl(arv_cursos);
+                            arv_cursos = cadastra_curso_automatico_decrescente(arv_cursos);
                             printf("Cursos cadastrados com sucesso!\n");
                             break;
                         case 4:
@@ -100,16 +100,10 @@ int main(){
                             printa_tamanho(arv_cursos);
                             break;
                         case 6:
-                            arv_cursos = cadastra_curso_automatico_aleatorio_avl(arv_cursos);
-                            printf("Cursos cadastrados com sucesso!\n");
+                            cadastrarAlunosEmCurso(&lista_alunos, &arv_cursos);
                             break;
                         case 7:
-                            arv_cursos = cadastra_curso_automatico_crescente_avl(arv_cursos);
-                            printf("Cursos cadastrados com sucesso!\n");
-                            break;
-                        case 8:
-                            arv_cursos = cadastra_curso_automatico_decrescente_avl(arv_cursos);
-                            printf("Cursos cadastrados com sucesso!\n");
+                            medirTempoBuscaNota(lista_alunos, arv_cursos,  7581,  205);
                             break;
                         case 0:
                             break;

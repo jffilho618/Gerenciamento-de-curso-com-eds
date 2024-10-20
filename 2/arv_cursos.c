@@ -110,7 +110,7 @@ void mostrar_todos_os_cursos(No_curso *raiz){
 }
 
 
-int inserir_curso_avl(No_curso **raiz, long long int codigo_curso, char nome_curso[50], int quant_periodos) {
+int inserir_curso(No_curso **raiz, long long int codigo_curso, char nome_curso[50], int quant_periodos) {
     int resultado = 1; // Sucesso por padrão
 
     if (*raiz == NULL) {
@@ -128,24 +128,24 @@ int inserir_curso_avl(No_curso **raiz, long long int codigo_curso, char nome_cur
             (*raiz)->altura = 0;
         }
     } else if (codigo_curso < (*raiz)->codigo_curso) {
-        resultado = inserir_curso_avl(&(*raiz)->esq, codigo_curso, nome_curso, quant_periodos);
+        resultado = inserir_curso(&(*raiz)->esq, codigo_curso, nome_curso, quant_periodos);
         if (resultado) {
-            if (fatorBalanceamento(*raiz) >= 2) {
+            if (fatorBalanceamentoCursos(*raiz) >= 2) {
                 if (codigo_curso < (*raiz)->esq->codigo_curso) {
-                    *raiz = rotacaoDireita(*raiz);
+                    *raiz = rotacaoDireitaCursos(*raiz);
                 } else {
-                    *raiz = rotacaoDuplaDireita(*raiz);
+                    *raiz = rotacaoDuplaDireitaCursos(*raiz);
                 }
             }
         }
     } else if (codigo_curso > (*raiz)->codigo_curso) {
-        resultado = inserir_curso_avl(&(*raiz)->dir, codigo_curso, nome_curso, quant_periodos);
+        resultado = inserir_curso(&(*raiz)->dir, codigo_curso, nome_curso, quant_periodos);
         if (resultado) {
-            if (fatorBalanceamento(*raiz) >= 2) {
+            if (fatorBalanceamentoCursos(*raiz) >= 2) {
                 if (codigo_curso > (*raiz)->dir->codigo_curso) {
-                    *raiz = rotacaoEsquerda(*raiz);
+                    *raiz = rotacaoEsquerdaCursos(*raiz);
                 } else {
-                    *raiz = rotacaoDuplaEsquerda(*raiz);
+                    *raiz = rotacaoDuplaEsquerdaCursos(*raiz);
                 }
             }
         }
@@ -154,14 +154,14 @@ int inserir_curso_avl(No_curso **raiz, long long int codigo_curso, char nome_cur
     }
 
     if (resultado) {
-        (*raiz)->altura = maior(altura((*raiz)->esq), altura((*raiz)->dir)) + 1;
+        (*raiz)->altura = maior(alturaCursos((*raiz)->esq), alturaCursos((*raiz)->dir)) + 1;
     }
 
     return resultado;
 }
 
 
-int altura(No_curso *raiz) {
+int alturaCursos(No_curso *raiz) {
     if (raiz == NULL) {
         return -1;
     } else {
@@ -169,44 +169,44 @@ int altura(No_curso *raiz) {
     }
 }
 
-int fatorBalanceamento(No_curso *raiz) {
-    return labs(altura(raiz->esq) - altura(raiz->dir));
+int fatorBalanceamentoCursos(No_curso *raiz) {
+    return labs(alturaCursos(raiz->esq) - alturaCursos(raiz->dir));
 }
 
 int maior(int x, int y) {
     return (x > y) ? x : y;
 }
 
-No_curso* rotacaoDireita(No_curso *raiz) {
+No_curso* rotacaoDireitaCursos(No_curso *raiz) {
     No_curso *aux = raiz->esq;
     raiz->esq = aux->dir;
     aux->dir = raiz;
-    raiz->altura = maior(altura(raiz->esq), altura(raiz->dir)) + 1;
-    aux->altura = maior(altura(aux->esq), raiz->altura) + 1;
+    raiz->altura = maior(alturaCursos(raiz->esq), alturaCursos(raiz->dir)) + 1;
+    aux->altura = maior(alturaCursos(aux->esq), raiz->altura) + 1;
     return aux;
 }
 
-No_curso* rotacaoEsquerda(No_curso *raiz) {
+No_curso* rotacaoEsquerdaCursos(No_curso *raiz) {
     No_curso *aux = raiz->dir;
     raiz->dir = aux->esq;
     aux->esq = raiz;
-    raiz->altura = maior(altura(raiz->esq), altura(raiz->dir)) + 1;
-    aux->altura = maior(altura(aux->dir), raiz->altura) + 1;
+    raiz->altura = maior(alturaCursos(raiz->esq), alturaCursos(raiz->dir)) + 1;
+    aux->altura = maior(alturaCursos(aux->dir), raiz->altura) + 1;
     return aux;
 }
 
-No_curso* rotacaoDuplaDireita(No_curso *raiz) {
-    raiz->esq = rotacaoEsquerda(raiz->esq);
-    return rotacaoDireita(raiz);
+No_curso* rotacaoDuplaDireitaCursos(No_curso *raiz) {
+    raiz->esq = rotacaoEsquerdaCursos(raiz->esq);
+    return rotacaoDireitaCursos(raiz);
 }
 
-No_curso* rotacaoDuplaEsquerda(No_curso *raiz) {
-    raiz->dir = rotacaoDireita(raiz->dir);
-    return rotacaoEsquerda(raiz);
+No_curso* rotacaoDuplaEsquerdaCursos(No_curso *raiz) {
+    raiz->dir = rotacaoDireitaCursos(raiz->dir);
+    return rotacaoEsquerdaCursos(raiz);
 }
 
 
-No_curso* cadastrar_curso_avl(No_curso *raiz) {
+No_curso* cadastrarCurso(No_curso *raiz) {
 
     printf("Informe o codigo do curso: ");
     int codigo_curso;
@@ -230,7 +230,7 @@ No_curso* cadastrar_curso_avl(No_curso *raiz) {
         
     QueryPerformanceCounter(&start_time);
 
-    if (inserir_curso_avl(&raiz, codigo_curso, nome_curso, quant_periodos)) {
+    if (inserir_curso(&raiz, codigo_curso, nome_curso, quant_periodos)) {
         // Curso inserido com sucesso
         QueryPerformanceCounter(&end_time);
 

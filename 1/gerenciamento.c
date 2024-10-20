@@ -113,7 +113,7 @@ No_curso* cadastra_curso_automatico_crescente(No_curso *Raiz) {
             fscanf(arq, "%s", nome_curso);
             quant_periodos = 8 + (rand() % 3);
             
-            if (i+1!=131 && i+1!=23249 && i+1!=2956 && i+1!=10231 && i+1!=592 && i+1!=8321 && i+1!=6234 && i+1!=1237 && i+1!=18239 && i+1!=4123){
+            if (i+1!=131 && i+1!=23249 && i+1!=2956 && i+1!=10231 && i+1!=592 && i+1!=8321 && i+1!=6234 && i+1!=1237 && i+1!=18239 && i+1!=4123 && i+1!= 23000) {
                 if (inserir_curso(&Raiz, i+1, nome_curso, quant_periodos)) {
                     //printf("Curso inserido com sucesso\n");
                 } else {
@@ -153,7 +153,7 @@ No_curso* cadastra_curso_automatico_decrescente(No_curso *Raiz) {
             //printf("i: %d\n", i-1);
             fscanf(arq, "%s", nome_curso);
             quant_periodos = 8 + (rand() % 3);
-            if (i+1!=131 && i+1!=23249 && i+1!=2956 && i+1!=10231 && i+1!=592 && i+1!=8321 && i+1!=6234 && i+1!=1237 && i+1!=18239 && i+1!=4123){
+            if (i+1!=131 && i+1!=23249 && i+1!=2956 && i+1!=10231 && i+1!=592 && i+1!=8321 && i+1!=6234 && i+1!=1237 && i+1!=18239 && i+1!=4123 && i+1!=23000){
                 if (inserir_curso(&Raiz, i+1, nome_curso, quant_periodos)) {
                     //printf("Curso inserido com sucesso\n");
                 } else {
@@ -178,7 +178,7 @@ No_curso* teste_insercao_ARVBB(No_curso *raiz) {
     FILE *arq;
     arq = fopen("tempos_decrescentes.txt", "a");
 
-    int vet[] = {131, 23249, 2956, 10231, 592, 8321, 6234, 1237, 18239, 4123};
+    int vet[] = {131, 23000, 2956, 10231, 592, 8321, 6234, 1237, 18239, 4123};
     printf("Informe o nome do curso: ");
     char nome_curso[50];
     scanf(" %49[^\n]", nome_curso);
@@ -337,7 +337,7 @@ void cadastrarNotasAleatorias(No_notas** arv_notas, No_matriculas* arv_matricula
     }
 
     // Gera uma nota aleatória entre 0 e 10
-    float nota = (rand() % 110) / 10.0;
+    float nota = (rand() % 100) / 10.0;
 
     // Insere a nota aleatória para a disciplina
     inserirNota(arv_notas, arv_matriculas->codigo_disciplina, 1 + (rand() % 8), nota);
