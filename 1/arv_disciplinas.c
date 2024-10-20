@@ -140,6 +140,7 @@ int retorna_periodo_curso(No_curso *raiz, int valor) {
 }
 
 
+
 int verifica_carga_horaria(int valor){
     int retorno = 0;
     if (valor % 15 ==0 && valor >= 30 && valor <= 90){

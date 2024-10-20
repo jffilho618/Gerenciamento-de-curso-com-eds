@@ -229,5 +229,5 @@ No_notas* rotacaoEsquerdaNotas(No_notas *raiz);
 No_notas* rotacaoDuplaDireitaNotas(No_notas *raiz);
 No_notas* rotacaoDuplaEsquerdaNotas(No_notas *raiz);
 int tamanho_notas(No_notas *raiz);
-
+int buscar_nota(No_notas* raiz, int codigo_disciplina,float *nota, int *semestre);
 #endif

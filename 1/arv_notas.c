@@ -203,76 +203,88 @@ void mostrarNotasDePeriodo(Elemento* lista_alunos){
     
 }
 
+int buscar_nota(No_notas* raiz, int codigo_disciplina,float *nota, int *semestre) {
+    int resultado = 0;  // Variável para armazenar o resultado
 
-void mostrarNotaDeDisciplina(Elemento* lista_alunos, No_curso* arvore_cursos){
+    while (raiz != NULL) {
+        if (codigo_disciplina == raiz->codigo_disciplina) {
+            (*nota) = raiz->nota_final;
+            (*semestre) = raiz->semestre_cursado;
+            return 1;  // Sucesso
+        }
+
+        if (codigo_disciplina < raiz->codigo_disciplina) {
+            raiz = raiz->esq;
+        } else {
+            raiz = raiz->dir;
+        }
+    }
+
+    return resultado;  // Retorna 1 para sucesso, 0 para falha
+} 
+
+void mostrarNotaDeDisciplina(Elemento* lista_alunos, No_curso* arvore_cursos) {
     int matricula_aluno, codigo_disciplina;
 
     printf("Digite a matrícula do aluno: ");
     scanf("%d", &matricula_aluno);
     printf("Digite o código da disciplina: ");
     scanf("%d", &codigo_disciplina);
+    int semestre;
+    float nota;
 
     Elemento* aluno = NULL;
     if (buscar_aluno(lista_alunos, matricula_aluno, &aluno)) {
+        if (buscar_nota(aluno->arvore_notas, codigo_disciplina, &nota, &semestre)) {
+            printf("Disciplina encontrada no curso\n");  // LOG
 
-        No_notas *notas = aluno->arvore_notas;
+            while (arvore_cursos != NULL) {
+                if (arvore_cursos->codigo_curso == aluno->codigo_curso) {
+                    while (arvore_cursos->arvore_disciplinas != NULL) {
+                        if (arvore_cursos->arvore_disciplinas->codigo_disciplina == codigo_disciplina) {
+                            printf("Disciplina: %s, Código: %d, Período: %d, Nota: %.2f, Semestre: %d Carga Horária\n", arvore_cursos->arvore_disciplinas->nome_disciplina, arvore_cursos->arvore_disciplinas->codigo_disciplina, arvore_cursos->arvore_disciplinas->periodo, nota, semestre, arvore_cursos->arvore_disciplinas->carga_horaria);
+                        }
 
-        No_disciplinas* disciplina = NULL;
-        if (buscar_disciplina_no_curso(arvore_cursos, codigo_disciplina, &disciplina)) {
-
-            while (notas != NULL) {
-                if (notas->codigo_disciplina == codigo_disciplina) {
-                    printf("Disciplina: %s\n", disciplina->nome_disciplina);
-                    printf("Período: %d, Carga Horária: %d\n", disciplina->periodo, disciplina->carga_horaria);
-                    printf("Nota: %.2f\n", notas->nota_final);
+                        if (codigo_disciplina < arvore_cursos->arvore_disciplinas->codigo_disciplina) {
+                            arvore_cursos->arvore_disciplinas = arvore_cursos->arvore_disciplinas->esq;
+                        } else {
+                            arvore_cursos->arvore_disciplinas = arvore_cursos->arvore_disciplinas->dir;
+                        }
+                    }
+                    
+                    
                 }
-                
-                if (codigo_disciplina < notas->codigo_disciplina) {
-                    notas = notas->esq;
-                } 
-                
-                else {
-                    notas = notas->dir;
+
+                if (codigo_disciplina < arvore_cursos->codigo_curso) {
+                    arvore_cursos = arvore_cursos->esq;
+                } else {
+                    arvore_cursos = arvore_cursos->dir;
                 }
             }
+            
 
-            printf("Nota para a disciplina %d não encontrada.\n", codigo_disciplina);
+        } else {
+            printf("Nota para a disciplina não encontrada!\n");
         }
 
-        else{
-            printf("Disciplina não encontrada no curso!\n");
-        }
-        
-    }
-
-    else{
+    } else {
         printf("Aluno não encontrado!\n");
     }
-
 }
 
+
 void mostrarNotaDeDisciplinaAutomatico(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina) {
+    int semestre;
+    float nota;
     Elemento* aluno = NULL;
     if (buscar_aluno(lista_alunos, matricula_aluno, &aluno)) {
-        No_notas* notas = aluno->arvore_notas;
-        No_disciplinas* disciplina = NULL;
+        if (buscar_nota(aluno->arvore_notas, codigo_disciplina, &nota, &semestre)) {
+        }   
 
-        if (buscar_disciplina_no_curso(arvore_cursos, codigo_disciplina, &disciplina)) {
-            while (notas != NULL) {
-                if (notas->codigo_disciplina == codigo_disciplina) {
-                    return;
-                }
-
-                if (codigo_disciplina < notas->codigo_disciplina) {
-                    notas = notas->esq;
-                } else {
-                    notas = notas->dir;
-                }
-            }
-            printf("Nota para a disciplina %d não encontrada.\n", codigo_disciplina);
-        } else {
-            printf("Disciplina não encontrada no curso!\n");
+        else {
+            printf("Nota para a disciplina não encontrada!\n");
         }
+
     } else {
         printf("Aluno não encontrado!\n");
     }
