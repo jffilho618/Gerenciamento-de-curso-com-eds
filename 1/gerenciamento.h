@@ -170,5 +170,6 @@ void mostrar_historico_aluno_periodo(Elemento* lista_alunos, No_curso*  arvore_c
 No_notas* retorna_arvore_de_notas(Elemento* lista_alunos, int matricula_aluno);
 void imprimir_disciplinas_matriculadas(No_disciplinas* raiz, int codigo_disciplina);
 void removerMatriculas(No_matriculas** arv_matriculas);
+int buscar_nota(No_notas* raiz, int codigo_disciplina,float *nota, int *semestre);
 
 #endif

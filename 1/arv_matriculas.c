@@ -58,9 +58,12 @@ int buscar_disciplina(No_disciplinas* raiz, int codigo_disciplina, No_disciplina
     *disciplina_encontrada = NULL;  // Inicialmente, nenhuma disciplina encontrada
 
     if (raiz != NULL) {
+        printf("Verificando disciplina com código: %d\n", raiz->codigo_disciplina);  // LOG
+
         if (codigo_disciplina == raiz->codigo_disciplina) {
             *disciplina_encontrada = raiz;
             resultado = 1;  // Disciplina encontrada
+            printf("Disciplina encontrada: %s\n", raiz->nome_disciplina);  // LOG
         } else if (codigo_disciplina < raiz->codigo_disciplina) {
             resultado = buscar_disciplina(raiz->esq, codigo_disciplina, disciplina_encontrada);
         } else {
@@ -68,31 +71,37 @@ int buscar_disciplina(No_disciplinas* raiz, int codigo_disciplina, No_disciplina
         }
     }
 
-    return resultado;
-}
-
-
-
-int buscar_disciplina_no_curso(No_curso* raiz_curso, int codigo_disciplina, No_disciplinas** disciplina_encontrada) {
-    int resultado = 0;  // Variável para armazenar o resultado
-    *disciplina_encontrada = NULL;  // Inicialmente, nenhuma disciplina encontrada
-
-    while (raiz_curso != NULL) {
-        if (buscar_disciplina(raiz_curso->arvore_disciplinas, codigo_disciplina, disciplina_encontrada)) {
-            resultado = 1;  // Disciplina encontrada no curso
-        }
-
-        if (codigo_disciplina < raiz_curso->codigo_curso) {
-            raiz_curso = raiz_curso->esq;
-        } 
-        
-        else {
-            raiz_curso = raiz_curso->dir;
-        }
+    if (resultado == 0) {
+        printf("Disciplina com código %d não encontrada.\n", codigo_disciplina);  // LOG
     }
 
     return resultado;
 }
+
+
+
+
+int buscar_disciplina_no_curso(No_curso* raiz_curso, int codigo_disciplina, No_disciplinas** disciplina_encontrada) {
+    *disciplina_encontrada = NULL;  // Inicialmente, nenhuma disciplina encontrada
+
+    // Percorre a árvore de cursos
+    while (raiz_curso != NULL) {
+        // Tenta buscar a disciplina na árvore de disciplinas do curso atual
+        if (buscar_disciplina(raiz_curso->arvore_disciplinas, codigo_disciplina, disciplina_encontrada)) {
+            return 1;  // Disciplina encontrada, retorna sucesso
+        }
+
+        // Se a disciplina não está nesse curso, percorre a árvore de cursos
+        if (codigo_disciplina < raiz_curso->codigo_curso) {
+            raiz_curso = raiz_curso->esq;
+        } else {
+            raiz_curso = raiz_curso->dir;
+        }
+    }
+
+    return 0;  // Disciplina não encontrada
+}
+
 
 
 
