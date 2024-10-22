@@ -1,12 +1,2000 @@
-201;Algoritmos;60;1;23249
-202;Estrutura de Dados;60;2;23249
-203;Cálculo;60;1;23249
-204;Álgebra Linear;60;1;23249
-205;Banco de Dados;60;3;23249
-206;Redes de Computadores;60;3;23249
-207;Sistemas Operacionais;60;2;23249
-208;Engenharia de Software;60;2;23249
-209;Inteligência Artificial;60;4;23249
-210;Matemática Discreta;60;1;23249
-211;Compiladores;60;4;23249
-212;Análise de Algoritmos;60;3;23249
+201;Estrutura de Dados;60;2;23249
+202;Cálculo;60;3;23249
+203;Álgebra Linear;60;4;23249
+204;Banco de Dados;60;5;23249
+205;Redes de Computadores;60;6;23249
+206;Sistemas Operacionais;60;7;23249
+207;Engenharia de Software;60;8;23249
+208;Inteligência Artificial;60;1;23249
+209;Matemática Discreta;60;2;23249
+210;Compiladores;60;3;23249
+211;Análise de Algoritmos;60;4;23249
+212;Teoria da Computação;60;5;23249
+213;Computação Gráfica;60;6;23249
+214;Sistemas Distribuídos;60;7;23249
+215;Segurança da Informação;60;8;23249
+216;Interação Humano-Computador;60;1;23249
+217;Processamento de Imagens;60;2;23249
+218;Projeto de Sistemas de Software;60;3;23249
+219;Redes Neurais;60;4;23249
+220;Aprendizado de Máquina;60;5;23249
+221;Mineração de Dados;60;6;23249
+222;Computação em Nuvem;60;7;23249
+223;Internet das Coisas;60;8;23249
+224;Robótica;60;1;23249
+225;Criptografia;60;2;23249
+226;Realidade Virtual;60;3;23249
+227;Programação Paralela;60;4;23249
+228;Programação Funcional;60;5;23249
+229;Blockchain e Aplicações;60;6;23249
+230;Arquitetura de Computadores;60;7;23249
+231;Circuitos Digitais;60;8;23249
+232;Desenvolvimento Web;60;1;23249
+233;Desenvolvimento Mobile;60;2;23249
+234;Engenharia de Requisitos;60;3;23249
+235;Gestão de Projetos;60;4;23249
+236;Modelagem de Processos de Negócio;60;5;23249
+237;Governança de TI;60;6;23249
+238;Auditoria de Sistemas;60;7;23249
+239;Gestão de Serviços de TI;60;8;23249
+240;Sistemas de Informação Gerencial;60;1;23249
+241;Modelagem de Dados;60;2;23249
+242;Tópicos Avançados em Redes;60;3;23249
+243;Tópicos Especiais em Segurança da Informação;60;4;23249
+244;Administração de Servidores;60;5;23249
+245;Virtualização de Servidores;60;6;23249
+246;Qualidade de Software;60;7;23249
+247;Métricas de Software;60;8;23249
+248;Desenvolvimento Ágil;60;1;23249
+249;Inovação Tecnológica;60;2;23249
+250;Gerenciamento de Redes;60;3;23249
+251;Segurança em Redes de Computadores;60;4;23249
+252;Data Science;60;5;23249
+253;Big Data;60;6;23249
+254;Pesquisa Operacional;60;7;23249
+255;Redes Sem Fio;60;8;23249
+256;Criptografia Aplicada;60;1;23249
+257;Engenharia de Sistemas;60;2;23249
+258;Sistemas de Controle;60;3;23249
+259;Linguagens de Programação;60;4;23249
+260;Testes de Software;60;5;23249
+261;Desenvolvimento de Jogos;60;6;23249
+262;Design de Interação;60;7;23249
+263;Análise de Sistemas;60;8;23249
+264;Modelagem UML;60;1;23249
+265;Administração de Bancos de Dados;60;2;23249
+266;Tecnologias Web;60;3;23249
+267;Gestão de Configurações;60;4;23249
+268;Tópicos Especiais em Banco de Dados;60;5;23249
+269;Inteligência Coletiva;60;6;23249
+270;Gestão da Inovação;60;7;23249
+271;Segurança de Aplicações Web;60;8;23249
+272;Visualização de Dados;60;1;23249
+273;Tecnologias Emergentes;60;2;23249
+274;Interface de Usuário;60;3;23249
+275;Algoritmos;60;4;23249
+276;Estrutura de Dados;60;5;23249
+277;Cálculo;60;6;23249
+278;Álgebra Linear;60;7;23249
+279;Banco de Dados;60;8;23249
+280;Redes de Computadores;60;1;23249
+281;Sistemas Operacionais;60;2;23249
+282;Engenharia de Software;60;3;23249
+283;Inteligência Artificial;60;4;23249
+284;Matemática Discreta;60;5;23249
+285;Compiladores;60;6;23249
+286;Análise de Algoritmos;60;7;23249
+287;Teoria da Computação;60;8;23249
+288;Computação Gráfica;60;1;23249
+289;Sistemas Distribuídos;60;2;23249
+290;Segurança da Informação;60;3;23249
+291;Interação Humano-Computador;60;4;23249
+292;Processamento de Imagens;60;5;23249
+293;Projeto de Sistemas de Software;60;6;23249
+294;Redes Neurais;60;7;23249
+295;Aprendizado de Máquina;60;8;23249
+296;Mineração de Dados;60;1;23249
+297;Computação em Nuvem;60;2;23249
+298;Internet das Coisas;60;3;23249
+299;Robótica;60;4;23249
+300;Criptografia;60;5;23249
+301;Realidade Virtual;60;6;23249
+302;Programação Paralela;60;7;23249
+303;Programação Funcional;60;8;23249
+304;Blockchain e Aplicações;60;1;23249
+305;Arquitetura de Computadores;60;2;23249
+306;Circuitos Digitais;60;3;23249
+307;Desenvolvimento Web;60;4;23249
+308;Desenvolvimento Mobile;60;5;23249
+309;Engenharia de Requisitos;60;6;23249
+310;Gestão de Projetos;60;7;23249
+311;Modelagem de Processos de Negócio;60;8;23249
+312;Governança de TI;60;1;23249
+313;Auditoria de Sistemas;60;2;23249
+314;Gestão de Serviços de TI;60;3;23249
+315;Sistemas de Informação Gerencial;60;4;23249
+316;Modelagem de Dados;60;5;23249
+317;Tópicos Avançados em Redes;60;6;23249
+318;Tópicos Especiais em Segurança da Informação;60;7;23249
+319;Administração de Servidores;60;8;23249
+320;Virtualização de Servidores;60;1;23249
+321;Qualidade de Software;60;2;23249
+322;Métricas de Software;60;3;23249
+323;Desenvolvimento Ágil;60;4;23249
+324;Inovação Tecnológica;60;5;23249
+325;Gerenciamento de Redes;60;6;23249
+326;Segurança em Redes de Computadores;60;7;23249
+327;Data Science;60;8;23249
+328;Big Data;60;1;23249
+329;Pesquisa Operacional;60;2;23249
+330;Redes Sem Fio;60;3;23249
+331;Criptografia Aplicada;60;4;23249
+332;Engenharia de Sistemas;60;5;23249
+333;Sistemas de Controle;60;6;23249
+334;Linguagens de Programação;60;7;23249
+335;Testes de Software;60;8;23249
+336;Desenvolvimento de Jogos;60;1;23249
+337;Design de Interação;60;2;23249
+338;Análise de Sistemas;60;3;23249
+339;Modelagem UML;60;4;23249
+340;Administração de Bancos de Dados;60;5;23249
+341;Tecnologias Web;60;6;23249
+342;Gestão de Configurações;60;7;23249
+343;Tópicos Especiais em Banco de Dados;60;8;23249
+344;Inteligência Coletiva;60;1;23249
+345;Gestão da Inovação;60;2;23249
+346;Segurança de Aplicações Web;60;3;23249
+347;Visualização de Dados;60;4;23249
+348;Tecnologias Emergentes;60;5;23249
+349;Interface de Usuário;60;6;23249
+350;Algoritmos;60;7;23249
+351;Estrutura de Dados;60;8;23249
+352;Cálculo;60;1;23249
+353;Álgebra Linear;60;2;23249
+354;Banco de Dados;60;3;23249
+355;Redes de Computadores;60;4;23249
+356;Sistemas Operacionais;60;5;23249
+357;Engenharia de Software;60;6;23249
+358;Inteligência Artificial;60;7;23249
+359;Matemática Discreta;60;8;23249
+360;Compiladores;60;1;23249
+361;Análise de Algoritmos;60;2;23249
+362;Teoria da Computação;60;3;23249
+363;Computação Gráfica;60;4;23249
+364;Sistemas Distribuídos;60;5;23249
+365;Segurança da Informação;60;6;23249
+366;Interação Humano-Computador;60;7;23249
+367;Processamento de Imagens;60;8;23249
+368;Projeto de Sistemas de Software;60;1;23249
+369;Redes Neurais;60;2;23249
+370;Aprendizado de Máquina;60;3;23249
+371;Mineração de Dados;60;4;23249
+372;Computação em Nuvem;60;5;23249
+373;Internet das Coisas;60;6;23249
+374;Robótica;60;7;23249
+375;Criptografia;60;8;23249
+376;Realidade Virtual;60;1;23249
+377;Programação Paralela;60;2;23249
+378;Programação Funcional;60;3;23249
+379;Blockchain e Aplicações;60;4;23249
+380;Arquitetura de Computadores;60;5;23249
+381;Circuitos Digitais;60;6;23249
+382;Desenvolvimento Web;60;7;23249
+383;Desenvolvimento Mobile;60;8;23249
+384;Engenharia de Requisitos;60;1;23249
+385;Gestão de Projetos;60;2;23249
+386;Modelagem de Processos de Negócio;60;3;23249
+387;Governança de TI;60;4;23249
+388;Auditoria de Sistemas;60;5;23249
+389;Gestão de Serviços de TI;60;6;23249
+390;Sistemas de Informação Gerencial;60;7;23249
+391;Modelagem de Dados;60;8;23249
+392;Tópicos Avançados em Redes;60;1;23249
+393;Tópicos Especiais em Segurança da Informação;60;2;23249
+394;Administração de Servidores;60;3;23249
+395;Virtualização de Servidores;60;4;23249
+396;Qualidade de Software;60;5;23249
+397;Métricas de Software;60;6;23249
+398;Desenvolvimento Ágil;60;7;23249
+399;Inovação Tecnológica;60;8;23249
+400;Gerenciamento de Redes;60;1;23249
+401;Segurança em Redes de Computadores;60;2;23249
+402;Data Science;60;3;23249
+403;Big Data;60;4;23249
+404;Pesquisa Operacional;60;5;23249
+405;Redes Sem Fio;60;6;23249
+406;Criptografia Aplicada;60;7;23249
+407;Engenharia de Sistemas;60;8;23249
+408;Sistemas de Controle;60;1;23249
+409;Linguagens de Programação;60;2;23249
+410;Testes de Software;60;3;23249
+411;Desenvolvimento de Jogos;60;4;23249
+412;Design de Interação;60;5;23249
+413;Análise de Sistemas;60;6;23249
+414;Modelagem UML;60;7;23249
+415;Administração de Bancos de Dados;60;8;23249
+416;Tecnologias Web;60;1;23249
+417;Gestão de Configurações;60;2;23249
+418;Tópicos Especiais em Banco de Dados;60;3;23249
+419;Inteligência Coletiva;60;4;23249
+420;Gestão da Inovação;60;5;23249
+421;Segurança de Aplicações Web;60;6;23249
+422;Visualização de Dados;60;7;23249
+423;Tecnologias Emergentes;60;8;23249
+424;Interface de Usuário;60;1;23249
+425;Algoritmos;60;2;23249
+426;Estrutura de Dados;60;3;23249
+427;Cálculo;60;4;23249
+428;Álgebra Linear;60;5;23249
+429;Banco de Dados;60;6;23249
+430;Redes de Computadores;60;7;23249
+431;Sistemas Operacionais;60;8;23249
+432;Engenharia de Software;60;1;23249
+433;Inteligência Artificial;60;2;23249
+434;Matemática Discreta;60;3;23249
+435;Compiladores;60;4;23249
+436;Análise de Algoritmos;60;5;23249
+437;Teoria da Computação;60;6;23249
+438;Computação Gráfica;60;7;23249
+439;Sistemas Distribuídos;60;8;23249
+440;Segurança da Informação;60;1;23249
+441;Interação Humano-Computador;60;2;23249
+442;Processamento de Imagens;60;3;23249
+443;Projeto de Sistemas de Software;60;4;23249
+444;Redes Neurais;60;5;23249
+445;Aprendizado de Máquina;60;6;23249
+446;Mineração de Dados;60;7;23249
+447;Computação em Nuvem;60;8;23249
+448;Internet das Coisas;60;1;23249
+449;Robótica;60;2;23249
+450;Criptografia;60;3;23249
+451;Realidade Virtual;60;4;23249
+452;Programação Paralela;60;5;23249
+453;Programação Funcional;60;6;23249
+454;Blockchain e Aplicações;60;7;23249
+455;Arquitetura de Computadores;60;8;23249
+456;Circuitos Digitais;60;1;23249
+457;Desenvolvimento Web;60;2;23249
+458;Desenvolvimento Mobile;60;3;23249
+459;Engenharia de Requisitos;60;4;23249
+460;Gestão de Projetos;60;5;23249
+461;Modelagem de Processos de Negócio;60;6;23249
+462;Governança de TI;60;7;23249
+463;Auditoria de Sistemas;60;8;23249
+464;Gestão de Serviços de TI;60;1;23249
+465;Sistemas de Informação Gerencial;60;2;23249
+466;Modelagem de Dados;60;3;23249
+467;Tópicos Avançados em Redes;60;4;23249
+468;Tópicos Especiais em Segurança da Informação;60;5;23249
+469;Administração de Servidores;60;6;23249
+470;Virtualização de Servidores;60;7;23249
+471;Qualidade de Software;60;8;23249
+472;Métricas de Software;60;1;23249
+473;Desenvolvimento Ágil;60;2;23249
+474;Inovação Tecnológica;60;3;23249
+475;Gerenciamento de Redes;60;4;23249
+476;Segurança em Redes de Computadores;60;5;23249
+477;Data Science;60;6;23249
+478;Big Data;60;7;23249
+479;Pesquisa Operacional;60;8;23249
+480;Redes Sem Fio;60;1;23249
+481;Criptografia Aplicada;60;2;23249
+482;Engenharia de Sistemas;60;3;23249
+483;Sistemas de Controle;60;4;23249
+484;Linguagens de Programação;60;5;23249
+485;Testes de Software;60;6;23249
+486;Desenvolvimento de Jogos;60;7;23249
+487;Design de Interação;60;8;23249
+488;Análise de Sistemas;60;1;23249
+489;Modelagem UML;60;2;23249
+490;Administração de Bancos de Dados;60;3;23249
+491;Tecnologias Web;60;4;23249
+492;Gestão de Configurações;60;5;23249
+493;Tópicos Especiais em Banco de Dados;60;6;23249
+494;Inteligência Coletiva;60;7;23249
+495;Gestão da Inovação;60;8;23249
+496;Segurança de Aplicações Web;60;1;23249
+497;Visualização de Dados;60;2;23249
+498;Tecnologias Emergentes;60;3;23249
+499;Interface de Usuário;60;4;23249
+500;Algoritmos;60;5;23249
+501;Estrutura de Dados;60;6;23249
+502;Cálculo;60;7;23249
+503;Álgebra Linear;60;8;23249
+504;Banco de Dados;60;1;23249
+505;Redes de Computadores;60;2;23249
+506;Sistemas Operacionais;60;3;23249
+507;Engenharia de Software;60;4;23249
+508;Inteligência Artificial;60;5;23249
+509;Matemática Discreta;60;6;23249
+510;Compiladores;60;7;23249
+511;Análise de Algoritmos;60;8;23249
+512;Teoria da Computação;60;1;23249
+513;Computação Gráfica;60;2;23249
+514;Sistemas Distribuídos;60;3;23249
+515;Segurança da Informação;60;4;23249
+516;Interação Humano-Computador;60;5;23249
+517;Processamento de Imagens;60;6;23249
+518;Projeto de Sistemas de Software;60;7;23249
+519;Redes Neurais;60;8;23249
+520;Aprendizado de Máquina;60;1;23249
+521;Mineração de Dados;60;2;23249
+522;Computação em Nuvem;60;3;23249
+523;Internet das Coisas;60;4;23249
+524;Robótica;60;5;23249
+525;Criptografia;60;6;23249
+526;Realidade Virtual;60;7;23249
+527;Programação Paralela;60;8;23249
+528;Programação Funcional;60;1;23249
+529;Blockchain e Aplicações;60;2;23249
+530;Arquitetura de Computadores;60;3;23249
+531;Circuitos Digitais;60;4;23249
+532;Desenvolvimento Web;60;5;23249
+533;Desenvolvimento Mobile;60;6;23249
+534;Engenharia de Requisitos;60;7;23249
+535;Gestão de Projetos;60;8;23249
+536;Modelagem de Processos de Negócio;60;1;23249
+537;Governança de TI;60;2;23249
+538;Auditoria de Sistemas;60;3;23249
+539;Gestão de Serviços de TI;60;4;23249
+540;Sistemas de Informação Gerencial;60;5;23249
+541;Modelagem de Dados;60;6;23249
+542;Tópicos Avançados em Redes;60;7;23249
+543;Tópicos Especiais em Segurança da Informação;60;8;23249
+544;Administração de Servidores;60;1;23249
+545;Virtualização de Servidores;60;2;23249
+546;Qualidade de Software;60;3;23249
+547;Métricas de Software;60;4;23249
+548;Desenvolvimento Ágil;60;5;23249
+549;Inovação Tecnológica;60;6;23249
+550;Gerenciamento de Redes;60;7;23249
+551;Segurança em Redes de Computadores;60;8;23249
+552;Data Science;60;1;23249
+553;Big Data;60;2;23249
+554;Pesquisa Operacional;60;3;23249
+555;Redes Sem Fio;60;4;23249
+556;Criptografia Aplicada;60;5;23249
+557;Engenharia de Sistemas;60;6;23249
+558;Sistemas de Controle;60;7;23249
+559;Linguagens de Programação;60;8;23249
+560;Testes de Software;60;1;23249
+561;Desenvolvimento de Jogos;60;2;23249
+562;Design de Interação;60;3;23249
+563;Análise de Sistemas;60;4;23249
+564;Modelagem UML;60;5;23249
+565;Administração de Bancos de Dados;60;6;23249
+566;Tecnologias Web;60;7;23249
+567;Gestão de Configurações;60;8;23249
+568;Tópicos Especiais em Banco de Dados;60;1;23249
+569;Inteligência Coletiva;60;2;23249
+570;Gestão da Inovação;60;3;23249
+571;Segurança de Aplicações Web;60;4;23249
+572;Visualização de Dados;60;5;23249
+573;Tecnologias Emergentes;60;6;23249
+574;Interface de Usuário;60;7;23249
+575;Algoritmos;60;8;23249
+576;Estrutura de Dados;60;1;23249
+577;Cálculo;60;2;23249
+578;Álgebra Linear;60;3;23249
+579;Banco de Dados;60;4;23249
+580;Redes de Computadores;60;5;23249
+581;Sistemas Operacionais;60;6;23249
+582;Engenharia de Software;60;7;23249
+583;Inteligência Artificial;60;8;23249
+584;Matemática Discreta;60;1;23249
+585;Compiladores;60;2;23249
+586;Análise de Algoritmos;60;3;23249
+587;Teoria da Computação;60;4;23249
+588;Computação Gráfica;60;5;23249
+589;Sistemas Distribuídos;60;6;23249
+590;Segurança da Informação;60;7;23249
+591;Interação Humano-Computador;60;8;23249
+592;Processamento de Imagens;60;1;23249
+593;Projeto de Sistemas de Software;60;2;23249
+594;Redes Neurais;60;3;23249
+595;Aprendizado de Máquina;60;4;23249
+596;Mineração de Dados;60;5;23249
+597;Computação em Nuvem;60;6;23249
+598;Internet das Coisas;60;7;23249
+599;Robótica;60;8;23249
+600;Criptografia;60;1;23249
+601;Realidade Virtual;60;2;23249
+602;Programação Paralela;60;3;23249
+603;Programação Funcional;60;4;23249
+604;Blockchain e Aplicações;60;5;23249
+605;Arquitetura de Computadores;60;6;23249
+606;Circuitos Digitais;60;7;23249
+607;Desenvolvimento Web;60;8;23249
+608;Desenvolvimento Mobile;60;1;23249
+609;Engenharia de Requisitos;60;2;23249
+610;Gestão de Projetos;60;3;23249
+611;Modelagem de Processos de Negócio;60;4;23249
+612;Governança de TI;60;5;23249
+613;Auditoria de Sistemas;60;6;23249
+614;Gestão de Serviços de TI;60;7;23249
+615;Sistemas de Informação Gerencial;60;8;23249
+616;Modelagem de Dados;60;1;23249
+617;Tópicos Avançados em Redes;60;2;23249
+618;Tópicos Especiais em Segurança da Informação;60;3;23249
+619;Administração de Servidores;60;4;23249
+620;Virtualização de Servidores;60;5;23249
+621;Qualidade de Software;60;6;23249
+622;Métricas de Software;60;7;23249
+623;Desenvolvimento Ágil;60;8;23249
+624;Inovação Tecnológica;60;1;23249
+625;Gerenciamento de Redes;60;2;23249
+626;Segurança em Redes de Computadores;60;3;23249
+627;Data Science;60;4;23249
+628;Big Data;60;5;23249
+629;Pesquisa Operacional;60;6;23249
+630;Redes Sem Fio;60;7;23249
+631;Criptografia Aplicada;60;8;23249
+632;Engenharia de Sistemas;60;1;23249
+633;Sistemas de Controle;60;2;23249
+634;Linguagens de Programação;60;3;23249
+635;Testes de Software;60;4;23249
+636;Desenvolvimento de Jogos;60;5;23249
+637;Design de Interação;60;6;23249
+638;Análise de Sistemas;60;7;23249
+639;Modelagem UML;60;8;23249
+640;Administração de Bancos de Dados;60;1;23249
+641;Tecnologias Web;60;2;23249
+642;Gestão de Configurações;60;3;23249
+643;Tópicos Especiais em Banco de Dados;60;4;23249
+644;Inteligência Coletiva;60;5;23249
+645;Gestão da Inovação;60;6;23249
+646;Segurança de Aplicações Web;60;7;23249
+647;Visualização de Dados;60;8;23249
+648;Tecnologias Emergentes;60;1;23249
+649;Interface de Usuário;60;2;23249
+650;Algoritmos;60;3;23249
+651;Estrutura de Dados;60;4;23249
+652;Cálculo;60;5;23249
+653;Álgebra Linear;60;6;23249
+654;Banco de Dados;60;7;23249
+655;Redes de Computadores;60;8;23249
+656;Sistemas Operacionais;60;1;23249
+657;Engenharia de Software;60;2;23249
+658;Inteligência Artificial;60;3;23249
+659;Matemática Discreta;60;4;23249
+660;Compiladores;60;5;23249
+661;Análise de Algoritmos;60;6;23249
+662;Teoria da Computação;60;7;23249
+663;Computação Gráfica;60;8;23249
+664;Sistemas Distribuídos;60;1;23249
+665;Segurança da Informação;60;2;23249
+666;Interação Humano-Computador;60;3;23249
+667;Processamento de Imagens;60;4;23249
+668;Projeto de Sistemas de Software;60;5;23249
+669;Redes Neurais;60;6;23249
+670;Aprendizado de Máquina;60;7;23249
+671;Mineração de Dados;60;8;23249
+672;Computação em Nuvem;60;1;23249
+673;Internet das Coisas;60;2;23249
+674;Robótica;60;3;23249
+675;Criptografia;60;4;23249
+676;Realidade Virtual;60;5;23249
+677;Programação Paralela;60;6;23249
+678;Programação Funcional;60;7;23249
+679;Blockchain e Aplicações;60;8;23249
+680;Arquitetura de Computadores;60;1;23249
+681;Circuitos Digitais;60;2;23249
+682;Desenvolvimento Web;60;3;23249
+683;Desenvolvimento Mobile;60;4;23249
+684;Engenharia de Requisitos;60;5;23249
+685;Gestão de Projetos;60;6;23249
+686;Modelagem de Processos de Negócio;60;7;23249
+687;Governança de TI;60;8;23249
+688;Auditoria de Sistemas;60;1;23249
+689;Gestão de Serviços de TI;60;2;23249
+690;Sistemas de Informação Gerencial;60;3;23249
+691;Modelagem de Dados;60;4;23249
+692;Tópicos Avançados em Redes;60;5;23249
+693;Tópicos Especiais em Segurança da Informação;60;6;23249
+694;Administração de Servidores;60;7;23249
+695;Virtualização de Servidores;60;8;23249
+696;Qualidade de Software;60;1;23249
+697;Métricas de Software;60;2;23249
+698;Desenvolvimento Ágil;60;3;23249
+699;Inovação Tecnológica;60;4;23249
+700;Gerenciamento de Redes;60;5;23249
+701;Segurança em Redes de Computadores;60;6;23249
+702;Data Science;60;7;23249
+703;Big Data;60;8;23249
+704;Pesquisa Operacional;60;1;23249
+705;Redes Sem Fio;60;2;23249
+706;Criptografia Aplicada;60;3;23249
+707;Engenharia de Sistemas;60;4;23249
+708;Sistemas de Controle;60;5;23249
+709;Linguagens de Programação;60;6;23249
+710;Testes de Software;60;7;23249
+711;Desenvolvimento de Jogos;60;8;23249
+712;Design de Interação;60;1;23249
+713;Análise de Sistemas;60;2;23249
+714;Modelagem UML;60;3;23249
+715;Administração de Bancos de Dados;60;4;23249
+716;Tecnologias Web;60;5;23249
+717;Gestão de Configurações;60;6;23249
+718;Tópicos Especiais em Banco de Dados;60;7;23249
+719;Inteligência Coletiva;60;8;23249
+720;Gestão da Inovação;60;1;23249
+721;Segurança de Aplicações Web;60;2;23249
+722;Visualização de Dados;60;3;23249
+723;Tecnologias Emergentes;60;4;23249
+724;Interface de Usuário;60;5;23249
+725;Algoritmos;60;6;23249
+726;Estrutura de Dados;60;7;23249
+727;Cálculo;60;8;23249
+728;Álgebra Linear;60;1;23249
+729;Banco de Dados;60;2;23249
+730;Redes de Computadores;60;3;23249
+731;Sistemas Operacionais;60;4;23249
+732;Engenharia de Software;60;5;23249
+733;Inteligência Artificial;60;6;23249
+734;Matemática Discreta;60;7;23249
+735;Compiladores;60;8;23249
+736;Análise de Algoritmos;60;1;23249
+737;Teoria da Computação;60;2;23249
+738;Computação Gráfica;60;3;23249
+739;Sistemas Distribuídos;60;4;23249
+740;Segurança da Informação;60;5;23249
+741;Interação Humano-Computador;60;6;23249
+742;Processamento de Imagens;60;7;23249
+743;Projeto de Sistemas de Software;60;8;23249
+744;Redes Neurais;60;1;23249
+745;Aprendizado de Máquina;60;2;23249
+746;Mineração de Dados;60;3;23249
+747;Computação em Nuvem;60;4;23249
+748;Internet das Coisas;60;5;23249
+749;Robótica;60;6;23249
+750;Criptografia;60;7;23249
+751;Realidade Virtual;60;8;23249
+752;Programação Paralela;60;1;23249
+753;Programação Funcional;60;2;23249
+754;Blockchain e Aplicações;60;3;23249
+755;Arquitetura de Computadores;60;4;23249
+756;Circuitos Digitais;60;5;23249
+757;Desenvolvimento Web;60;6;23249
+758;Desenvolvimento Mobile;60;7;23249
+759;Engenharia de Requisitos;60;8;23249
+760;Gestão de Projetos;60;1;23249
+761;Modelagem de Processos de Negócio;60;2;23249
+762;Governança de TI;60;3;23249
+763;Auditoria de Sistemas;60;4;23249
+764;Gestão de Serviços de TI;60;5;23249
+765;Sistemas de Informação Gerencial;60;6;23249
+766;Modelagem de Dados;60;7;23249
+767;Tópicos Avançados em Redes;60;8;23249
+768;Tópicos Especiais em Segurança da Informação;60;1;23249
+769;Administração de Servidores;60;2;23249
+770;Virtualização de Servidores;60;3;23249
+771;Qualidade de Software;60;4;23249
+772;Métricas de Software;60;5;23249
+773;Desenvolvimento Ágil;60;6;23249
+774;Inovação Tecnológica;60;7;23249
+775;Gerenciamento de Redes;60;8;23249
+776;Segurança em Redes de Computadores;60;1;23249
+777;Data Science;60;2;23249
+778;Big Data;60;3;23249
+779;Pesquisa Operacional;60;4;23249
+780;Redes Sem Fio;60;5;23249
+781;Criptografia Aplicada;60;6;23249
+782;Engenharia de Sistemas;60;7;23249
+783;Sistemas de Controle;60;8;23249
+784;Linguagens de Programação;60;1;23249
+785;Testes de Software;60;2;23249
+786;Desenvolvimento de Jogos;60;3;23249
+787;Design de Interação;60;4;23249
+788;Análise de Sistemas;60;5;23249
+789;Modelagem UML;60;6;23249
+790;Administração de Bancos de Dados;60;7;23249
+791;Tecnologias Web;60;8;23249
+792;Gestão de Configurações;60;1;23249
+793;Tópicos Especiais em Banco de Dados;60;2;23249
+794;Inteligência Coletiva;60;3;23249
+795;Gestão da Inovação;60;4;23249
+796;Segurança de Aplicações Web;60;5;23249
+797;Visualização de Dados;60;6;23249
+798;Tecnologias Emergentes;60;7;23249
+799;Interface de Usuário;60;8;23249
+800;Algoritmos;60;1;23249
+801;Estrutura de Dados;60;2;23249
+802;Cálculo;60;3;23249
+803;Álgebra Linear;60;4;23249
+804;Banco de Dados;60;5;23249
+805;Redes de Computadores;60;6;23249
+806;Sistemas Operacionais;60;7;23249
+807;Engenharia de Software;60;8;23249
+808;Inteligência Artificial;60;1;23249
+809;Matemática Discreta;60;2;23249
+810;Compiladores;60;3;23249
+811;Análise de Algoritmos;60;4;23249
+812;Teoria da Computação;60;5;23249
+813;Computação Gráfica;60;6;23249
+814;Sistemas Distribuídos;60;7;23249
+815;Segurança da Informação;60;8;23249
+816;Interação Humano-Computador;60;1;23249
+817;Processamento de Imagens;60;2;23249
+818;Projeto de Sistemas de Software;60;3;23249
+819;Redes Neurais;60;4;23249
+820;Aprendizado de Máquina;60;5;23249
+821;Mineração de Dados;60;6;23249
+822;Computação em Nuvem;60;7;23249
+823;Internet das Coisas;60;8;23249
+824;Robótica;60;1;23249
+825;Criptografia;60;2;23249
+826;Realidade Virtual;60;3;23249
+827;Programação Paralela;60;4;23249
+828;Programação Funcional;60;5;23249
+829;Blockchain e Aplicações;60;6;23249
+830;Arquitetura de Computadores;60;7;23249
+831;Circuitos Digitais;60;8;23249
+832;Desenvolvimento Web;60;1;23249
+833;Desenvolvimento Mobile;60;2;23249
+834;Engenharia de Requisitos;60;3;23249
+835;Gestão de Projetos;60;4;23249
+836;Modelagem de Processos de Negócio;60;5;23249
+837;Governança de TI;60;6;23249
+838;Auditoria de Sistemas;60;7;23249
+839;Gestão de Serviços de TI;60;8;23249
+840;Sistemas de Informação Gerencial;60;1;23249
+841;Modelagem de Dados;60;2;23249
+842;Tópicos Avançados em Redes;60;3;23249
+843;Tópicos Especiais em Segurança da Informação;60;4;23249
+844;Administração de Servidores;60;5;23249
+845;Virtualização de Servidores;60;6;23249
+846;Qualidade de Software;60;7;23249
+847;Métricas de Software;60;8;23249
+848;Desenvolvimento Ágil;60;1;23249
+849;Inovação Tecnológica;60;2;23249
+850;Gerenciamento de Redes;60;3;23249
+851;Segurança em Redes de Computadores;60;4;23249
+852;Data Science;60;5;23249
+853;Big Data;60;6;23249
+854;Pesquisa Operacional;60;7;23249
+855;Redes Sem Fio;60;8;23249
+856;Criptografia Aplicada;60;1;23249
+857;Engenharia de Sistemas;60;2;23249
+858;Sistemas de Controle;60;3;23249
+859;Linguagens de Programação;60;4;23249
+860;Testes de Software;60;5;23249
+861;Desenvolvimento de Jogos;60;6;23249
+862;Design de Interação;60;7;23249
+863;Análise de Sistemas;60;8;23249
+864;Modelagem UML;60;1;23249
+865;Administração de Bancos de Dados;60;2;23249
+866;Tecnologias Web;60;3;23249
+867;Gestão de Configurações;60;4;23249
+868;Tópicos Especiais em Banco de Dados;60;5;23249
+869;Inteligência Coletiva;60;6;23249
+870;Gestão da Inovação;60;7;23249
+871;Segurança de Aplicações Web;60;8;23249
+872;Visualização de Dados;60;1;23249
+873;Tecnologias Emergentes;60;2;23249
+874;Interface de Usuário;60;3;23249
+875;Algoritmos;60;4;23249
+876;Estrutura de Dados;60;5;23249
+877;Cálculo;60;6;23249
+878;Álgebra Linear;60;7;23249
+879;Banco de Dados;60;8;23249
+880;Redes de Computadores;60;1;23249
+881;Sistemas Operacionais;60;2;23249
+882;Engenharia de Software;60;3;23249
+883;Inteligência Artificial;60;4;23249
+884;Matemática Discreta;60;5;23249
+885;Compiladores;60;6;23249
+886;Análise de Algoritmos;60;7;23249
+887;Teoria da Computação;60;8;23249
+888;Computação Gráfica;60;1;23249
+889;Sistemas Distribuídos;60;2;23249
+890;Segurança da Informação;60;3;23249
+891;Interação Humano-Computador;60;4;23249
+892;Processamento de Imagens;60;5;23249
+893;Projeto de Sistemas de Software;60;6;23249
+894;Redes Neurais;60;7;23249
+895;Aprendizado de Máquina;60;8;23249
+896;Mineração de Dados;60;1;23249
+897;Computação em Nuvem;60;2;23249
+898;Internet das Coisas;60;3;23249
+899;Robótica;60;4;23249
+900;Criptografia;60;5;23249
+901;Realidade Virtual;60;6;23249
+902;Programação Paralela;60;7;23249
+903;Programação Funcional;60;8;23249
+904;Blockchain e Aplicações;60;1;23249
+905;Arquitetura de Computadores;60;2;23249
+906;Circuitos Digitais;60;3;23249
+907;Desenvolvimento Web;60;4;23249
+908;Desenvolvimento Mobile;60;5;23249
+909;Engenharia de Requisitos;60;6;23249
+910;Gestão de Projetos;60;7;23249
+911;Modelagem de Processos de Negócio;60;8;23249
+912;Governança de TI;60;1;23249
+913;Auditoria de Sistemas;60;2;23249
+914;Gestão de Serviços de TI;60;3;23249
+915;Sistemas de Informação Gerencial;60;4;23249
+916;Modelagem de Dados;60;5;23249
+917;Tópicos Avançados em Redes;60;6;23249
+918;Tópicos Especiais em Segurança da Informação;60;7;23249
+919;Administração de Servidores;60;8;23249
+920;Virtualização de Servidores;60;1;23249
+921;Qualidade de Software;60;2;23249
+922;Métricas de Software;60;3;23249
+923;Desenvolvimento Ágil;60;4;23249
+924;Inovação Tecnológica;60;5;23249
+925;Gerenciamento de Redes;60;6;23249
+926;Segurança em Redes de Computadores;60;7;23249
+927;Data Science;60;8;23249
+928;Big Data;60;1;23249
+929;Pesquisa Operacional;60;2;23249
+930;Redes Sem Fio;60;3;23249
+931;Criptografia Aplicada;60;4;23249
+932;Engenharia de Sistemas;60;5;23249
+933;Sistemas de Controle;60;6;23249
+934;Linguagens de Programação;60;7;23249
+935;Testes de Software;60;8;23249
+936;Desenvolvimento de Jogos;60;1;23249
+937;Design de Interação;60;2;23249
+938;Análise de Sistemas;60;3;23249
+939;Modelagem UML;60;4;23249
+940;Administração de Bancos de Dados;60;5;23249
+941;Tecnologias Web;60;6;23249
+942;Gestão de Configurações;60;7;23249
+943;Tópicos Especiais em Banco de Dados;60;8;23249
+944;Inteligência Coletiva;60;1;23249
+945;Gestão da Inovação;60;2;23249
+946;Segurança de Aplicações Web;60;3;23249
+947;Visualização de Dados;60;4;23249
+948;Tecnologias Emergentes;60;5;23249
+949;Interface de Usuário;60;6;23249
+950;Algoritmos;60;7;23249
+951;Estrutura de Dados;60;8;23249
+952;Cálculo;60;1;23249
+953;Álgebra Linear;60;2;23249
+954;Banco de Dados;60;3;23249
+955;Redes de Computadores;60;4;23249
+956;Sistemas Operacionais;60;5;23249
+957;Engenharia de Software;60;6;23249
+958;Inteligência Artificial;60;7;23249
+959;Matemática Discreta;60;8;23249
+960;Compiladores;60;1;23249
+961;Análise de Algoritmos;60;2;23249
+962;Teoria da Computação;60;3;23249
+963;Computação Gráfica;60;4;23249
+964;Sistemas Distribuídos;60;5;23249
+965;Segurança da Informação;60;6;23249
+966;Interação Humano-Computador;60;7;23249
+967;Processamento de Imagens;60;8;23249
+968;Projeto de Sistemas de Software;60;1;23249
+969;Redes Neurais;60;2;23249
+970;Aprendizado de Máquina;60;3;23249
+971;Mineração de Dados;60;4;23249
+972;Computação em Nuvem;60;5;23249
+973;Internet das Coisas;60;6;23249
+974;Robótica;60;7;23249
+975;Criptografia;60;8;23249
+976;Realidade Virtual;60;1;23249
+977;Programação Paralela;60;2;23249
+978;Programação Funcional;60;3;23249
+979;Blockchain e Aplicações;60;4;23249
+980;Arquitetura de Computadores;60;5;23249
+981;Circuitos Digitais;60;6;23249
+982;Desenvolvimento Web;60;7;23249
+983;Desenvolvimento Mobile;60;8;23249
+984;Engenharia de Requisitos;60;1;23249
+985;Gestão de Projetos;60;2;23249
+986;Modelagem de Processos de Negócio;60;3;23249
+987;Governança de TI;60;4;23249
+988;Auditoria de Sistemas;60;5;23249
+989;Gestão de Serviços de TI;60;6;23249
+990;Sistemas de Informação Gerencial;60;7;23249
+991;Modelagem de Dados;60;8;23249
+992;Tópicos Avançados em Redes;60;1;23249
+993;Tópicos Especiais em Segurança da Informação;60;2;23249
+994;Administração de Servidores;60;3;23249
+995;Virtualização de Servidores;60;4;23249
+996;Qualidade de Software;60;5;23249
+997;Métricas de Software;60;6;23249
+998;Desenvolvimento Ágil;60;7;23249
+999;Inovação Tecnológica;60;8;23249
+1000;Gerenciamento de Redes;60;1;23249
+1001;Segurança em Redes de Computadores;60;2;23249
+1002;Data Science;60;3;23249
+1003;Big Data;60;4;23249
+1004;Pesquisa Operacional;60;5;23249
+1005;Redes Sem Fio;60;6;23249
+1006;Criptografia Aplicada;60;7;23249
+1007;Engenharia de Sistemas;60;8;23249
+1008;Sistemas de Controle;60;1;23249
+1009;Linguagens de Programação;60;2;23249
+1010;Testes de Software;60;3;23249
+1011;Desenvolvimento de Jogos;60;4;23249
+1012;Design de Interação;60;5;23249
+1013;Análise de Sistemas;60;6;23249
+1014;Modelagem UML;60;7;23249
+1015;Administração de Bancos de Dados;60;8;23249
+1016;Tecnologias Web;60;1;23249
+1017;Gestão de Configurações;60;2;23249
+1018;Tópicos Especiais em Banco de Dados;60;3;23249
+1019;Inteligência Coletiva;60;4;23249
+1020;Gestão da Inovação;60;5;23249
+1021;Segurança de Aplicações Web;60;6;23249
+1022;Visualização de Dados;60;7;23249
+1023;Tecnologias Emergentes;60;8;23249
+1024;Interface de Usuário;60;1;23249
+1025;Algoritmos;60;2;23249
+1026;Estrutura de Dados;60;3;23249
+1027;Cálculo;60;4;23249
+1028;Álgebra Linear;60;5;23249
+1029;Banco de Dados;60;6;23249
+1030;Redes de Computadores;60;7;23249
+1031;Sistemas Operacionais;60;8;23249
+1032;Engenharia de Software;60;1;23249
+1033;Inteligência Artificial;60;2;23249
+1034;Matemática Discreta;60;3;23249
+1035;Compiladores;60;4;23249
+1036;Análise de Algoritmos;60;5;23249
+1037;Teoria da Computação;60;6;23249
+1038;Computação Gráfica;60;7;23249
+1039;Sistemas Distribuídos;60;8;23249
+1040;Segurança da Informação;60;1;23249
+1041;Interação Humano-Computador;60;2;23249
+1042;Processamento de Imagens;60;3;23249
+1043;Projeto de Sistemas de Software;60;4;23249
+1044;Redes Neurais;60;5;23249
+1045;Aprendizado de Máquina;60;6;23249
+1046;Mineração de Dados;60;7;23249
+1047;Computação em Nuvem;60;8;23249
+1048;Internet das Coisas;60;1;23249
+1049;Robótica;60;2;23249
+1050;Criptografia;60;3;23249
+1051;Realidade Virtual;60;4;23249
+1052;Programação Paralela;60;5;23249
+1053;Programação Funcional;60;6;23249
+1054;Blockchain e Aplicações;60;7;23249
+1055;Arquitetura de Computadores;60;8;23249
+1056;Circuitos Digitais;60;1;23249
+1057;Desenvolvimento Web;60;2;23249
+1058;Desenvolvimento Mobile;60;3;23249
+1059;Engenharia de Requisitos;60;4;23249
+1060;Gestão de Projetos;60;5;23249
+1061;Modelagem de Processos de Negócio;60;6;23249
+1062;Governança de TI;60;7;23249
+1063;Auditoria de Sistemas;60;8;23249
+1064;Gestão de Serviços de TI;60;1;23249
+1065;Sistemas de Informação Gerencial;60;2;23249
+1066;Modelagem de Dados;60;3;23249
+1067;Tópicos Avançados em Redes;60;4;23249
+1068;Tópicos Especiais em Segurança da Informação;60;5;23249
+1069;Administração de Servidores;60;6;23249
+1070;Virtualização de Servidores;60;7;23249
+1071;Qualidade de Software;60;8;23249
+1072;Métricas de Software;60;1;23249
+1073;Desenvolvimento Ágil;60;2;23249
+1074;Inovação Tecnológica;60;3;23249
+1075;Gerenciamento de Redes;60;4;23249
+1076;Segurança em Redes de Computadores;60;5;23249
+1077;Data Science;60;6;23249
+1078;Big Data;60;7;23249
+1079;Pesquisa Operacional;60;8;23249
+1080;Redes Sem Fio;60;1;23249
+1081;Criptografia Aplicada;60;2;23249
+1082;Engenharia de Sistemas;60;3;23249
+1083;Sistemas de Controle;60;4;23249
+1084;Linguagens de Programação;60;5;23249
+1085;Testes de Software;60;6;23249
+1086;Desenvolvimento de Jogos;60;7;23249
+1087;Design de Interação;60;8;23249
+1088;Análise de Sistemas;60;1;23249
+1089;Modelagem UML;60;2;23249
+1090;Administração de Bancos de Dados;60;3;23249
+1091;Tecnologias Web;60;4;23249
+1092;Gestão de Configurações;60;5;23249
+1093;Tópicos Especiais em Banco de Dados;60;6;23249
+1094;Inteligência Coletiva;60;7;23249
+1095;Gestão da Inovação;60;8;23249
+1096;Segurança de Aplicações Web;60;1;23249
+1097;Visualização de Dados;60;2;23249
+1098;Tecnologias Emergentes;60;3;23249
+1099;Interface de Usuário;60;4;23249
+1100;Algoritmos;60;5;23249
+1101;Estrutura de Dados;60;6;23249
+1102;Cálculo;60;7;23249
+1103;Álgebra Linear;60;8;23249
+1104;Banco de Dados;60;1;23249
+1105;Redes de Computadores;60;2;23249
+1106;Sistemas Operacionais;60;3;23249
+1107;Engenharia de Software;60;4;23249
+1108;Inteligência Artificial;60;5;23249
+1109;Matemática Discreta;60;6;23249
+1110;Compiladores;60;7;23249
+1111;Análise de Algoritmos;60;8;23249
+1112;Teoria da Computação;60;1;23249
+1113;Computação Gráfica;60;2;23249
+1114;Sistemas Distribuídos;60;3;23249
+1115;Segurança da Informação;60;4;23249
+1116;Interação Humano-Computador;60;5;23249
+1117;Processamento de Imagens;60;6;23249
+1118;Projeto de Sistemas de Software;60;7;23249
+1119;Redes Neurais;60;8;23249
+1120;Aprendizado de Máquina;60;1;23249
+1121;Mineração de Dados;60;2;23249
+1122;Computação em Nuvem;60;3;23249
+1123;Internet das Coisas;60;4;23249
+1124;Robótica;60;5;23249
+1125;Criptografia;60;6;23249
+1126;Realidade Virtual;60;7;23249
+1127;Programação Paralela;60;8;23249
+1128;Programação Funcional;60;1;23249
+1129;Blockchain e Aplicações;60;2;23249
+1130;Arquitetura de Computadores;60;3;23249
+1131;Circuitos Digitais;60;4;23249
+1132;Desenvolvimento Web;60;5;23249
+1133;Desenvolvimento Mobile;60;6;23249
+1134;Engenharia de Requisitos;60;7;23249
+1135;Gestão de Projetos;60;8;23249
+1136;Modelagem de Processos de Negócio;60;1;23249
+1137;Governança de TI;60;2;23249
+1138;Auditoria de Sistemas;60;3;23249
+1139;Gestão de Serviços de TI;60;4;23249
+1140;Sistemas de Informação Gerencial;60;5;23249
+1141;Modelagem de Dados;60;6;23249
+1142;Tópicos Avançados em Redes;60;7;23249
+1143;Tópicos Especiais em Segurança da Informação;60;8;23249
+1144;Administração de Servidores;60;1;23249
+1145;Virtualização de Servidores;60;2;23249
+1146;Qualidade de Software;60;3;23249
+1147;Métricas de Software;60;4;23249
+1148;Desenvolvimento Ágil;60;5;23249
+1149;Inovação Tecnológica;60;6;23249
+1150;Gerenciamento de Redes;60;7;23249
+1151;Segurança em Redes de Computadores;60;8;23249
+1152;Data Science;60;1;23249
+1153;Big Data;60;2;23249
+1154;Pesquisa Operacional;60;3;23249
+1155;Redes Sem Fio;60;4;23249
+1156;Criptografia Aplicada;60;5;23249
+1157;Engenharia de Sistemas;60;6;23249
+1158;Sistemas de Controle;60;7;23249
+1159;Linguagens de Programação;60;8;23249
+1160;Testes de Software;60;1;23249
+1161;Desenvolvimento de Jogos;60;2;23249
+1162;Design de Interação;60;3;23249
+1163;Análise de Sistemas;60;4;23249
+1164;Modelagem UML;60;5;23249
+1165;Administração de Bancos de Dados;60;6;23249
+1166;Tecnologias Web;60;7;23249
+1167;Gestão de Configurações;60;8;23249
+1168;Tópicos Especiais em Banco de Dados;60;1;23249
+1169;Inteligência Coletiva;60;2;23249
+1170;Gestão da Inovação;60;3;23249
+1171;Segurança de Aplicações Web;60;4;23249
+1172;Visualização de Dados;60;5;23249
+1173;Tecnologias Emergentes;60;6;23249
+1174;Interface de Usuário;60;7;23249
+1175;Algoritmos;60;8;23249
+1176;Estrutura de Dados;60;1;23249
+1177;Cálculo;60;2;23249
+1178;Álgebra Linear;60;3;23249
+1179;Banco de Dados;60;4;23249
+1180;Redes de Computadores;60;5;23249
+1181;Sistemas Operacionais;60;6;23249
+1182;Engenharia de Software;60;7;23249
+1183;Inteligência Artificial;60;8;23249
+1184;Matemática Discreta;60;1;23249
+1185;Compiladores;60;2;23249
+1186;Análise de Algoritmos;60;3;23249
+1187;Teoria da Computação;60;4;23249
+1188;Computação Gráfica;60;5;23249
+1189;Sistemas Distribuídos;60;6;23249
+1190;Segurança da Informação;60;7;23249
+1191;Interação Humano-Computador;60;8;23249
+1192;Processamento de Imagens;60;1;23249
+1193;Projeto de Sistemas de Software;60;2;23249
+1194;Redes Neurais;60;3;23249
+1195;Aprendizado de Máquina;60;4;23249
+1196;Mineração de Dados;60;5;23249
+1197;Computação em Nuvem;60;6;23249
+1198;Internet das Coisas;60;7;23249
+1199;Robótica;60;8;23249
+1200;Criptografia;60;1;23249
+1201;Realidade Virtual;60;2;23249
+1202;Programação Paralela;60;3;23249
+1203;Programação Funcional;60;4;23249
+1204;Blockchain e Aplicações;60;5;23249
+1205;Arquitetura de Computadores;60;6;23249
+1206;Circuitos Digitais;60;7;23249
+1207;Desenvolvimento Web;60;8;23249
+1208;Desenvolvimento Mobile;60;1;23249
+1209;Engenharia de Requisitos;60;2;23249
+1210;Gestão de Projetos;60;3;23249
+1211;Modelagem de Processos de Negócio;60;4;23249
+1212;Governança de TI;60;5;23249
+1213;Auditoria de Sistemas;60;6;23249
+1214;Gestão de Serviços de TI;60;7;23249
+1215;Sistemas de Informação Gerencial;60;8;23249
+1216;Modelagem de Dados;60;1;23249
+1217;Tópicos Avançados em Redes;60;2;23249
+1218;Tópicos Especiais em Segurança da Informação;60;3;23249
+1219;Administração de Servidores;60;4;23249
+1220;Virtualização de Servidores;60;5;23249
+1221;Qualidade de Software;60;6;23249
+1222;Métricas de Software;60;7;23249
+1223;Desenvolvimento Ágil;60;8;23249
+1224;Inovação Tecnológica;60;1;23249
+1225;Gerenciamento de Redes;60;2;23249
+1226;Segurança em Redes de Computadores;60;3;23249
+1227;Data Science;60;4;23249
+1228;Big Data;60;5;23249
+1229;Pesquisa Operacional;60;6;23249
+1230;Redes Sem Fio;60;7;23249
+1231;Criptografia Aplicada;60;8;23249
+1232;Engenharia de Sistemas;60;1;23249
+1233;Sistemas de Controle;60;2;23249
+1234;Linguagens de Programação;60;3;23249
+1235;Testes de Software;60;4;23249
+1236;Desenvolvimento de Jogos;60;5;23249
+1237;Design de Interação;60;6;23249
+1238;Análise de Sistemas;60;7;23249
+1239;Modelagem UML;60;8;23249
+1240;Administração de Bancos de Dados;60;1;23249
+1241;Tecnologias Web;60;2;23249
+1242;Gestão de Configurações;60;3;23249
+1243;Tópicos Especiais em Banco de Dados;60;4;23249
+1244;Inteligência Coletiva;60;5;23249
+1245;Gestão da Inovação;60;6;23249
+1246;Segurança de Aplicações Web;60;7;23249
+1247;Visualização de Dados;60;8;23249
+1248;Tecnologias Emergentes;60;1;23249
+1249;Interface de Usuário;60;2;23249
+1250;Algoritmos;60;3;23249
+1251;Estrutura de Dados;60;4;23249
+1252;Cálculo;60;5;23249
+1253;Álgebra Linear;60;6;23249
+1254;Banco de Dados;60;7;23249
+1255;Redes de Computadores;60;8;23249
+1256;Sistemas Operacionais;60;1;23249
+1257;Engenharia de Software;60;2;23249
+1258;Inteligência Artificial;60;3;23249
+1259;Matemática Discreta;60;4;23249
+1260;Compiladores;60;5;23249
+1261;Análise de Algoritmos;60;6;23249
+1262;Teoria da Computação;60;7;23249
+1263;Computação Gráfica;60;8;23249
+1264;Sistemas Distribuídos;60;1;23249
+1265;Segurança da Informação;60;2;23249
+1266;Interação Humano-Computador;60;3;23249
+1267;Processamento de Imagens;60;4;23249
+1268;Projeto de Sistemas de Software;60;5;23249
+1269;Redes Neurais;60;6;23249
+1270;Aprendizado de Máquina;60;7;23249
+1271;Mineração de Dados;60;8;23249
+1272;Computação em Nuvem;60;1;23249
+1273;Internet das Coisas;60;2;23249
+1274;Robótica;60;3;23249
+1275;Criptografia;60;4;23249
+1276;Realidade Virtual;60;5;23249
+1277;Programação Paralela;60;6;23249
+1278;Programação Funcional;60;7;23249
+1279;Blockchain e Aplicações;60;8;23249
+1280;Arquitetura de Computadores;60;1;23249
+1281;Circuitos Digitais;60;2;23249
+1282;Desenvolvimento Web;60;3;23249
+1283;Desenvolvimento Mobile;60;4;23249
+1284;Engenharia de Requisitos;60;5;23249
+1285;Gestão de Projetos;60;6;23249
+1286;Modelagem de Processos de Negócio;60;7;23249
+1287;Governança de TI;60;8;23249
+1288;Auditoria de Sistemas;60;1;23249
+1289;Gestão de Serviços de TI;60;2;23249
+1290;Sistemas de Informação Gerencial;60;3;23249
+1291;Modelagem de Dados;60;4;23249
+1292;Tópicos Avançados em Redes;60;5;23249
+1293;Tópicos Especiais em Segurança da Informação;60;6;23249
+1294;Administração de Servidores;60;7;23249
+1295;Virtualização de Servidores;60;8;23249
+1296;Qualidade de Software;60;1;23249
+1297;Métricas de Software;60;2;23249
+1298;Desenvolvimento Ágil;60;3;23249
+1299;Inovação Tecnológica;60;4;23249
+1300;Gerenciamento de Redes;60;5;23249
+1301;Segurança em Redes de Computadores;60;6;23249
+1302;Data Science;60;7;23249
+1303;Big Data;60;8;23249
+1304;Pesquisa Operacional;60;1;23249
+1305;Redes Sem Fio;60;2;23249
+1306;Criptografia Aplicada;60;3;23249
+1307;Engenharia de Sistemas;60;4;23249
+1308;Sistemas de Controle;60;5;23249
+1309;Linguagens de Programação;60;6;23249
+1310;Testes de Software;60;7;23249
+1311;Desenvolvimento de Jogos;60;8;23249
+1312;Design de Interação;60;1;23249
+1313;Análise de Sistemas;60;2;23249
+1314;Modelagem UML;60;3;23249
+1315;Administração de Bancos de Dados;60;4;23249
+1316;Tecnologias Web;60;5;23249
+1317;Gestão de Configurações;60;6;23249
+1318;Tópicos Especiais em Banco de Dados;60;7;23249
+1319;Inteligência Coletiva;60;8;23249
+1320;Gestão da Inovação;60;1;23249
+1321;Segurança de Aplicações Web;60;2;23249
+1322;Visualização de Dados;60;3;23249
+1323;Tecnologias Emergentes;60;4;23249
+1324;Interface de Usuário;60;5;23249
+1325;Algoritmos;60;6;23249
+1326;Estrutura de Dados;60;7;23249
+1327;Cálculo;60;8;23249
+1328;Álgebra Linear;60;1;23249
+1329;Banco de Dados;60;2;23249
+1330;Redes de Computadores;60;3;23249
+1331;Sistemas Operacionais;60;4;23249
+1332;Engenharia de Software;60;5;23249
+1333;Inteligência Artificial;60;6;23249
+1334;Matemática Discreta;60;7;23249
+1335;Compiladores;60;8;23249
+1336;Análise de Algoritmos;60;1;23249
+1337;Teoria da Computação;60;2;23249
+1338;Computação Gráfica;60;3;23249
+1339;Sistemas Distribuídos;60;4;23249
+1340;Segurança da Informação;60;5;23249
+1341;Interação Humano-Computador;60;6;23249
+1342;Processamento de Imagens;60;7;23249
+1343;Projeto de Sistemas de Software;60;8;23249
+1344;Redes Neurais;60;1;23249
+1345;Aprendizado de Máquina;60;2;23249
+1346;Mineração de Dados;60;3;23249
+1347;Computação em Nuvem;60;4;23249
+1348;Internet das Coisas;60;5;23249
+1349;Robótica;60;6;23249
+1350;Criptografia;60;7;23249
+1351;Realidade Virtual;60;8;23249
+1352;Programação Paralela;60;1;23249
+1353;Programação Funcional;60;2;23249
+1354;Blockchain e Aplicações;60;3;23249
+1355;Arquitetura de Computadores;60;4;23249
+1356;Circuitos Digitais;60;5;23249
+1357;Desenvolvimento Web;60;6;23249
+1358;Desenvolvimento Mobile;60;7;23249
+1359;Engenharia de Requisitos;60;8;23249
+1360;Gestão de Projetos;60;1;23249
+1361;Modelagem de Processos de Negócio;60;2;23249
+1362;Governança de TI;60;3;23249
+1363;Auditoria de Sistemas;60;4;23249
+1364;Gestão de Serviços de TI;60;5;23249
+1365;Sistemas de Informação Gerencial;60;6;23249
+1366;Modelagem de Dados;60;7;23249
+1367;Tópicos Avançados em Redes;60;8;23249
+1368;Tópicos Especiais em Segurança da Informação;60;1;23249
+1369;Administração de Servidores;60;2;23249
+1370;Virtualização de Servidores;60;3;23249
+1371;Qualidade de Software;60;4;23249
+1372;Métricas de Software;60;5;23249
+1373;Desenvolvimento Ágil;60;6;23249
+1374;Inovação Tecnológica;60;7;23249
+1375;Gerenciamento de Redes;60;8;23249
+1376;Segurança em Redes de Computadores;60;1;23249
+1377;Data Science;60;2;23249
+1378;Big Data;60;3;23249
+1379;Pesquisa Operacional;60;4;23249
+1380;Redes Sem Fio;60;5;23249
+1381;Criptografia Aplicada;60;6;23249
+1382;Engenharia de Sistemas;60;7;23249
+1383;Sistemas de Controle;60;8;23249
+1384;Linguagens de Programação;60;1;23249
+1385;Testes de Software;60;2;23249
+1386;Desenvolvimento de Jogos;60;3;23249
+1387;Design de Interação;60;4;23249
+1388;Análise de Sistemas;60;5;23249
+1389;Modelagem UML;60;6;23249
+1390;Administração de Bancos de Dados;60;7;23249
+1391;Tecnologias Web;60;8;23249
+1392;Gestão de Configurações;60;1;23249
+1393;Tópicos Especiais em Banco de Dados;60;2;23249
+1394;Inteligência Coletiva;60;3;23249
+1395;Gestão da Inovação;60;4;23249
+1396;Segurança de Aplicações Web;60;5;23249
+1397;Visualização de Dados;60;6;23249
+1398;Tecnologias Emergentes;60;7;23249
+1399;Interface de Usuário;60;8;23249
+1400;Algoritmos;60;1;23249
+1401;Estrutura de Dados;60;2;23249
+1402;Cálculo;60;3;23249
+1403;Álgebra Linear;60;4;23249
+1404;Banco de Dados;60;5;23249
+1405;Redes de Computadores;60;6;23249
+1406;Sistemas Operacionais;60;7;23249
+1407;Engenharia de Software;60;8;23249
+1408;Inteligência Artificial;60;1;23249
+1409;Matemática Discreta;60;2;23249
+1410;Compiladores;60;3;23249
+1411;Análise de Algoritmos;60;4;23249
+1412;Teoria da Computação;60;5;23249
+1413;Computação Gráfica;60;6;23249
+1414;Sistemas Distribuídos;60;7;23249
+1415;Segurança da Informação;60;8;23249
+1416;Interação Humano-Computador;60;1;23249
+1417;Processamento de Imagens;60;2;23249
+1418;Projeto de Sistemas de Software;60;3;23249
+1419;Redes Neurais;60;4;23249
+1420;Aprendizado de Máquina;60;5;23249
+1421;Mineração de Dados;60;6;23249
+1422;Computação em Nuvem;60;7;23249
+1423;Internet das Coisas;60;8;23249
+1424;Robótica;60;1;23249
+1425;Criptografia;60;2;23249
+1426;Realidade Virtual;60;3;23249
+1427;Programação Paralela;60;4;23249
+1428;Programação Funcional;60;5;23249
+1429;Blockchain e Aplicações;60;6;23249
+1430;Arquitetura de Computadores;60;7;23249
+1431;Circuitos Digitais;60;8;23249
+1432;Desenvolvimento Web;60;1;23249
+1433;Desenvolvimento Mobile;60;2;23249
+1434;Engenharia de Requisitos;60;3;23249
+1435;Gestão de Projetos;60;4;23249
+1436;Modelagem de Processos de Negócio;60;5;23249
+1437;Governança de TI;60;6;23249
+1438;Auditoria de Sistemas;60;7;23249
+1439;Gestão de Serviços de TI;60;8;23249
+1440;Sistemas de Informação Gerencial;60;1;23249
+1441;Modelagem de Dados;60;2;23249
+1442;Tópicos Avançados em Redes;60;3;23249
+1443;Tópicos Especiais em Segurança da Informação;60;4;23249
+1444;Administração de Servidores;60;5;23249
+1445;Virtualização de Servidores;60;6;23249
+1446;Qualidade de Software;60;7;23249
+1447;Métricas de Software;60;8;23249
+1448;Desenvolvimento Ágil;60;1;23249
+1449;Inovação Tecnológica;60;2;23249
+1450;Gerenciamento de Redes;60;3;23249
+1451;Segurança em Redes de Computadores;60;4;23249
+1452;Data Science;60;5;23249
+1453;Big Data;60;6;23249
+1454;Pesquisa Operacional;60;7;23249
+1455;Redes Sem Fio;60;8;23249
+1456;Criptografia Aplicada;60;1;23249
+1457;Engenharia de Sistemas;60;2;23249
+1458;Sistemas de Controle;60;3;23249
+1459;Linguagens de Programação;60;4;23249
+1460;Testes de Software;60;5;23249
+1461;Desenvolvimento de Jogos;60;6;23249
+1462;Design de Interação;60;7;23249
+1463;Análise de Sistemas;60;8;23249
+1464;Modelagem UML;60;1;23249
+1465;Administração de Bancos de Dados;60;2;23249
+1466;Tecnologias Web;60;3;23249
+1467;Gestão de Configurações;60;4;23249
+1468;Tópicos Especiais em Banco de Dados;60;5;23249
+1469;Inteligência Coletiva;60;6;23249
+1470;Gestão da Inovação;60;7;23249
+1471;Segurança de Aplicações Web;60;8;23249
+1472;Visualização de Dados;60;1;23249
+1473;Tecnologias Emergentes;60;2;23249
+1474;Interface de Usuário;60;3;23249
+1475;Algoritmos;60;4;23249
+1476;Estrutura de Dados;60;5;23249
+1477;Cálculo;60;6;23249
+1478;Álgebra Linear;60;7;23249
+1479;Banco de Dados;60;8;23249
+1480;Redes de Computadores;60;1;23249
+1481;Sistemas Operacionais;60;2;23249
+1482;Engenharia de Software;60;3;23249
+1483;Inteligência Artificial;60;4;23249
+1484;Matemática Discreta;60;5;23249
+1485;Compiladores;60;6;23249
+1486;Análise de Algoritmos;60;7;23249
+1487;Teoria da Computação;60;8;23249
+1488;Computação Gráfica;60;1;23249
+1489;Sistemas Distribuídos;60;2;23249
+1490;Segurança da Informação;60;3;23249
+1491;Interação Humano-Computador;60;4;23249
+1492;Processamento de Imagens;60;5;23249
+1493;Projeto de Sistemas de Software;60;6;23249
+1494;Redes Neurais;60;7;23249
+1495;Aprendizado de Máquina;60;8;23249
+1496;Mineração de Dados;60;1;23249
+1497;Computação em Nuvem;60;2;23249
+1498;Internet das Coisas;60;3;23249
+1499;Robótica;60;4;23249
+1500;Criptografia;60;5;23249
+1501;Realidade Virtual;60;6;23249
+1502;Programação Paralela;60;7;23249
+1503;Programação Funcional;60;8;23249
+1504;Blockchain e Aplicações;60;1;23249
+1505;Arquitetura de Computadores;60;2;23249
+1506;Circuitos Digitais;60;3;23249
+1507;Desenvolvimento Web;60;4;23249
+1508;Desenvolvimento Mobile;60;5;23249
+1509;Engenharia de Requisitos;60;6;23249
+1510;Gestão de Projetos;60;7;23249
+1511;Modelagem de Processos de Negócio;60;8;23249
+1512;Governança de TI;60;1;23249
+1513;Auditoria de Sistemas;60;2;23249
+1514;Gestão de Serviços de TI;60;3;23249
+1515;Sistemas de Informação Gerencial;60;4;23249
+1516;Modelagem de Dados;60;5;23249
+1517;Tópicos Avançados em Redes;60;6;23249
+1518;Tópicos Especiais em Segurança da Informação;60;7;23249
+1519;Administração de Servidores;60;8;23249
+1520;Virtualização de Servidores;60;1;23249
+1521;Qualidade de Software;60;2;23249
+1522;Métricas de Software;60;3;23249
+1523;Desenvolvimento Ágil;60;4;23249
+1524;Inovação Tecnológica;60;5;23249
+1525;Gerenciamento de Redes;60;6;23249
+1526;Segurança em Redes de Computadores;60;7;23249
+1527;Data Science;60;8;23249
+1528;Big Data;60;1;23249
+1529;Pesquisa Operacional;60;2;23249
+1530;Redes Sem Fio;60;3;23249
+1531;Criptografia Aplicada;60;4;23249
+1532;Engenharia de Sistemas;60;5;23249
+1533;Sistemas de Controle;60;6;23249
+1534;Linguagens de Programação;60;7;23249
+1535;Testes de Software;60;8;23249
+1536;Desenvolvimento de Jogos;60;1;23249
+1537;Design de Interação;60;2;23249
+1538;Análise de Sistemas;60;3;23249
+1539;Modelagem UML;60;4;23249
+1540;Administração de Bancos de Dados;60;5;23249
+1541;Tecnologias Web;60;6;23249
+1542;Gestão de Configurações;60;7;23249
+1543;Tópicos Especiais em Banco de Dados;60;8;23249
+1544;Inteligência Coletiva;60;1;23249
+1545;Gestão da Inovação;60;2;23249
+1546;Segurança de Aplicações Web;60;3;23249
+1547;Visualização de Dados;60;4;23249
+1548;Tecnologias Emergentes;60;5;23249
+1549;Interface de Usuário;60;6;23249
+1550;Algoritmos;60;7;23249
+1551;Estrutura de Dados;60;8;23249
+1552;Cálculo;60;1;23249
+1553;Álgebra Linear;60;2;23249
+1554;Banco de Dados;60;3;23249
+1555;Redes de Computadores;60;4;23249
+1556;Sistemas Operacionais;60;5;23249
+1557;Engenharia de Software;60;6;23249
+1558;Inteligência Artificial;60;7;23249
+1559;Matemática Discreta;60;8;23249
+1560;Compiladores;60;1;23249
+1561;Análise de Algoritmos;60;2;23249
+1562;Teoria da Computação;60;3;23249
+1563;Computação Gráfica;60;4;23249
+1564;Sistemas Distribuídos;60;5;23249
+1565;Segurança da Informação;60;6;23249
+1566;Interação Humano-Computador;60;7;23249
+1567;Processamento de Imagens;60;8;23249
+1568;Projeto de Sistemas de Software;60;1;23249
+1569;Redes Neurais;60;2;23249
+1570;Aprendizado de Máquina;60;3;23249
+1571;Mineração de Dados;60;4;23249
+1572;Computação em Nuvem;60;5;23249
+1573;Internet das Coisas;60;6;23249
+1574;Robótica;60;7;23249
+1575;Criptografia;60;8;23249
+1576;Realidade Virtual;60;1;23249
+1577;Programação Paralela;60;2;23249
+1578;Programação Funcional;60;3;23249
+1579;Blockchain e Aplicações;60;4;23249
+1580;Arquitetura de Computadores;60;5;23249
+1581;Circuitos Digitais;60;6;23249
+1582;Desenvolvimento Web;60;7;23249
+1583;Desenvolvimento Mobile;60;8;23249
+1584;Engenharia de Requisitos;60;1;23249
+1585;Gestão de Projetos;60;2;23249
+1586;Modelagem de Processos de Negócio;60;3;23249
+1587;Governança de TI;60;4;23249
+1588;Auditoria de Sistemas;60;5;23249
+1589;Gestão de Serviços de TI;60;6;23249
+1590;Sistemas de Informação Gerencial;60;7;23249
+1591;Modelagem de Dados;60;8;23249
+1592;Tópicos Avançados em Redes;60;1;23249
+1593;Tópicos Especiais em Segurança da Informação;60;2;23249
+1594;Administração de Servidores;60;3;23249
+1595;Virtualização de Servidores;60;4;23249
+1596;Qualidade de Software;60;5;23249
+1597;Métricas de Software;60;6;23249
+1598;Desenvolvimento Ágil;60;7;23249
+1599;Inovação Tecnológica;60;8;23249
+1600;Gerenciamento de Redes;60;1;23249
+1601;Segurança em Redes de Computadores;60;2;23249
+1602;Data Science;60;3;23249
+1603;Big Data;60;4;23249
+1604;Pesquisa Operacional;60;5;23249
+1605;Redes Sem Fio;60;6;23249
+1606;Criptografia Aplicada;60;7;23249
+1607;Engenharia de Sistemas;60;8;23249
+1608;Sistemas de Controle;60;1;23249
+1609;Linguagens de Programação;60;2;23249
+1610;Testes de Software;60;3;23249
+1611;Desenvolvimento de Jogos;60;4;23249
+1612;Design de Interação;60;5;23249
+1613;Análise de Sistemas;60;6;23249
+1614;Modelagem UML;60;7;23249
+1615;Administração de Bancos de Dados;60;8;23249
+1616;Tecnologias Web;60;1;23249
+1617;Gestão de Configurações;60;2;23249
+1618;Tópicos Especiais em Banco de Dados;60;3;23249
+1619;Inteligência Coletiva;60;4;23249
+1620;Gestão da Inovação;60;5;23249
+1621;Segurança de Aplicações Web;60;6;23249
+1622;Visualização de Dados;60;7;23249
+1623;Tecnologias Emergentes;60;8;23249
+1624;Interface de Usuário;60;1;23249
+1625;Algoritmos;60;2;23249
+1626;Estrutura de Dados;60;3;23249
+1627;Cálculo;60;4;23249
+1628;Álgebra Linear;60;5;23249
+1629;Banco de Dados;60;6;23249
+1630;Redes de Computadores;60;7;23249
+1631;Sistemas Operacionais;60;8;23249
+1632;Engenharia de Software;60;1;23249
+1633;Inteligência Artificial;60;2;23249
+1634;Matemática Discreta;60;3;23249
+1635;Compiladores;60;4;23249
+1636;Análise de Algoritmos;60;5;23249
+1637;Teoria da Computação;60;6;23249
+1638;Computação Gráfica;60;7;23249
+1639;Sistemas Distribuídos;60;8;23249
+1640;Segurança da Informação;60;1;23249
+1641;Interação Humano-Computador;60;2;23249
+1642;Processamento de Imagens;60;3;23249
+1643;Projeto de Sistemas de Software;60;4;23249
+1644;Redes Neurais;60;5;23249
+1645;Aprendizado de Máquina;60;6;23249
+1646;Mineração de Dados;60;7;23249
+1647;Computação em Nuvem;60;8;23249
+1648;Internet das Coisas;60;1;23249
+1649;Robótica;60;2;23249
+1650;Criptografia;60;3;23249
+1651;Realidade Virtual;60;4;23249
+1652;Programação Paralela;60;5;23249
+1653;Programação Funcional;60;6;23249
+1654;Blockchain e Aplicações;60;7;23249
+1655;Arquitetura de Computadores;60;8;23249
+1656;Circuitos Digitais;60;1;23249
+1657;Desenvolvimento Web;60;2;23249
+1658;Desenvolvimento Mobile;60;3;23249
+1659;Engenharia de Requisitos;60;4;23249
+1660;Gestão de Projetos;60;5;23249
+1661;Modelagem de Processos de Negócio;60;6;23249
+1662;Governança de TI;60;7;23249
+1663;Auditoria de Sistemas;60;8;23249
+1664;Gestão de Serviços de TI;60;1;23249
+1665;Sistemas de Informação Gerencial;60;2;23249
+1666;Modelagem de Dados;60;3;23249
+1667;Tópicos Avançados em Redes;60;4;23249
+1668;Tópicos Especiais em Segurança da Informação;60;5;23249
+1669;Administração de Servidores;60;6;23249
+1670;Virtualização de Servidores;60;7;23249
+1671;Qualidade de Software;60;8;23249
+1672;Métricas de Software;60;1;23249
+1673;Desenvolvimento Ágil;60;2;23249
+1674;Inovação Tecnológica;60;3;23249
+1675;Gerenciamento de Redes;60;4;23249
+1676;Segurança em Redes de Computadores;60;5;23249
+1677;Data Science;60;6;23249
+1678;Big Data;60;7;23249
+1679;Pesquisa Operacional;60;8;23249
+1680;Redes Sem Fio;60;1;23249
+1681;Criptografia Aplicada;60;2;23249
+1682;Engenharia de Sistemas;60;3;23249
+1683;Sistemas de Controle;60;4;23249
+1684;Linguagens de Programação;60;5;23249
+1685;Testes de Software;60;6;23249
+1686;Desenvolvimento de Jogos;60;7;23249
+1687;Design de Interação;60;8;23249
+1688;Análise de Sistemas;60;1;23249
+1689;Modelagem UML;60;2;23249
+1690;Administração de Bancos de Dados;60;3;23249
+1691;Tecnologias Web;60;4;23249
+1692;Gestão de Configurações;60;5;23249
+1693;Tópicos Especiais em Banco de Dados;60;6;23249
+1694;Inteligência Coletiva;60;7;23249
+1695;Gestão da Inovação;60;8;23249
+1696;Segurança de Aplicações Web;60;1;23249
+1697;Visualização de Dados;60;2;23249
+1698;Tecnologias Emergentes;60;3;23249
+1699;Interface de Usuário;60;4;23249
+1700;Algoritmos;60;5;23249
+1701;Estrutura de Dados;60;6;23249
+1702;Cálculo;60;7;23249
+1703;Álgebra Linear;60;8;23249
+1704;Banco de Dados;60;1;23249
+1705;Redes de Computadores;60;2;23249
+1706;Sistemas Operacionais;60;3;23249
+1707;Engenharia de Software;60;4;23249
+1708;Inteligência Artificial;60;5;23249
+1709;Matemática Discreta;60;6;23249
+1710;Compiladores;60;7;23249
+1711;Análise de Algoritmos;60;8;23249
+1712;Teoria da Computação;60;1;23249
+1713;Computação Gráfica;60;2;23249
+1714;Sistemas Distribuídos;60;3;23249
+1715;Segurança da Informação;60;4;23249
+1716;Interação Humano-Computador;60;5;23249
+1717;Processamento de Imagens;60;6;23249
+1718;Projeto de Sistemas de Software;60;7;23249
+1719;Redes Neurais;60;8;23249
+1720;Aprendizado de Máquina;60;1;23249
+1721;Mineração de Dados;60;2;23249
+1722;Computação em Nuvem;60;3;23249
+1723;Internet das Coisas;60;4;23249
+1724;Robótica;60;5;23249
+1725;Criptografia;60;6;23249
+1726;Realidade Virtual;60;7;23249
+1727;Programação Paralela;60;8;23249
+1728;Programação Funcional;60;1;23249
+1729;Blockchain e Aplicações;60;2;23249
+1730;Arquitetura de Computadores;60;3;23249
+1731;Circuitos Digitais;60;4;23249
+1732;Desenvolvimento Web;60;5;23249
+1733;Desenvolvimento Mobile;60;6;23249
+1734;Engenharia de Requisitos;60;7;23249
+1735;Gestão de Projetos;60;8;23249
+1736;Modelagem de Processos de Negócio;60;1;23249
+1737;Governança de TI;60;2;23249
+1738;Auditoria de Sistemas;60;3;23249
+1739;Gestão de Serviços de TI;60;4;23249
+1740;Sistemas de Informação Gerencial;60;5;23249
+1741;Modelagem de Dados;60;6;23249
+1742;Tópicos Avançados em Redes;60;7;23249
+1743;Tópicos Especiais em Segurança da Informação;60;8;23249
+1744;Administração de Servidores;60;1;23249
+1745;Virtualização de Servidores;60;2;23249
+1746;Qualidade de Software;60;3;23249
+1747;Métricas de Software;60;4;23249
+1748;Desenvolvimento Ágil;60;5;23249
+1749;Inovação Tecnológica;60;6;23249
+1750;Gerenciamento de Redes;60;7;23249
+1751;Segurança em Redes de Computadores;60;8;23249
+1752;Data Science;60;1;23249
+1753;Big Data;60;2;23249
+1754;Pesquisa Operacional;60;3;23249
+1755;Redes Sem Fio;60;4;23249
+1756;Criptografia Aplicada;60;5;23249
+1757;Engenharia de Sistemas;60;6;23249
+1758;Sistemas de Controle;60;7;23249
+1759;Linguagens de Programação;60;8;23249
+1760;Testes de Software;60;1;23249
+1761;Desenvolvimento de Jogos;60;2;23249
+1762;Design de Interação;60;3;23249
+1763;Análise de Sistemas;60;4;23249
+1764;Modelagem UML;60;5;23249
+1765;Administração de Bancos de Dados;60;6;23249
+1766;Tecnologias Web;60;7;23249
+1767;Gestão de Configurações;60;8;23249
+1768;Tópicos Especiais em Banco de Dados;60;1;23249
+1769;Inteligência Coletiva;60;2;23249
+1770;Gestão da Inovação;60;3;23249
+1771;Segurança de Aplicações Web;60;4;23249
+1772;Visualização de Dados;60;5;23249
+1773;Tecnologias Emergentes;60;6;23249
+1774;Interface de Usuário;60;7;23249
+1775;Algoritmos;60;8;23249
+1776;Estrutura de Dados;60;1;23249
+1777;Cálculo;60;2;23249
+1778;Álgebra Linear;60;3;23249
+1779;Banco de Dados;60;4;23249
+1780;Redes de Computadores;60;5;23249
+1781;Sistemas Operacionais;60;6;23249
+1782;Engenharia de Software;60;7;23249
+1783;Inteligência Artificial;60;8;23249
+1784;Matemática Discreta;60;1;23249
+1785;Compiladores;60;2;23249
+1786;Análise de Algoritmos;60;3;23249
+1787;Teoria da Computação;60;4;23249
+1788;Computação Gráfica;60;5;23249
+1789;Sistemas Distribuídos;60;6;23249
+1790;Segurança da Informação;60;7;23249
+1791;Interação Humano-Computador;60;8;23249
+1792;Processamento de Imagens;60;1;23249
+1793;Projeto de Sistemas de Software;60;2;23249
+1794;Redes Neurais;60;3;23249
+1795;Aprendizado de Máquina;60;4;23249
+1796;Mineração de Dados;60;5;23249
+1797;Computação em Nuvem;60;6;23249
+1798;Internet das Coisas;60;7;23249
+1799;Robótica;60;8;23249
+1800;Criptografia;60;1;23249
+1801;Realidade Virtual;60;2;23249
+1802;Programação Paralela;60;3;23249
+1803;Programação Funcional;60;4;23249
+1804;Blockchain e Aplicações;60;5;23249
+1805;Arquitetura de Computadores;60;6;23249
+1806;Circuitos Digitais;60;7;23249
+1807;Desenvolvimento Web;60;8;23249
+1808;Desenvolvimento Mobile;60;1;23249
+1809;Engenharia de Requisitos;60;2;23249
+1810;Gestão de Projetos;60;3;23249
+1811;Modelagem de Processos de Negócio;60;4;23249
+1812;Governança de TI;60;5;23249
+1813;Auditoria de Sistemas;60;6;23249
+1814;Gestão de Serviços de TI;60;7;23249
+1815;Sistemas de Informação Gerencial;60;8;23249
+1816;Modelagem de Dados;60;1;23249
+1817;Tópicos Avançados em Redes;60;2;23249
+1818;Tópicos Especiais em Segurança da Informação;60;3;23249
+1819;Administração de Servidores;60;4;23249
+1820;Virtualização de Servidores;60;5;23249
+1821;Qualidade de Software;60;6;23249
+1822;Métricas de Software;60;7;23249
+1823;Desenvolvimento Ágil;60;8;23249
+1824;Inovação Tecnológica;60;1;23249
+1825;Gerenciamento de Redes;60;2;23249
+1826;Segurança em Redes de Computadores;60;3;23249
+1827;Data Science;60;4;23249
+1828;Big Data;60;5;23249
+1829;Pesquisa Operacional;60;6;23249
+1830;Redes Sem Fio;60;7;23249
+1831;Criptografia Aplicada;60;8;23249
+1832;Engenharia de Sistemas;60;1;23249
+1833;Sistemas de Controle;60;2;23249
+1834;Linguagens de Programação;60;3;23249
+1835;Testes de Software;60;4;23249
+1836;Desenvolvimento de Jogos;60;5;23249
+1837;Design de Interação;60;6;23249
+1838;Análise de Sistemas;60;7;23249
+1839;Modelagem UML;60;8;23249
+1840;Administração de Bancos de Dados;60;1;23249
+1841;Tecnologias Web;60;2;23249
+1842;Gestão de Configurações;60;3;23249
+1843;Tópicos Especiais em Banco de Dados;60;4;23249
+1844;Inteligência Coletiva;60;5;23249
+1845;Gestão da Inovação;60;6;23249
+1846;Segurança de Aplicações Web;60;7;23249
+1847;Visualização de Dados;60;8;23249
+1848;Tecnologias Emergentes;60;1;23249
+1849;Interface de Usuário;60;2;23249
+1850;Algoritmos;60;3;23249
+1851;Estrutura de Dados;60;4;23249
+1852;Cálculo;60;5;23249
+1853;Álgebra Linear;60;6;23249
+1854;Banco de Dados;60;7;23249
+1855;Redes de Computadores;60;8;23249
+1856;Sistemas Operacionais;60;1;23249
+1857;Engenharia de Software;60;2;23249
+1858;Inteligência Artificial;60;3;23249
+1859;Matemática Discreta;60;4;23249
+1860;Compiladores;60;5;23249
+1861;Análise de Algoritmos;60;6;23249
+1862;Teoria da Computação;60;7;23249
+1863;Computação Gráfica;60;8;23249
+1864;Sistemas Distribuídos;60;1;23249
+1865;Segurança da Informação;60;2;23249
+1866;Interação Humano-Computador;60;3;23249
+1867;Processamento de Imagens;60;4;23249
+1868;Projeto de Sistemas de Software;60;5;23249
+1869;Redes Neurais;60;6;23249
+1870;Aprendizado de Máquina;60;7;23249
+1871;Mineração de Dados;60;8;23249
+1872;Computação em Nuvem;60;1;23249
+1873;Internet das Coisas;60;2;23249
+1874;Robótica;60;3;23249
+1875;Criptografia;60;4;23249
+1876;Realidade Virtual;60;5;23249
+1877;Programação Paralela;60;6;23249
+1878;Programação Funcional;60;7;23249
+1879;Blockchain e Aplicações;60;8;23249
+1880;Arquitetura de Computadores;60;1;23249
+1881;Circuitos Digitais;60;2;23249
+1882;Desenvolvimento Web;60;3;23249
+1883;Desenvolvimento Mobile;60;4;23249
+1884;Engenharia de Requisitos;60;5;23249
+1885;Gestão de Projetos;60;6;23249
+1886;Modelagem de Processos de Negócio;60;7;23249
+1887;Governança de TI;60;8;23249
+1888;Auditoria de Sistemas;60;1;23249
+1889;Gestão de Serviços de TI;60;2;23249
+1890;Sistemas de Informação Gerencial;60;3;23249
+1891;Modelagem de Dados;60;4;23249
+1892;Tópicos Avançados em Redes;60;5;23249
+1893;Tópicos Especiais em Segurança da Informação;60;6;23249
+1894;Administração de Servidores;60;7;23249
+1895;Virtualização de Servidores;60;8;23249
+1896;Qualidade de Software;60;1;23249
+1897;Métricas de Software;60;2;23249
+1898;Desenvolvimento Ágil;60;3;23249
+1899;Inovação Tecnológica;60;4;23249
+1900;Gerenciamento de Redes;60;5;23249
+1901;Segurança em Redes de Computadores;60;6;23249
+1902;Data Science;60;7;23249
+1903;Big Data;60;8;23249
+1904;Pesquisa Operacional;60;1;23249
+1905;Redes Sem Fio;60;2;23249
+1906;Criptografia Aplicada;60;3;23249
+1907;Engenharia de Sistemas;60;4;23249
+1908;Sistemas de Controle;60;5;23249
+1909;Linguagens de Programação;60;6;23249
+1910;Testes de Software;60;7;23249
+1911;Desenvolvimento de Jogos;60;8;23249
+1912;Design de Interação;60;1;23249
+1913;Análise de Sistemas;60;2;23249
+1914;Modelagem UML;60;3;23249
+1915;Administração de Bancos de Dados;60;4;23249
+1916;Tecnologias Web;60;5;23249
+1917;Gestão de Configurações;60;6;23249
+1918;Tópicos Especiais em Banco de Dados;60;7;23249
+1919;Inteligência Coletiva;60;8;23249
+1920;Gestão da Inovação;60;1;23249
+1921;Segurança de Aplicações Web;60;2;23249
+1922;Visualização de Dados;60;3;23249
+1923;Tecnologias Emergentes;60;4;23249
+1924;Interface de Usuário;60;5;23249
+1925;Algoritmos;60;6;23249
+1926;Estrutura de Dados;60;7;23249
+1927;Cálculo;60;8;23249
+1928;Álgebra Linear;60;1;23249
+1929;Banco de Dados;60;2;23249
+1930;Redes de Computadores;60;3;23249
+1931;Sistemas Operacionais;60;4;23249
+1932;Engenharia de Software;60;5;23249
+1933;Inteligência Artificial;60;6;23249
+1934;Matemática Discreta;60;7;23249
+1935;Compiladores;60;8;23249
+1936;Análise de Algoritmos;60;1;23249
+1937;Teoria da Computação;60;2;23249
+1938;Computação Gráfica;60;3;23249
+1939;Sistemas Distribuídos;60;4;23249
+1940;Segurança da Informação;60;5;23249
+1941;Interação Humano-Computador;60;6;23249
+1942;Processamento de Imagens;60;7;23249
+1943;Projeto de Sistemas de Software;60;8;23249
+1944;Redes Neurais;60;1;23249
+1945;Aprendizado de Máquina;60;2;23249
+1946;Mineração de Dados;60;3;23249
+1947;Computação em Nuvem;60;4;23249
+1948;Internet das Coisas;60;5;23249
+1949;Robótica;60;6;23249
+1950;Criptografia;60;7;23249
+1951;Realidade Virtual;60;8;23249
+1952;Programação Paralela;60;1;23249
+1953;Programação Funcional;60;2;23249
+1954;Blockchain e Aplicações;60;3;23249
+1955;Arquitetura de Computadores;60;4;23249
+1956;Circuitos Digitais;60;5;23249
+1957;Desenvolvimento Web;60;6;23249
+1958;Desenvolvimento Mobile;60;7;23249
+1959;Engenharia de Requisitos;60;8;23249
+1960;Gestão de Projetos;60;1;23249
+1961;Modelagem de Processos de Negócio;60;2;23249
+1962;Governança de TI;60;3;23249
+1963;Auditoria de Sistemas;60;4;23249
+1964;Gestão de Serviços de TI;60;5;23249
+1965;Sistemas de Informação Gerencial;60;6;23249
+1966;Modelagem de Dados;60;7;23249
+1967;Tópicos Avançados em Redes;60;8;23249
+1968;Tópicos Especiais em Segurança da Informação;60;1;23249
+1969;Administração de Servidores;60;2;23249
+1970;Virtualização de Servidores;60;3;23249
+1971;Qualidade de Software;60;4;23249
+1972;Métricas de Software;60;5;23249
+1973;Desenvolvimento Ágil;60;6;23249
+1974;Inovação Tecnológica;60;7;23249
+1975;Gerenciamento de Redes;60;8;23249
+1976;Segurança em Redes de Computadores;60;1;23249
+1977;Data Science;60;2;23249
+1978;Big Data;60;3;23249
+1979;Pesquisa Operacional;60;4;23249
+1980;Redes Sem Fio;60;5;23249
+1981;Criptografia Aplicada;60;6;23249
+1982;Engenharia de Sistemas;60;7;23249
+1983;Sistemas de Controle;60;8;23249
+1984;Linguagens de Programação;60;1;23249
+1985;Testes de Software;60;2;23249
+1986;Desenvolvimento de Jogos;60;3;23249
+1987;Design de Interação;60;4;23249
+1988;Análise de Sistemas;60;5;23249
+1989;Modelagem UML;60;6;23249
+1990;Administração de Bancos de Dados;60;7;23249
+1991;Tecnologias Web;60;8;23249
+1992;Gestão de Configurações;60;1;23249
+1993;Tópicos Especiais em Banco de Dados;60;2;23249
+1994;Inteligência Coletiva;60;3;23249
+1995;Gestão da Inovação;60;4;23249
+1996;Segurança de Aplicações Web;60;5;23249
+1997;Visualização de Dados;60;6;23249
+1998;Tecnologias Emergentes;60;7;23249
+1999;Interface de Usuário;60;8;23249
+2000;Algoritmos;60;1;23249
+2001;Estrutura de Dados;60;2;23249
+2002;Cálculo;60;3;23249
+2003;Álgebra Linear;60;4;23249
+2004;Banco de Dados;60;5;23249
+2005;Redes de Computadores;60;6;23249
+2006;Sistemas Operacionais;60;7;23249
+2007;Engenharia de Software;60;8;23249
+2008;Inteligência Artificial;60;1;23249
+2009;Matemática Discreta;60;2;23249
+2010;Compiladores;60;3;23249
+2011;Análise de Algoritmos;60;4;23249
+2012;Teoria da Computação;60;5;23249
+2013;Computação Gráfica;60;6;23249
+2014;Sistemas Distribuídos;60;7;23249
+2015;Segurança da Informação;60;8;23249
+2016;Interação Humano-Computador;60;1;23249
+2017;Processamento de Imagens;60;2;23249
+2018;Projeto de Sistemas de Software;60;3;23249
+2019;Redes Neurais;60;4;23249
+2020;Aprendizado de Máquina;60;5;23249
+2021;Mineração de Dados;60;6;23249
+2022;Computação em Nuvem;60;7;23249
+2023;Internet das Coisas;60;8;23249
+2024;Robótica;60;1;23249
+2025;Criptografia;60;2;23249
+2026;Realidade Virtual;60;3;23249
+2027;Programação Paralela;60;4;23249
+2028;Programação Funcional;60;5;23249
+2029;Blockchain e Aplicações;60;6;23249
+2030;Arquitetura de Computadores;60;7;23249
+2031;Circuitos Digitais;60;8;23249
+2032;Desenvolvimento Web;60;1;23249
+2033;Desenvolvimento Mobile;60;2;23249
+2034;Engenharia de Requisitos;60;3;23249
+2035;Gestão de Projetos;60;4;23249
+2036;Modelagem de Processos de Negócio;60;5;23249
+2037;Governança de TI;60;6;23249
+2038;Auditoria de Sistemas;60;7;23249
+2039;Gestão de Serviços de TI;60;8;23249
+2040;Sistemas de Informação Gerencial;60;1;23249
+2041;Modelagem de Dados;60;2;23249
+2042;Tópicos Avançados em Redes;60;3;23249
+2043;Tópicos Especiais em Segurança da Informação;60;4;23249
+2044;Administração de Servidores;60;5;23249
+2045;Virtualização de Servidores;60;6;23249
+2046;Qualidade de Software;60;7;23249
+2047;Métricas de Software;60;8;23249
+2048;Desenvolvimento Ágil;60;1;23249
+2049;Inovação Tecnológica;60;2;23249
+2050;Gerenciamento de Redes;60;3;23249
+2051;Segurança em Redes de Computadores;60;4;23249
+2052;Data Science;60;5;23249
+2053;Big Data;60;6;23249
+2054;Pesquisa Operacional;60;7;23249
+2055;Redes Sem Fio;60;8;23249
+2056;Criptografia Aplicada;60;1;23249
+2057;Engenharia de Sistemas;60;2;23249
+2058;Sistemas de Controle;60;3;23249
+2059;Linguagens de Programação;60;4;23249
+2060;Testes de Software;60;5;23249
+2061;Desenvolvimento de Jogos;60;6;23249
+2062;Design de Interação;60;7;23249
+2063;Análise de Sistemas;60;8;23249
+2064;Modelagem UML;60;1;23249
+2065;Administração de Bancos de Dados;60;2;23249
+2066;Tecnologias Web;60;3;23249
+2067;Gestão de Configurações;60;4;23249
+2068;Tópicos Especiais em Banco de Dados;60;5;23249
+2069;Inteligência Coletiva;60;6;23249
+2070;Gestão da Inovação;60;7;23249
+2071;Segurança de Aplicações Web;60;8;23249
+2072;Visualização de Dados;60;1;23249
+2073;Tecnologias Emergentes;60;2;23249
+2074;Interface de Usuário;60;3;23249
+2075;Algoritmos;60;4;23249
+2076;Estrutura de Dados;60;5;23249
+2077;Cálculo;60;6;23249
+2078;Álgebra Linear;60;7;23249
+2079;Banco de Dados;60;8;23249
+2080;Redes de Computadores;60;1;23249
+2081;Sistemas Operacionais;60;2;23249
+2082;Engenharia de Software;60;3;23249
+2083;Inteligência Artificial;60;4;23249
+2084;Matemática Discreta;60;5;23249
+2085;Compiladores;60;6;23249
+2086;Análise de Algoritmos;60;7;23249
+2087;Teoria da Computação;60;8;23249
+2088;Computação Gráfica;60;1;23249
+2089;Sistemas Distribuídos;60;2;23249
+2090;Segurança da Informação;60;3;23249
+2091;Interação Humano-Computador;60;4;23249
+2092;Processamento de Imagens;60;5;23249
+2093;Projeto de Sistemas de Software;60;6;23249
+2094;Redes Neurais;60;7;23249
+2095;Aprendizado de Máquina;60;8;23249
+2096;Mineração de Dados;60;1;23249
+2097;Computação em Nuvem;60;2;23249
+2098;Internet das Coisas;60;3;23249
+2099;Robótica;60;4;23249
+2100;Criptografia;60;5;23249
+2101;Realidade Virtual;60;6;23249
+2102;Programação Paralela;60;7;23249
+2103;Programação Funcional;60;8;23249
+2104;Blockchain e Aplicações;60;1;23249
+2105;Arquitetura de Computadores;60;2;23249
+2106;Circuitos Digitais;60;3;23249
+2107;Desenvolvimento Web;60;4;23249
+2108;Desenvolvimento Mobile;60;5;23249
+2109;Engenharia de Requisitos;60;6;23249
+2110;Gestão de Projetos;60;7;23249
+2111;Modelagem de Processos de Negócio;60;8;23249
+2112;Governança de TI;60;1;23249
+2113;Auditoria de Sistemas;60;2;23249
+2114;Gestão de Serviços de TI;60;3;23249
+2115;Sistemas de Informação Gerencial;60;4;23249
+2116;Modelagem de Dados;60;5;23249
+2117;Tópicos Avançados em Redes;60;6;23249
+2118;Tópicos Especiais em Segurança da Informação;60;7;23249
+2119;Administração de Servidores;60;8;23249
+2120;Virtualização de Servidores;60;1;23249
+2121;Qualidade de Software;60;2;23249
+2122;Métricas de Software;60;3;23249
+2123;Desenvolvimento Ágil;60;4;23249
+2124;Inovação Tecnológica;60;5;23249
+2125;Gerenciamento de Redes;60;6;23249
+2126;Segurança em Redes de Computadores;60;7;23249
+2127;Data Science;60;8;23249
+2128;Big Data;60;1;23249
+2129;Pesquisa Operacional;60;2;23249
+2130;Redes Sem Fio;60;3;23249
+2131;Criptografia Aplicada;60;4;23249
+2132;Engenharia de Sistemas;60;5;23249
+2133;Sistemas de Controle;60;6;23249
+2134;Linguagens de Programação;60;7;23249
+2135;Testes de Software;60;8;23249
+2136;Desenvolvimento de Jogos;60;1;23249
+2137;Design de Interação;60;2;23249
+2138;Análise de Sistemas;60;3;23249
+2139;Modelagem UML;60;4;23249
+2140;Administração de Bancos de Dados;60;5;23249
+2141;Tecnologias Web;60;6;23249
+2142;Gestão de Configurações;60;7;23249
+2143;Tópicos Especiais em Banco de Dados;60;8;23249
+2144;Inteligência Coletiva;60;1;23249
+2145;Gestão da Inovação;60;2;23249
+2146;Segurança de Aplicações Web;60;3;23249
+2147;Visualização de Dados;60;4;23249
+2148;Tecnologias Emergentes;60;5;23249
+2149;Interface de Usuário;60;6;23249
+2150;Algoritmos;60;7;23249
+2151;Estrutura de Dados;60;8;23249
+2152;Cálculo;60;1;23249
+2153;Álgebra Linear;60;2;23249
+2154;Banco de Dados;60;3;23249
+2155;Redes de Computadores;60;4;23249
+2156;Sistemas Operacionais;60;5;23249
+2157;Engenharia de Software;60;6;23249
+2158;Inteligência Artificial;60;7;23249
+2159;Matemática Discreta;60;8;23249
+2160;Compiladores;60;1;23249
+2161;Análise de Algoritmos;60;2;23249
+2162;Teoria da Computação;60;3;23249
+2163;Computação Gráfica;60;4;23249
+2164;Sistemas Distribuídos;60;5;23249
+2165;Segurança da Informação;60;6;23249
+2166;Interação Humano-Computador;60;7;23249
+2167;Processamento de Imagens;60;8;23249
+2168;Projeto de Sistemas de Software;60;1;23249
+2169;Redes Neurais;60;2;23249
+2170;Aprendizado de Máquina;60;3;23249
+2171;Mineração de Dados;60;4;23249
+2172;Computação em Nuvem;60;5;23249
+2173;Internet das Coisas;60;6;23249
+2174;Robótica;60;7;23249
+2175;Criptografia;60;8;23249
+2176;Realidade Virtual;60;1;23249
+2177;Programação Paralela;60;2;23249
+2178;Programação Funcional;60;3;23249
+2179;Blockchain e Aplicações;60;4;23249
+2180;Arquitetura de Computadores;60;5;23249
+2181;Circuitos Digitais;60;6;23249
+2182;Desenvolvimento Web;60;7;23249
+2183;Desenvolvimento Mobile;60;8;23249
+2184;Engenharia de Requisitos;60;1;23249
+2185;Gestão de Projetos;60;2;23249
+2186;Modelagem de Processos de Negócio;60;3;23249
+2187;Governança de TI;60;4;23249
+2188;Auditoria de Sistemas;60;5;23249
+2189;Gestão de Serviços de TI;60;6;23249
+2190;Sistemas de Informação Gerencial;60;7;23249
+2191;Modelagem de Dados;60;8;23249
+2192;Tópicos Avançados em Redes;60;1;23249
+2193;Tópicos Especiais em Segurança da Informação;60;2;23249
+2194;Administração de Servidores;60;3;23249
+2195;Virtualização de Servidores;60;4;23249
+2196;Qualidade de Software;60;5;23249
+2197;Métricas de Software;60;6;23249
+2198;Desenvolvimento Ágil;60;7;23249
+2199;Inovação Tecnológica;60;8;23249
+2200;Gerenciamento de Redes;60;1;23249

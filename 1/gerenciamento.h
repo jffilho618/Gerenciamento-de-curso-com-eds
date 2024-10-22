@@ -69,6 +69,7 @@ void mostrar_disciplinas_de_um_curso(No_curso *Raiz);
 
 No_curso* criarARVOREcursos();
 int inserir_curso(No_curso **raiz, long long int codigo_curso, char nome_curso[50], int quant_periodos);
+int remover_curso(No_curso **raiz, int codigo_curso);
 No_curso* CadastrarCurso(No_curso *raiz);
 int tamanho(No_curso *raiz);
 int busca_curso(No_curso *raiz, int codigo_curso);

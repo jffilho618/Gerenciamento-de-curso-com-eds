@@ -147,3 +147,56 @@ void mostrar_todos_os_cursos(No_curso *raiz){
     
     
 }
+
+int remover_curso(No_curso **raiz, int codigo_curso) {
+    int resultado = 0; // Falha por padrão
+
+    if (*raiz != NULL) {
+        if (codigo_curso < (*raiz)->codigo_curso) {
+            resultado = remover_curso(&(*raiz)->esq, codigo_curso);
+        } else if (codigo_curso > (*raiz)->codigo_curso) {
+            resultado = remover_curso(&(*raiz)->dir, codigo_curso);
+        } else {
+            No_curso *temp = NULL;
+
+            // Caso 1: Nó sem filhos (nó folha)
+            if ((*raiz)->esq == NULL && (*raiz)->dir == NULL) {
+                free(*raiz);
+                *raiz = NULL;
+                resultado = 1;
+            }
+
+            // Caso 2: Nó com um filho
+            else if ((*raiz)->esq == NULL) {
+                temp = (*raiz)->dir;
+                free(*raiz);
+                *raiz = temp;
+                resultado = 1;  // Remoção bem-sucedida
+            }
+            else if ((*raiz)->dir == NULL) {
+                temp = (*raiz)->esq;
+                free(*raiz);
+                *raiz = temp;
+                resultado = 1;  // Remoção bem-sucedida
+            }
+
+            // Caso 3: Nó com dois filhos
+            else {
+                // Encontrar o predecessor (máximo da subárvore esquerda)
+                No_curso *predecessor = (*raiz)->esq;
+                while (predecessor->dir != NULL) {
+                    predecessor = predecessor->dir;
+                }
+
+                // Copiar o valor do predecessor para o nó atual
+                (*raiz)->codigo_curso = predecessor->codigo_curso;
+
+                // Remover o predecessor
+                resultado = remover_curso(&(*raiz)->esq, predecessor->codigo_curso);
+            }
+        }   
+    }
+
+    return resultado;
+}
+

@@ -613,7 +613,7 @@ void mostrar_historico_aluno_periodo(Elemento* lista_alunos, No_curso* arvore_cu
             printf("--------------------------------------------------------------\n");
 
             // Array temporário para armazenar o histórico
-            Historico historico[100]; // Tamanho fixo para exemplo (pode ser dinâmico conforme necessidade)
+            Historico historico[2001]; // Tamanho fixo para exemplo (pode ser dinâmico conforme necessidade)
             int count = 0;
 
             // Percorre a árvore de notas do aluno usando uma função recursiva
