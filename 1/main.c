@@ -103,7 +103,7 @@ int main(){
                             cadastrarAlunosEmCurso(&lista_alunos, &arv_cursos);
                             break;
                         case 7:
-                            medirTempoBuscaNota(lista_alunos, arv_cursos,  7581,  205);
+                            medirTempoBuscaNota(lista_alunos, arv_cursos,  7581,  2153);
                             break;
                         case 0:
                             break;

@@ -114,24 +114,26 @@ int inserir_curso(No_curso **raiz, long long int codigo_curso, char nome_curso[5
     int resultado = 1; // Sucesso por padrão
 
     if (*raiz == NULL) {
+        // Aloca memória para o novo nó
         *raiz = (No_curso*)malloc(sizeof(No_curso));
         if (*raiz == NULL) {
-            printf("Erro ao alocar memória para o novo nó.\n");
-            resultado = 0; // Falha na alocação de memória
+            return 0; // Falha na alocação de memória
         } else {
             (*raiz)->codigo_curso = codigo_curso;
             strcpy((*raiz)->nome_curso, nome_curso);
             (*raiz)->quant_periodos = quant_periodos;
-            (*raiz)->arvore_disciplinas = NULL;
+            (*raiz)->arvore_disciplinas = NULL; // Inicializado como NULL
             (*raiz)->esq = NULL;
             (*raiz)->dir = NULL;
             (*raiz)->altura = 0;
         }
     } else if (codigo_curso < (*raiz)->codigo_curso) {
+        // Inserção na subárvore esquerda
         resultado = inserir_curso(&(*raiz)->esq, codigo_curso, nome_curso, quant_periodos);
         if (resultado) {
+            // Verifica o fator de balanceamento e realiza rotações se necessário
             if (fatorBalanceamentoCursos(*raiz) >= 2) {
-                if (codigo_curso < (*raiz)->esq->codigo_curso) {
+                if ((*raiz)->esq != NULL && codigo_curso < (*raiz)->esq->codigo_curso) {
                     *raiz = rotacaoDireitaCursos(*raiz);
                 } else {
                     *raiz = rotacaoDuplaDireitaCursos(*raiz);
@@ -139,10 +141,12 @@ int inserir_curso(No_curso **raiz, long long int codigo_curso, char nome_curso[5
             }
         }
     } else if (codigo_curso > (*raiz)->codigo_curso) {
+        // Inserção na subárvore direita
         resultado = inserir_curso(&(*raiz)->dir, codigo_curso, nome_curso, quant_periodos);
         if (resultado) {
+            // Verifica o fator de balanceamento e realiza rotações se necessário
             if (fatorBalanceamentoCursos(*raiz) >= 2) {
-                if (codigo_curso > (*raiz)->dir->codigo_curso) {
+                if ((*raiz)->dir != NULL && codigo_curso > (*raiz)->dir->codigo_curso) {
                     *raiz = rotacaoEsquerdaCursos(*raiz);
                 } else {
                     *raiz = rotacaoDuplaEsquerdaCursos(*raiz);
@@ -150,15 +154,19 @@ int inserir_curso(No_curso **raiz, long long int codigo_curso, char nome_curso[5
             }
         }
     } else {
-        resultado = 0;
+        resultado = 0; // Código de curso duplicado
     }
 
+    // Atualiza a altura se a inserção foi bem-sucedida
     if (resultado) {
         (*raiz)->altura = maior(alturaCursos((*raiz)->esq), alturaCursos((*raiz)->dir)) + 1;
     }
 
     return resultado;
 }
+
+
+
 
 
 int alturaCursos(No_curso *raiz) {
@@ -178,32 +186,173 @@ int maior(int x, int y) {
 }
 
 No_curso* rotacaoDireitaCursos(No_curso *raiz) {
-    No_curso *aux = raiz->esq;
-    raiz->esq = aux->dir;
-    aux->dir = raiz;
+    // Verifica se a raiz ou a subárvore esquerda é nula
+    if (raiz == NULL || raiz->esq == NULL) {
+        // Se não for possível rotacionar, retorna a raiz original
+        return raiz;
+    }
+    
+    No_curso *aux = raiz->esq;  // Auxiliar aponta para a subárvore esquerda
+    
+    // Certifique-se de que a subárvore esquerda (aux) existe antes de prosseguir
+    if (aux == NULL) {
+        printf("Erro: Tentativa de rotação à direita com subárvore esquerda nula.\n");
+        return raiz;
+    }
+
+    // Realiza a rotação
+    raiz->esq = aux->dir;  // A subárvore direita de aux vai para a esquerda de raiz
+    aux->dir = raiz;       // Coloca a raiz original como filho direito de aux
+
+    // Atualiza as alturas
     raiz->altura = maior(alturaCursos(raiz->esq), alturaCursos(raiz->dir)) + 1;
-    aux->altura = maior(alturaCursos(aux->esq), raiz->altura) + 1;
-    return aux;
+    aux->altura = maior(alturaCursos(aux->esq), alturaCursos(aux->dir)) + 1;
+
+    return aux; // Retorna o novo nó raiz
 }
+
 
 No_curso* rotacaoEsquerdaCursos(No_curso *raiz) {
+    if (raiz == NULL || raiz->dir == NULL) {
+        // Se o nó raiz ou sua subárvore direita for nula, não é possível fazer rotação
+        return raiz;
+    }
+    
     No_curso *aux = raiz->dir;
-    raiz->dir = aux->esq;
-    aux->esq = raiz;
+    
+    // Certifique-se de que a subárvore direita existe antes de tentar acessá-la
+    if (aux == NULL) {
+        printf("Erro: Tentativa de rotação à esquerda com subárvore direita nula.\n");
+        return raiz;
+    }
+
+    // Realiza a rotação
+    raiz->dir = aux->esq;  // Mover a subárvore esquerda do aux para a direita da raiz
+    aux->esq = raiz;       // Colocar a raiz atual como filho esquerdo do aux
+
+    // Atualiza as alturas
     raiz->altura = maior(alturaCursos(raiz->esq), alturaCursos(raiz->dir)) + 1;
-    aux->altura = maior(alturaCursos(aux->dir), raiz->altura) + 1;
-    return aux;
+    aux->altura = maior(alturaCursos(aux->esq), alturaCursos(aux->dir)) + 1;
+
+    return aux; // Retorna o novo nó raiz
 }
 
+
 No_curso* rotacaoDuplaDireitaCursos(No_curso *raiz) {
-    raiz->esq = rotacaoEsquerdaCursos(raiz->esq);
+    if (raiz == NULL) {
+        return raiz;
+    }
+    
+    if (raiz->esq != NULL) {
+        raiz->esq = rotacaoEsquerdaCursos(raiz->esq);
+    }
+    
     return rotacaoDireitaCursos(raiz);
 }
 
+
 No_curso* rotacaoDuplaEsquerdaCursos(No_curso *raiz) {
-    raiz->dir = rotacaoDireitaCursos(raiz->dir);
+    if (raiz == NULL) {
+        return raiz;
+    }
+
+    if (raiz->dir != NULL) {
+        raiz->dir = rotacaoDireitaCursos(raiz->dir);
+    }
+
     return rotacaoEsquerdaCursos(raiz);
 }
+
+
+
+
+No_curso* minimo_curso(No_curso* raiz) {
+    No_curso* atual = raiz;
+    
+    // Percorre a subárvore esquerda para encontrar o menor valor
+    while (atual != NULL && atual->esq != NULL) {
+        atual = atual->esq;
+    }
+
+    return atual;
+}
+
+int remover_curso(No_curso** raiz, int codigo_curso) {
+    if (raiz == NULL || *raiz == NULL) {
+        // A árvore ou subárvore está vazia, nada para remover
+        return 0;
+    }
+
+    int resultado = 0;
+
+    // Passo 1: Encontrar o nó a ser removido
+    if (codigo_curso < (*raiz)->codigo_curso) {
+        resultado = remover_curso(&(*raiz)->esq, codigo_curso);
+    } else if (codigo_curso > (*raiz)->codigo_curso) {
+        resultado = remover_curso(&(*raiz)->dir, codigo_curso);
+    } else {
+        // Disciplina encontrada
+        if ((*raiz)->esq == NULL && (*raiz)->dir == NULL) {
+            // Caso 1: Nó sem filhos
+            free(*raiz);
+            *raiz = NULL;
+            resultado = 1;
+        } else if ((*raiz)->esq == NULL) {
+            // Caso 2: Nó com apenas um filho à direita
+            No_curso* temp = (*raiz)->dir;
+            free(*raiz);
+            *raiz = temp;
+            resultado = 1;
+        } else if ((*raiz)->dir == NULL) {
+            // Caso 2: Nó com apenas um filho à esquerda
+            No_curso* temp = (*raiz)->esq;
+            free(*raiz);
+            *raiz = temp;
+            resultado = 1;
+        } else {
+            // Caso 3: Nó com dois filhos
+            No_curso* temp = minimo_curso((*raiz)->dir); // Encontra o sucessor
+            (*raiz)->codigo_curso = temp->codigo_curso;
+            resultado = remover_curso(&(*raiz)->dir, temp->codigo_curso);
+        }
+    }
+
+    // Passo 2: Balancear a árvore se um nó foi removido
+    if (*raiz != NULL) {
+        // Atualiza a altura do nó atual
+        (*raiz)->altura = maior(alturaCursos((*raiz)->esq), alturaCursos((*raiz)->dir)) + 1;
+
+        // Verifica o fator de balanceamento
+        int fator_balanceamento = fatorBalanceamentoCursos(*raiz);
+
+        // Caso 1: Desbalanceado à esquerda
+        if (fator_balanceamento >= 2) {
+            if ((*raiz)->esq != NULL && alturaCursos((*raiz)->esq->esq) >= alturaCursos((*raiz)->esq->dir)) {
+                // Rotação simples à direita
+                *raiz = rotacaoDireitaCursos(*raiz);
+            } else {
+                // Rotação dupla à direita
+                *raiz = rotacaoDuplaDireitaCursos(*raiz);
+            }
+        }
+
+        // Caso 2: Desbalanceado à direita
+        else if (fator_balanceamento <= -2) {
+            if ((*raiz)->dir != NULL && alturaCursos((*raiz)->dir->dir) >= alturaCursos((*raiz)->dir->esq)) {
+                // Rotação simples à esquerda
+                *raiz = rotacaoEsquerdaCursos(*raiz);
+            } else {
+                // Rotação dupla à esquerda
+                *raiz = rotacaoDuplaEsquerdaCursos(*raiz);
+            }
+        }
+    }
+
+    // Retorna 1 se a remoção foi bem-sucedida, 0 caso contrário
+    return resultado;
+}
+
+
 
 
 No_curso* cadastrarCurso(No_curso *raiz) {

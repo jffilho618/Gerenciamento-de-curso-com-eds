@@ -178,54 +178,57 @@ No_curso* cadastra_curso_automatico_decrescente(No_curso *Raiz) {
 
 
 No_curso* teste_insercao_ARVBB(No_curso *raiz) {
-
-    FILE *arq;
-    arq = fopen("tempos_decrescentes.txt", "a");
+    FILE *arq = fopen("tempos_decrescentes.txt", "a");
+    if (arq == NULL) {
+        printf("Erro ao abrir o arquivo\n");
+        return NULL;
+    }
 
     int vet[] = {131, 23000, 2956, 10231, 592, 8321, 6234, 1237, 18239, 4123};
-    printf("Informe o nome do curso: ");
-    char nome_curso[50];
-    scanf(" %49[^\n]", nome_curso);
-
-    printf("Informe a quantidade de periodos: ");
-    int quant_periodos;
-    scanf("%d", &quant_periodos);
     
     LARGE_INTEGER frequency, start_time, end_time;
     long long total_nanos_sum = 0;
 
     // Obtém a frequência do contador de alta resolução
     QueryPerformanceFrequency(&frequency);
+    
+    for (int j = 0; j < 31; j++) {
+        long long total_exec_nanos = 0; // Reset para cada execução
 
-    for (int i = 0; i < 10; i++) {
-        int codigo_curso = vet[i];
-        
-        QueryPerformanceCounter(&start_time);
+        for (int i = 0; i < 10; i++) {
+            int codigo_curso = vet[i];
+            
+            QueryPerformanceCounter(&start_time);
+            if (inserir_curso(&raiz, codigo_curso, "Engenharia de Software", 10)) {
+                QueryPerformanceCounter(&end_time);
 
-        if (inserir_curso(&raiz, codigo_curso, nome_curso, quant_periodos)) {
-            // Curso inserido com sucesso
-            QueryPerformanceCounter(&end_time);
+                // Calcular o tempo total de inserção em nanosegundos
+                long long total_nanos = (end_time.QuadPart - start_time.QuadPart) * 1000000000 / frequency.QuadPart;
 
-            // Calcular o tempo total de inserção em nanosegundos
-            long long total_nanos = (end_time.QuadPart - start_time.QuadPart) * 1000000000 / frequency.QuadPart;
+                if (j > 0) {
+                    total_nanos_sum += total_nanos;
+                }
+                total_exec_nanos += total_nanos; // Soma para a execução atual
+            } else {
+                printf("Erro ao inserir curso\n");
+            }
+        }
 
-            // Acumular os tempos
-            total_nanos_sum += total_nanos;
+        // Registra o total da execução atual
+        fprintf(arq, "Execução %d: %lld nanosegundos\n", j + 1, total_exec_nanos);
 
-        } else {
-            printf("erro");
+        // Remoção dos cursos após cada execução
+        for (int i = 0; i < 10; i++) {
+            int codigo_curso = vet[i];
+            if (!remover_curso(&raiz, codigo_curso)) {
+                printf("Erro ao remover curso\n");
+            }
         }
     }
 
-    // Exibir o tempo total de inserção
-    printf("Tempo total de inserção: %lld nanossegundos\n", total_nanos_sum);
-    printf("Tempo total de inserção: %f microssegundos\n", total_nanos_sum / 1000.0);
-    float milisegundos = total_nanos_sum / 1000000.0;
-    printf("Tempo total de inserção: %f milissegundos\n", milisegundos);
-    printf("Tempo total de inserção: %f segundos\n", total_nanos_sum / 1000000000.0);
-
-
-    fprintf(arq, "%f\n", milisegundos);
+    long long media = (long long)total_nanos_sum / 30; // Média das execuções
+    printf("Tempo médio de inserção (descartando o primeiro): %lld nanosegundos\n", media);
+    fprintf(arq, "Tempo médio de inserção (descartando o primeiro): %lld nanosegundos\n", media);
     fclose(arq);
     
     return raiz;
@@ -378,12 +381,20 @@ void removerMatriculas(No_matriculas** arv_matriculas) {
 void medirTempoBuscaNota(Elemento* lista_alunos, No_curso* arvore_cursos, int matricula_aluno, int codigo_disciplina) {
     LARGE_INTEGER frequency, start_time, end_time;
     long long total_nanos_sum = 0;
+    FILE *arq;
+
+    // Abre o arquivo para registrar os tempos de busca
+    arq = fopen("tempos_busca.txt", "a");
+    if (arq == NULL) {
+        printf("Erro ao abrir o arquivo!\n");
+        return;
+    }
 
     // Obtém a frequência do contador de alta resolução
     QueryPerformanceFrequency(&frequency);
 
-    // Repetir a busca 30 vezes para calcular a média
-    for (int i = 0; i < 30; i++) {
+    // Repetir a busca 30 vezes, mas descartaremos o primeiro tempo
+    for (int i = 0; i < 31; i++) {
         QueryPerformanceCounter(&start_time);
 
         // Chama a função de busca da nota
@@ -391,14 +402,27 @@ void medirTempoBuscaNota(Elemento* lista_alunos, No_curso* arvore_cursos, int ma
 
         QueryPerformanceCounter(&end_time);
 
-        // Calcular o tempo total de busca em nanosegundos
+        // Calcula o tempo de busca em nanosegundos
         long long total_nanos = (end_time.QuadPart - start_time.QuadPart) * 1000000000 / frequency.QuadPart;
-        total_nanos_sum += total_nanos;
+
+        // Grava o tempo de cada execução no arquivo
+        //fprintf(arq, "Execução %d: %lld nanosegundos\n", i+1, total_nanos);
+
+        // Ignora o primeiro tempo (i == 0) e soma os outros 29
+        if (i > 0) {
+            total_nanos_sum += total_nanos;
+        }
     }
 
-    // Calcula a média
-    long long media_nanos = total_nanos_sum / 30;
-    printf("Tempo médio de busca da nota: %lld nanosegundos\n", media_nanos);
+    // Calcula a média dos 29 tempos (descartando o primeiro)
+    long long media_nanos = total_nanos_sum / 29;
+    printf("Tempo médio de busca da nota (descartando o primeiro): %lld nanosegundos\n", media_nanos);
+
+    // Grava a média no arquivo
+    //fprintf(arq, "Tempo médio de busca (descartando o primeiro): %lld nanosegundos\n", media_nanos);
+
+    // Fecha o arquivo
+    fclose(arq);
 }
 
 void cadastrarNotaAutomatica(Elemento* aluno, No_curso* arvore_cursos, int codigo_disciplina, float nota) {

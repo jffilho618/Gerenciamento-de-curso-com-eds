@@ -30,7 +30,7 @@ typedef struct no_disciplinas{
 }No_disciplinas;
 
 typedef struct no_curso{
-    int codigo_curso;
+    long long int codigo_curso;
     char nome_curso[50];
     int quant_periodos;
     No_disciplinas *arvore_disciplinas;
@@ -185,6 +185,7 @@ No_curso* cadastra_curso_automatico_aleatorio(No_curso *raiz); // o nome vai ser
 No_curso* cadastra_curso_automatico_crescente(No_curso *raiz);
 No_curso* cadastra_curso_automatico_decrescente(No_curso *raiz);
 int inserir_curso(No_curso **raiz, long long int codigo_curso, char nome_curso[50], int quant_periodos);
+int remover_curso(No_curso **raiz, int codigo_curso);
 int alturaCursos(No_curso *raiz);
 int fatorBalanceamentoCursos(No_curso *raiz);
 int maior(int x, int y);
@@ -192,6 +193,7 @@ No_curso* rotacaoDireitaCursos(No_curso *raiz);
 No_curso* rotacaoEsquerdaCursos(No_curso *raiz);
 No_curso* rotacaoDuplaDireitaCursos(No_curso *raiz);
 No_curso* rotacaoDuplaEsquerdaCursos(No_curso *raiz);
+No_curso* minimo_curso(No_curso* raiz);
 
 
 

@@ -1,30 +1,32 @@
-0.018400
-0.035700
-0.023600
-0.022200
-0.032900
-0.019700
-0.023400
-0.021800
-0.016400
-0.039800
-0.014800
-0.019400
-0.020700
-0.016800
-0.022400
-0.016800
-0.041300
-0.018100
-0.021300
-0.015600
-0.060700
-0.020200
-0.035100
-0.021300
-0.020300
-0.021900
-0.017300
-0.042000
-0.016900
-0.023200
+Execução 1: 7400 nanosegundos
+Execução 2: 4300 nanosegundos
+Execução 3: 2900 nanosegundos
+Execução 4: 2300 nanosegundos
+Execução 5: 2300 nanosegundos
+Execução 6: 2400 nanosegundos
+Execução 7: 2800 nanosegundos
+Execução 8: 2700 nanosegundos
+Execução 9: 2600 nanosegundos
+Execução 10: 2100 nanosegundos
+Execução 11: 2400 nanosegundos
+Execução 12: 3100 nanosegundos
+Execução 13: 2800 nanosegundos
+Execução 14: 2500 nanosegundos
+Execução 15: 2100 nanosegundos
+Execução 16: 2000 nanosegundos
+Execução 17: 2100 nanosegundos
+Execução 18: 2300 nanosegundos
+Execução 19: 2300 nanosegundos
+Execução 20: 2600 nanosegundos
+Execução 21: 2900 nanosegundos
+Execução 22: 2200 nanosegundos
+Execução 23: 2500 nanosegundos
+Execução 24: 2400 nanosegundos
+Execução 25: 3000 nanosegundos
+Execução 26: 2600 nanosegundos
+Execução 27: 2400 nanosegundos
+Execução 28: 3200 nanosegundos
+Execução 29: 2300 nanosegundos
+Execução 30: 2300 nanosegundos
+Execução 31: 2100 nanosegundos
+Tempo médio de inserção (descartando o primeiro): 2550 nanosegundos
